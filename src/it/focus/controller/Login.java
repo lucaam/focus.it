@@ -43,14 +43,13 @@ public class Login extends HttpServlet {
 							Cookie namecookie = new Cookie("name", ub.getNome());
 							Cookie pswcookie = new Cookie("psw", ub.getPwd());
 							Cookie rolecookie = new Cookie("role", ub.getRole());
+							
 							usrcookie.setMaxAge(60*60*1);
 							namecookie.setMaxAge(60*60*1);
-
 							pswcookie.setMaxAge(60*60*1);
 							rolecookie.setMaxAge(60*60*1);
 							
 							namecookie.setPath("/");
-
 							usrcookie.setPath("/");
 							pswcookie.setPath("/");
 							rolecookie.setPath("/");
@@ -58,7 +57,8 @@ public class Login extends HttpServlet {
 							response.addCookie(usrcookie);
 							response.addCookie(pswcookie);
 							response.addCookie(rolecookie);
-							
+							response.addCookie(namecookie);
+
 							
 							request.setAttribute("userBean", ub);  // l'output ha bisogno di queste informazioni
 							System.out.println("Nome: " + ub.getNome());
