@@ -12,6 +12,7 @@
 
 <body>
   <%@include file="nav.jsp" %>
+  
 <div class="container boxmargin">
   <div class="row">
     <div class="col-sm-5">

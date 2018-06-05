@@ -17,7 +17,7 @@
 
 <div class="container boxmargin">
     <p>
-    Qualcosa Ã¨ andato storto, registrazione non avvenuta con successo.
+    Qualcosa è andato storto, registrazione non avvenuta con successo.
 
     Stai per essere reindirizzato alla pagina di registrazione.
     </p>

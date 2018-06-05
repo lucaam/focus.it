@@ -62,9 +62,9 @@
       	}
       }
 
-             if (usrcookie != null) {%>
+             if (namecookie != null) {%>
            
-              <a class="nav-link" href="#">Benvenuto <%out.println(namecookie.getValue());%></a>
+              <a class="nav-link" href="profile.jsp">Benvenuto <%out.println(namecookie.getValue());%></a>
             </li>
             <form class="nav-link" action="Logout" method="post">
             	<button type="submit" id="logout" class="fabutton">

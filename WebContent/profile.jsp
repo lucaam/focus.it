@@ -8,7 +8,11 @@
 </head>
 <body>
     <%@ include file="nav.jsp" %> 
-    
+    	
+    	
+		<%if(!"admin".equals(rolecookie.getValue())) 
+			response.sendRedirect("nopermission.jsp");
+		%>
     
     <%@ include file="footer.jsp" %>  
 </body>

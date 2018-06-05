@@ -15,7 +15,7 @@
  <%@include file="nav.jsp" %>
 <div class="container boxmargin">
     <p>
-    Qualcosa Ã¨ andato storto, non ti sei loggato con successo.
+    Qualcosa è andato storto, non ti sei loggato con successo.
     ID e/o password sono errati.
 
     Stai per essere reindirizzato alla pagina di registrazione.

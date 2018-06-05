@@ -14,6 +14,9 @@
 </head>
 <body>
   <%@include file="nav.jsp" %>
+  	<%if(!"admin".equals(rolecookie.getValue())) 
+			response.sendRedirect("nopermission.jsp");
+		%>
 <div class="container boxmargin">
     <p>
     Spiacente! Prodotto NON aggiunto con successo al database.

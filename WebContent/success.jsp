@@ -21,11 +21,7 @@
     Stai per essere reindirizzato alla homepage.
     </p>
     <p>
-    <% 						
-
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
-		requestDispatcher.forward(request, response);
-	%>	
+   
 							
     Nel caso non dovesse funzionare il reindirizzamento, clicca <a href="./index.jsp">qui</a>
     </p>
