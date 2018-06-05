@@ -5,7 +5,7 @@
 <%@include file="meta.jsp" %>
 <%@include file="head.jsp" %>
   <title>Homepage - focus.it</title>
-  
+
 </head>
 
 <body>
@@ -14,8 +14,7 @@
 
 
   </div>
-  <div class="container bg-cont">
-    <p class="text-center">
+<div class="container bg-cont">    <p class="text-center">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque nec nam aliquam sem et. Eget felis eget nunc lobortis mattis aliquam faucibus purus in. Aliquam ut porttitor leo a.
       Placerat orci nulla pellentesque dignissim enim sit. Et magnis dis parturient montes nascetur ridiculus mus. Lectus vestibulum mattis ullamcorper velit. Senectus et netus et malesuada fames ac turpis egestas. Malesuada fames ac turpis egestas integer
       eget aliquet nibh. Eu sem integer vitae justo eget magna. Dui ut ornare lectus sit amet est. Congue eu consequat ac felis donec et. Eget dolor morbi non arcu risus quis. Sodales neque sodales ut etiam sit amet nisl. Quis vel eros donec ac odio tempor
@@ -94,8 +93,8 @@
       Faucibus vitae aliquet nec ullamcorper sit. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Sed enim ut sem viverra.
     </p>
   </div>
-  
-<%@ include file="footer.jsp" %> 
+
+<%@ include file="footer.jsp" %>
 
 </body>
 

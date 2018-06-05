@@ -9,8 +9,8 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
+        <li class="nav-item">
+          <a class="nav-link" href="index.jsp">Home</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -42,7 +42,7 @@
 		
        
           <ul class="navbar-nav navbar-right bg-dark navbar-dark">
-            <li class="navbar-item active mr-auto">
+            
                          <%     
 			Cookie [] cookies = request.getCookies();
              Cookie usrcookie =null;
@@ -63,7 +63,7 @@
       }
 
              if (namecookie != null) {%>
-           
+           <li class="nav-item">
               <a class="nav-link" href="profile.jsp">Benvenuto <%out.println(namecookie.getValue());%></a>
             </li>
             <form class="nav-link" action="Logout" method="post">
