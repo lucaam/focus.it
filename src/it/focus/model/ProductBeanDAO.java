@@ -16,7 +16,7 @@ public class ProductBeanDAO {
 			
 			conn = DriverManagerConnectionPool.getConnection();
 			
-			String sqlInsert = ("insert into product (nomeprodotto, prezzo, marca, descrizione, colore, mpx, foto) values (?, ?, ?, ?, ?, ?, ?);");
+			String sqlInsert = ("insert into product (product_name, price, brand, description, colour, mpx, img) values (?, ?, ?, ?, ?, ?, ?);");
 			
 			prepstat = conn.prepareStatement(sqlInsert);
 			prepstat.setString(1, product);

@@ -1,7 +1,12 @@
 package it.focus.controller;
 
 import java.io.IOException;
+
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -26,16 +31,29 @@ public class Registration extends HttpServlet {
   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		
+		
+		
 		String name = request.getParameter("name");
 		String surname = request.getParameter("surname");
 		String login = request.getParameter("username");
 		String password = request.getParameter("password");
 		String email = request.getParameter("email");
+		String ldn = request.getParameter("birthplace");
+		String phone = request.getParameter("phone");
+		String dateString = request.getParameter("datebirht");
+//		Temp solution for testing purpose
+		Calendar calendar = Calendar.getInstance();
+	    java.sql.Date date = new java.sql.Date(calendar.getTime().getTime());
+
+		
+		
+		
 		
 		try {
 			
 			UserBeanDAO ubBeanDAO = new UserBeanDAO();
-			UserBean ub = ubBeanDAO.userRegistration(login, name, surname, password, email);
+			UserBean ub = ubBeanDAO.userRegistration(login, name, surname, password, email, ldn, phone, date);
 			
 			
 			if(ub != null)

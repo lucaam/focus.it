@@ -21,7 +21,7 @@
         Sei stato registrato con successo! Stai per essere reindirizzato alla homepage.
       </p>
       <p>
-
+		
 
         Nel caso non dovesse funzionare il reindirizzamento, clicca <a href="./index.jsp">qui</a>
       </p>

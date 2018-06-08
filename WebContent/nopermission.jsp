@@ -14,7 +14,7 @@
 		<%@include file="nav.jsp" %>
 			<div class="container boxmargin text-center">
 				<h1>Non hai i permessi sufficienti per accedere a questa pagina.
-		Controlla di essere loggato o di essere amministratore.
+					Controlla di essere loggato o di essere amministratore.
 
 		</h1>
 

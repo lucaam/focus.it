@@ -3,7 +3,6 @@ package it.focus.controller;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.*;
 import javax.servlet.RequestDispatcher;
 
@@ -30,6 +29,7 @@ public class Login extends HttpServlet {
 					try{
 						UserBeanDAO ubd = new UserBeanDAO();
 						UserBean ub = ubd.doRetriveByKey(userB.getUsr(), userB.getPwd());
+						HttpSession session = request.getSession();
 						if (ub==null) {    // login e/o password sbagliati -> chiamo login form  con messaggio errore
 											// il nome login.jsp non si vedrà nel browser
 							System.out.println("Invalid data");
@@ -60,7 +60,7 @@ public class Login extends HttpServlet {
 							response.addCookie(namecookie);
 
 							
-							request.setAttribute("userBean", ub);  // l'output ha bisogno di queste informazioni
+							session.setAttribute("userBean", ub);  // l'output ha bisogno di queste informazioni
 							System.out.println("Nome: " + ub.getNome());
 					
 

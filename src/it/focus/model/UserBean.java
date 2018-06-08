@@ -1,5 +1,7 @@
 package it.focus.model;
 
+import java.sql.Date;
+
 public class UserBean {
 	
 	private int id;
@@ -8,7 +10,10 @@ public class UserBean {
 	private String cognome;
 	private String email;
 	private String pwd;
-	public String role;
+	private String role;
+	private String birthplace;
+	private String phone;
+	private Date date;
 	
 	public UserBean(String userpwd, String userid)
 	{
@@ -70,6 +75,30 @@ public class UserBean {
 
 	public void setRole(String role) {
 		this.role = role;
+	}
+
+	public String getBirthplace() {
+		return birthplace;
+	}
+
+	public void setBirthplace(String birthplace) {
+		this.birthplace = birthplace;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
 	}
 	
 	

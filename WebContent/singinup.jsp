@@ -68,6 +68,24 @@
               <label for="email">Email:</label>
               <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required="true">
             </div>
+                        <!-- get cityborn --->
+            
+            <div class="form-group">
+              <label for="username">Date of birth:</label>
+              <input type="text" class="form-control" id="datebirth" placeholder="Enter date of birth" name="datebirth" required="true">
+            </div>
+                        <!-- get email --->
+            
+            <div class="form-group">
+              <label for="username">Birth place:</label>
+              <input type="text" class="form-control" id="birthplace" placeholder="Enter birth place" name="birthplace" required="true">
+            </div>
+                        <!-- get email --->
+            
+            <div class="form-group">
+              <label for="username">Phone number:</label>
+              <input type="text" class="form-control" id="phone" placeholder="Enter phone number" name="phone" required="true">
+            </div>
             <input type="submit" class="btn btn-default" value="Submit" onclick="return validateRegistration(this.form)">
           </form>
         </div>

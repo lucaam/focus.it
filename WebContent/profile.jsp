@@ -13,15 +13,23 @@
 
 
 		
-<%UserBean user = (UserBean) request.getAttribute("userBean");%>
+	<%UserBean user = (UserBean) session.getAttribute("userBean");%>
 
     <div class="container bg-cont">
       <h2>Benvenuto 
       <%= user.getNome() %>
       </h2>
       <h4>Questa è la tua area utente!</h4>
-
+      
+      <p>
+      	Nome e cognome: <%= user.getNome() %> <%= user.getCognome() %> <br>
+	      Hai i permessi da: <%= user.getRole() %> <br>
+	      Il tuo username è: <%= user.getUsr() %> <br>
+	      L'email di registrazione è: <%= user.getEmail() %> <br>
+      </p>
 	</div>
+	
+	
     <%@ include file="footer.jsp" %>
 </body>
 </html>
