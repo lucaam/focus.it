@@ -25,12 +25,12 @@ public class DriverManagerConnectionPool {
 		String host = "2.237.17.51";
 		String port = "3306";
 		String db = "focusit";
-		String username = "root";
-		String password = "Empirealice97root";
+		String username = "focusdb";
+		String password = "newpassword2018";
 //		newConnection = DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "/" +db, username, password + "?autoReconnect=true&useSSL=false");
 
 		
-		   String url = "jdbc:mysql://2.237.17.51:3306/"+"focusit"+"?autoReconnect=true&useSSL=false";
+		   String url = "jdbc:mysql://db4free.net:3306/"+"focusdb"+"?autoReconnect=true&useSSL=false";
 		   newConnection = DriverManager.getConnection(url, username, password);
 		   
 		
