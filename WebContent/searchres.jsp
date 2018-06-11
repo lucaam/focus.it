@@ -26,14 +26,20 @@
   <tbody>
   
 	<% ArrayList<ProductBean> pList = (ArrayList<ProductBean>) request.getAttribute("prod"); 
-		
-		for(ProductBean pb : pList)
+		if(!pList.isEmpty()){
+			for(ProductBean pb : pList)
+			{
+				out.print("<tr><th scope=\"row\">" + pb.getId() + "</th>");
+				out.print("<td>" + pb.getProduct() +"</td>");		
+				out.print("<td>" + pb.getPrice() + "€ </td>");
+				out.print("<td>" + pb.getDesc() + "</td>");
+				out.print("<td>" + pb.getMpx() + "</td>");
+			}
+		}
+		else
 		{
-			out.print("<tr><th scope=\"row\">" + pb.getId() + "</th>");
-			out.print("<td>" + pb.getProduct() +"</td>");		
-			out.print("<td>" + pb.getPrice() + "€ </td>");
-			out.print("<td>" + pb.getDesc() + "</td>");
-			out.print("<td>" + pb.getMpx() + "</td>");
+			out.print("<tr><th scope=\"row\"> Spiacenti! </th>");
+			out.print("<td> La ricerca non ha prodotto risultati!</td>");	
 		}
 	%>
 	
