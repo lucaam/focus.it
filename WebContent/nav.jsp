@@ -17,10 +17,10 @@
           Fotocamere
         </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#" onclick="$('search').value('Canon').submit()">Canon</a>
-            <a class="dropdown-item" href="#" onclick="$('search').value('Nikon').submit()">Nikon</a>
-            <a class="dropdown-item" href="#" onclick="$('search').value('Leica').submit()">Leica</a>
-            <a class="dropdown-item" href="#" onclick="$('search').value('Olympus').submit()">Olympus</a>
+            <a class="dropdown-item" href="searchProduct?search=Canon" >Canon</a>
+            <a class="dropdown-item" href="searchProduct?search=Nikon">Nikon</a>
+            <a class="dropdown-item" href="searchProduct?search=Leica">Leica</a>
+            <a class="dropdown-item" href="searchProduct?search=Olympus">Olympus</a>
             <div class="dropdown-divider"></div>
          
             <a class="dropdown-item" href="add.jsp">Add product</a>
