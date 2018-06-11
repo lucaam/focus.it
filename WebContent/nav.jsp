@@ -17,10 +17,10 @@
           Fotocamere
         </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Canon</a>
-            <a class="dropdown-item" href="#">Nikon</a>
-            <a class="dropdown-item" href="#">Leica</a>
-            <a class="dropdown-item" href="#">Olympus</a>
+            <a class="dropdown-item" href="#" onclick="$('search').value('Canon').submit()">Canon</a>
+            <a class="dropdown-item" href="#" onclick="$('search').value('Nikon').submit()">Nikon</a>
+            <a class="dropdown-item" href="#" onclick="$('search').value('Leica').submit()">Leica</a>
+            <a class="dropdown-item" href="#" onclick="$('search').value('Olympus').submit()">Olympus</a>
             <div class="dropdown-divider"></div>
          
             <a class="dropdown-item" href="add.jsp">Add product</a>
@@ -33,8 +33,8 @@
         </li>
       </ul>
 
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <form class="form-inline my-2 my-lg-0" action="searchProduct" method="get">
+        <input class="form-control mr-sm-2" id="search" name="search" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
       </form>
 	  

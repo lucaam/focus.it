@@ -19,13 +19,17 @@ public class ProductBean {
 	
 	
 	public ProductBean(/*id, */String product, Double price, String brand, String desc, Double mpx, String color/*, String type*/) {
-		this.setBrand(brand);
-		this.setDesc(desc);
-		this.setPrice(price);
+		this.product = product;
+		this.brand = brand;
+		this.price = price;
+		this.mpx = mpx;
+		this.desc = desc;
+		this.color = color;
+		
+		
 //		this.setId(id);
 //		this.setType(type);
-		this.setProduct(product);
-		this.setColor(color);
+		
 	}
 	
 	public int getId() {
