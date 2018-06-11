@@ -1,6 +1,5 @@
-<%@ page import="it.focus.model.UserBean" %>
-  <%UserBean user = (UserBean) request.getAttribute("userBean");
-      %>
+<%@ page import="it.focus.model.UserBean" language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="UTF-8" isErrorPage="true"%>
+  <%UserBean user = (UserBean) request.getAttribute("userBean"); %>
     <!DOCTYPE html>
     <html>
 
@@ -18,7 +17,7 @@
 
         <div class="container boxmargin">
           <p>
-            Qualcosa � andato storto, registrazione non avvenuta con successo. Stai per essere reindirizzato alla pagina di registrazione.
+            Qualcosa ï¿½ andato storto, registrazione non avvenuta con successo. Stai per essere reindirizzato alla pagina di registrazione.
           </p>
           <p>
             Nel caso non dovesse funzionare il reindirizzamento, clicca <a href="./singinup.jsp">qui</a>

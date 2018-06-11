@@ -61,6 +61,7 @@ public class Login extends HttpServlet {
 
 							
 							session.setAttribute("userBean", ub);  // l'output ha bisogno di queste informazioni
+							session.setMaxInactiveInterval(60*3);
 							System.out.println("Nome: " + ub.getNome());
 					
 

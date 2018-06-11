@@ -42,18 +42,12 @@ public class Registration extends HttpServlet {
 		String ldn = request.getParameter("birthplace");
 		String phone = request.getParameter("phone");
 		String dateString = request.getParameter("datebirht");
-//		Temp solution for testing purpose
-		Calendar calendar = Calendar.getInstance();
-	    java.sql.Date date = new java.sql.Date(calendar.getTime().getTime());
 
-		
-		
-		
 		
 		try {
 			
 			UserBeanDAO ubBeanDAO = new UserBeanDAO();
-			UserBean ub = ubBeanDAO.userRegistration(login, name, surname, password, email, ldn, phone, date);
+			UserBean ub = ubBeanDAO.userRegistration(login, name, surname, password, email, ldn, phone, dateString);
 			
 			
 			if(ub != null)

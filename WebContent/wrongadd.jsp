@@ -1,6 +1,6 @@
-<%@ page import="it.focus.model.UserBean" %>
-  <%UserBean user = (UserBean) request.getAttribute("userBean");
-      %>
+<%@ page import="it.focus.model.UserBean" language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="UTF-8" isErrorPage="true"%>
+  <%UserBean user = (UserBean) request.getAttribute("userBean"); %>
+
     <!DOCTYPE html>
     <html>
 

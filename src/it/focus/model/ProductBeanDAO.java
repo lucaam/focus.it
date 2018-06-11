@@ -1,16 +1,27 @@
 package it.focus.model;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+
+import javax.servlet.http.HttpSession;
+
+import com.mysql.jdbc.Blob;
 
 public class ProductBeanDAO {
-	public synchronized ProductBean newProd (String product, String brand, Double price, Double mpx, String color, String desc, InputStream pic)
+	public synchronized ProductBean newProd (String product, String brand, Double price, Double mpx, String color, String desc, FileInputStream fis)
 	{
 		
 		Connection conn = null;
 		PreparedStatement prepstat = null;
+		
 		
 		try {
 			
@@ -25,17 +36,14 @@ public class ProductBeanDAO {
 			prepstat.setString(4, desc);
 			prepstat.setString(5, color);
 			prepstat.setDouble(6, mpx);
-			prepstat.setBlob(7, pic);
+			prepstat.setBinaryStream(7, fis);
 			int state = prepstat.executeUpdate();
 			
 			
 			if(state!=0)
 			{
-				ProductBean pb = new ProductBean(product, price, brand);
-				pb.setDesc(desc);
-				pb.setColor(color);
-				pb.setMpx(mpx);
-				pb.setPic(pic);
+				ProductBean pb = new ProductBean(/*id, */product, price, brand, desc, mpx, color);
+				pb.setPic(fis);
 				return pb;
 
 			} 
@@ -54,4 +62,77 @@ public class ProductBeanDAO {
 	
 		return null;
 	}
+	
+	public synchronized ArrayList <ProductBean> getProducts(HttpSession session)
+	{
+		ArrayList<ProductBean> pList = new ArrayList<ProductBean>();
+		int i=0;
+		
+		if(session != null) {
+			for (ProductBean pb : pList )
+			{
+				
+				pb = (ProductBean) session.getAttribute("prod" + i++);
+				pList.add(pb);
+				
+				
+			
+		}
+		
+		if(pList.isEmpty()) {
+			Connection conn = null;
+			PreparedStatement prepstat = null;
+			UserBean ub = (UserBean) session.getAttribute("userBean");
+			
+			
+			try {
+				conn = DriverManagerConnectionPool.getConnection();
+				prepstat = conn.prepareStatement("SELECT * FROM cart WHERE id_cart = ?");
+				prepstat.setInt(1, ub.getId());
+				
+				PreparedStatement ps = null;
+				ps = conn.prepareStatement("SELECT * FROM product WHERE id_product = ?");
+			
+				ProductBean pb = null;
+				
+				ResultSet res = prepstat.executeQuery();
+				
+				while(res.next())
+				{
+				
+					int pId = res.getInt("id_product");
+					ResultSet rs = ps.executeQuery();
+					
+					for (ProductBean npb : pList )
+					{
+						npb = new ProductBean(/*res.getInt("id_product"),*/ res.getString("product_name"), res.getDouble("price"), res.getString("brand"), res.getString("description"), res.getDouble("mpx"), res.getString("colour")/*, res.getString("product_type")*/);
+						pList.add(npb);	
+					}
+						
+				}
+
+
+				
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					prepstat.close();
+					DriverManagerConnectionPool.releaseConnection(conn);
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			
+			
+			}
+		
+			
+		}
+		}
+		return pList;
+	}
 }
+		
+			
+

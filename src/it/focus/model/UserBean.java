@@ -13,7 +13,9 @@ public class UserBean {
 	private String role;
 	private String birthplace;
 	private String phone;
-	private Date date;
+	private String date;
+	private int id_usrorder;
+	private int id_addr;
 	
 	public UserBean(String userpwd, String userid)
 	{
@@ -93,12 +95,28 @@ public class UserBean {
 		this.phone = phone;
 	}
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
+	}
+
+	public int getId_usrorder() {
+		return id_usrorder;
+	}
+
+	public void setId_usrorder(int id_usrorder) {
+		this.id_usrorder = id_usrorder;
+	}
+
+	public int getId_addr() {
+		return id_addr;
+	}
+
+	public void setId_addr(int id_addr) {
+		this.id_addr = id_addr;
 	}
 	
 	

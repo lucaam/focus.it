@@ -1,3 +1,5 @@
+<%@ page import="it.focus.model.UserBean" language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="UTF-8" isErrorPage="true"%>
+  <%UserBean user = (UserBean) request.getAttribute("userBean"); %>
 <!DOCTYPE html>
 <html>
 
@@ -15,7 +17,7 @@
   <%@include file="nav.jsp" %>
     <div class="container boxmargin">
       <p>
-        Qualcosa � andato storto, non ti sei loggato con successo. ID e/o password sono errati. Stai per essere reindirizzato alla pagina di registrazione.
+        Qualcosa ï¿½ andato storto, non ti sei loggato con successo. ID e/o password sono errati. Stai per essere reindirizzato alla pagina di registrazione.
       </p>
       <p>
         Nel caso non dovesse funzionare il reindirizzamento, clicca <a href="./singinup.jsp">qui</a>

@@ -1,5 +1,5 @@
-<%@ page import="it.focus.model.UserBean" %>
-  <%UserBean user = (UserBean) request.getAttribute("userBean");
+<%@ page import="it.focus.model.ProductBean" %>
+  <%ProductBean pb = (ProductBean) request.getAttribute("prod");
       %>
     <!DOCTYPE html>
     <html lang="en" dir="ltr">
@@ -13,13 +13,13 @@
     <body>
       <%@include file="nav.jsp" %>
         <div class="container boxmargin">
-          <h2>Canon EOS 5D Mark III</h2>
+          <h2><%= pb.getProduct() %></h2>
           <div class="row">
             <div class="col-sm-7">
               <img src="./images/cameras/eos-5d-mark-iii.jpg" class="img-prod">
             </div>
             <div class="col-sm-5">
-              <h4>Canon EOS 5D Mark III</h4>
+              <h4><%= pb.getProduct() %></h4>
               <p class="text-justify">Descrizione prodottoDescrizione prodottoDescrizione prodottoDescrizione prodottoDescrizione prodottoDescrizione prodottoDescrizione prodotto<br> Descrizione prodottoDescrizione prodottoDescrizione prodottoDescrizione prodottoDescrizione
                 prodottoDescrizione prodottoDescrizione prodottoDescrizione prodotto<br>
               </p>
@@ -35,13 +35,8 @@
                 </ul>
             </div>
             <div class="row rowdesc-margin">
-              Tante altre informazioni sul prodotto se disponibili. Info sulla spedizione, info sulla garanzia ecc ecc ecc.<br>CIAO CIAO CIAOC CIAOC SICJASIODJASOIDJASOIJDOASIJDOSIAJDIOASJDOSADSADSA Tante altre informazioni sul prodotto se disponibili.
-              Info sulla spedizione, info sulla garanzia ecc ecc ecc.<br>CIAO CIAO CIAOC CIAOC SICJASIODJASOIDJASOIJDOASIJDOSIAJDIOASJDOSADSADSA Tante altre informazioni sul prodotto se disponibili. Info sulla spedizione, info sulla garanzia ecc ecc ecc.<br>CIAO
-              CIAO CIAOC CIAOC SICJASIODJASOIDJASOIJDOASIJDOSIAJDIOASJDOSADSADSA Tante altre informazioni sul prodotto se disponibili. Info sulla spedizione, info sulla garanzia ecc ecc ecc.<br>CIAO CIAO CIAOC CIAOC SICJASIODJASOIDJASOIJDOASIJDOSIAJDIOASJDOSADSADSA
-              Tante altre informazioni sul prodotto se disponibili. Info sulla spedizione, info sulla garanzia ecc ecc ecc.<br>CIAO CIAO CIAOC CIAOC SICJASIODJASOIDJASOIJDOASIJDOSIAJDIOASJDOSADSADSA Tante altre informazioni sul prodotto se disponibili.
-              Info sulla spedizione, info sulla garanzia ecc ecc ecc.<br>CIAO CIAO CIAOC CIAOC SICJASIODJASOIDJASOIJDOASIJDOSIAJDIOASJDOSADSADSA Tante altre informazioni sul prodotto se disponibili. Info sulla spedizione, info sulla garanzia ecc ecc ecc.<br>CIAO
-              CIAO CIAOC CIAOC SICJASIODJASOIDJASOIJDOASIJDOSIAJDIOASJDOSADSADSA Tante altre informazioni sul prodotto se disponibili. Info sulla spedizione, info sulla garanzia ecc ecc ecc.<br>CIAO CIAO CIAOC CIAOC SICJASIODJASOIDJASOIJDOASIJDOSIAJDIOASJDOSADSADSA
-            </div>
+              <%= pb.getDesc()%>
+              </div>
           </div>
         </div>
         <%@include file="footer.jsp" %>

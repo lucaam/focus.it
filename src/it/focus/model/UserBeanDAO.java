@@ -51,7 +51,7 @@ public class UserBeanDAO {
 		return null;
 	}
 	
-	public synchronized UserBean userRegistration(String login, String nome, String cognome, String pwd, String email, String ldn, String phone, Date date)
+	public synchronized UserBean userRegistration(String login, String nome, String cognome, String pwd, String email, String ldn, String phone, String date)
 	{ 
 		
 		Connection conn = null;
@@ -70,7 +70,7 @@ public class UserBeanDAO {
 			prepstat.setString(4, pwd);
 			prepstat.setString(5, email);
 			prepstat.setString(6, ldn);
-			prepstat.setDate(7, date);
+			prepstat.setString(7, date);
 			prepstat.setString(8, phone);
 
 			int state = prepstat.executeUpdate();

@@ -1,6 +1,7 @@
 package it.focus.controller;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
+
 
 import it.focus.model.ProductBean;
 import it.focus.model.ProductBeanDAO;
@@ -38,21 +40,16 @@ public class addProduct extends HttpServlet {
 		String desc = request.getParameter("desc");
 		String color = request.getParameter("color");
 		Double mpx = Double.parseDouble(request.getParameter("mpx"));
-		InputStream pic = null;
-		Part filePart = request.getPart("pic");
+		FileInputStream fis = null;
 		
-		if(filePart != null) {
-			System.out.println(filePart.getName());
-            System.out.println(filePart.getSize());
-            System.out.println(filePart.getContentType());
-            
-            pic = filePart.getInputStream();
-		}
+		
+		File file = new File(product);
+		fis = new FileInputStream (file);
 		
 		try {
 			
 			ProductBeanDAO pbBeanDAO = new ProductBeanDAO();
-			ProductBean pb = pbBeanDAO.newProd(product, brand, price, mpx, color, desc, pic);
+			ProductBean pb = pbBeanDAO.newProd(product, brand, price, mpx, color, desc, fis);
 			
 			
 			if(pb != null)

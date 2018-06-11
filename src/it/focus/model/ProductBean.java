@@ -1,6 +1,9 @@
 package it.focus.model;
 
+import java.io.FileInputStream;
 import java.io.InputStream;
+
+import com.mysql.jdbc.Blob;
 
 public class ProductBean {
 	
@@ -11,14 +14,18 @@ public class ProductBean {
 	private String desc;
 	private Double mpx;
 	private String color;
-	private InputStream pic;
+	private FileInputStream pic;
+	private String type;
 	
 	
-	public ProductBean(String product, Double price, String brand) {
-		this.product = product;
-		this.price = price;
-		this.brand = brand;
-	
+	public ProductBean(/*id, */String product, Double price, String brand, String desc, Double mpx, String color/*, String type*/) {
+		this.setBrand(brand);
+		this.setDesc(desc);
+		this.setPrice(price);
+//		this.setId(id);
+//		this.setType(type);
+		this.setProduct(product);
+		this.setColor(color);
 	}
 	
 	public int getId() {
@@ -64,12 +71,20 @@ public class ProductBean {
 		this.color = color;
 	}
 
-	public InputStream getPic() {
+	public FileInputStream getPic() {
 		return pic;
 	}
 
-	public void setPic(InputStream pic) {
-		this.pic = pic;
+	public void setPic(FileInputStream fis) {
+		this.pic = fis;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 	
 }

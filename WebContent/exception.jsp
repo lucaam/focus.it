@@ -1,6 +1,5 @@
-<%@ page import="it.focus.model.UserBean" %>
-  <%UserBean user = (UserBean) request.getAttribute("userBean");
-      %>
+<%@ page import="it.focus.model.UserBean" language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="UTF-8" isErrorPage="true"%>
+  <%UserBean user = (UserBean) request.getAttribute("userBean"); %>
     <!DOCTYPE html>
     <html lang="en">
 
@@ -13,7 +12,7 @@
     <body>
       <%@include file="nav.jsp" %>
         <div class="container boxmargin text-center">
-          <h1>Errore - Exception</h1> Qualcosa � andato storto!
+          <h1>Errore - Exception</h1> Qualcosa ï¿½ andato storto!
           <br />
           <br />
           <% Exception e = (Exception) request.getAttribute("exception");%>
