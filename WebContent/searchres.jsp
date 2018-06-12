@@ -26,6 +26,7 @@
 		    out.print("<th scope=\"col\">Price</th>");
 		    out.print("<th scope=\"col\">Description</th>");
 			out.print(" <th scope=\"col\">Mpx</th>");
+			out.print(" <th scope=\"col\">Go to</th>");
 			out.print("</tr>");
 			out.print("</thead>");
 			out.print("<tbody>");
