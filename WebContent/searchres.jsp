@@ -13,39 +13,45 @@
 <body>
 <%@include file="nav.jsp" %>
 <div class="container">
-<table class="table">
-<thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Name</th>
-      <th scope="col">Price</th>
-      <th scope="col">Description</th>
-      <th scope="col">Megapixels</th>
-    </tr>
-  </thead>
-  <tbody>
+
   
 	<% ArrayList<ProductBean> pList = (ArrayList<ProductBean>) request.getAttribute("prod"); 
+	
 		if(!pList.isEmpty()){
+			out.print("<table class=\"table\">");
+			out.print("<thead>");
+			out.print("<tr>");
+			out.print("<th scope=\"col\">Image</th>");
+		    out.print("<th scope=\"col\">Name</th>");
+		    out.print("<th scope=\"col\">Price</th>");
+		    out.print("<th scope=\"col\">Description</th>");
+			out.print(" <th scope=\"col\">Mpx</th>");
+			out.print("</tr>");
+			out.print("</thead>");
+			out.print("<tbody>");
 			for(ProductBean pb : pList)
 			{
-				out.print("<tr><th scope=\"row\">" + pb.getId() + "</th>");
-				out.print("<td>" + pb.getProduct() +"</td>");		
+				
+				out.print("<tr><th scope=\"row\">" + pb.getPic() +"</th>");		
+				out.print("<td>" + pb.getProduct() + " </td>");
 				out.print("<td>" + pb.getPrice() + "€ </td>");
 				out.print("<td>" + pb.getDesc() + "</td>");
 				out.print("<td>" + pb.getMpx() + "</td>");
+				out.print("<td><a href=\"generatePage?idProd="+ pb.getId() +"\">ProductPage</a></td>");
+				
+				
 			}
+			out.print("</tbody>");
+			out.print("</table>");
 		}
 		else
 		{
-			out.print("<tr><th scope=\"row\"> Spiacenti! </th>");
-			out.print("<td> La ricerca non ha prodotto risultati!</td>");	
+			out.print("<p class=\"text-center\"> <h2> Spiacenti! La ricerca non ha protato risultati!</p>");
 		}
 	%>
 	
 	
-	</tbody>
-	</table>
+	
 	</div>
 <%@ include file="footer.jsp" %>
 </body>

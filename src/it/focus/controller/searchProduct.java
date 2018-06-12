@@ -34,12 +34,9 @@ public class searchProduct extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String toSearch = request.getParameter("search");
-		System.out.println(toSearch);
 		ProductBeanDAO pbd = new ProductBeanDAO();
-		ArrayList<ProductBean> pList = pbd.serchIntoDb(toSearch);
-		
-		System.out.println(pList.isEmpty());
-		
+		ArrayList<ProductBean> pList = pbd.searchBrand(toSearch);
+				
 		request.setAttribute("prod", pList);
 		
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("searchres.jsp");
