@@ -34,11 +34,11 @@
 			{
 				
 				out.print("<tr><th scope=\"row\">" + pb.getPic() +"</th>");		
-				out.print("<td td-prod>" + pb.getProduct() + " </td>");
-				out.print("<td td-prod>" + pb.getPrice() + "€ </td>");
-				out.print("<td td-prod >" + pb.getDesc() + "</td>");
-				out.print("<td td-prod>" + pb.getMpx() + "</td>");
-				out.print("<td td-prod><a href=\"generatePage?idProd="+ pb.getId() +"\">ProductPage</a></td></tr>");
+				out.print("<td class=\"td-prod\">" + pb.getProduct() + " </td>");
+				out.print("<td class=\"td-prod\">" + pb.getPrice() + "€ </td>");
+				out.print("<td class=\"td-prod\">" + pb.getDesc() + "</td>");
+				out.print("<td class=\"td-prod\">" + pb.getMpx() + "</td>");
+				out.print("<td class=\"td-prod\"><a href=\"generatePage?idProd="+ pb.getId() +"\">ProductPage</a></td></tr>");
 				
 				
 			}
