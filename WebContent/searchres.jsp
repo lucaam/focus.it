@@ -37,7 +37,7 @@
 				out.print("<td>" + pb.getPrice() + "€ </td>");
 				out.print("<td>" + pb.getDesc() + "</td>");
 				out.print("<td>" + pb.getMpx() + "</td>");
-				out.print("<td><a href=\"generatePage?idProd="+ pb.getId() +"\">ProductPage</a></td>");
+				out.print("<td><a href=\"generatePage?idProd="+ pb.getId() +"\">ProductPage</a></td></tr>");
 				
 				
 			}
