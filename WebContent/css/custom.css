@@ -50,3 +50,9 @@ body {
   padding: 0px;
   border: none;
 }
+
+.td-prod{
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
