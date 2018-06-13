@@ -31,10 +31,11 @@ public class UserBeanDAO {
 				ub.setUsr(res.getString("login"));
 				ub.setEmail(res.getString("email"));
 				ub.setPwd(res.getString("pwd"));
-				ub.setPwd(res.getString("city_born"));
-				ub.setPwd(res.getString("bday"));
-				ub.setPwd(res.getString("phone"));
+				ub.setBirthplace(res.getString("city_born"));
+				ub.setDate(res.getDate("bday"));
+				ub.setPhone(res.getString("phone"));
 				
+				System.out.println(ub.getRole());
 				return ub;
 			}
 			
@@ -52,7 +53,7 @@ public class UserBeanDAO {
 		return null;
 	}
 	
-	public synchronized UserBean userRegistration(String login, String nome, String cognome, String pwd, String email, String ldn, String phone, String date)
+	public synchronized UserBean userRegistration(String login, String nome, String cognome, String pwd, String email, String ldn, String phone, Date date)
 	{ 
 		
 		Connection conn = null;
@@ -71,7 +72,7 @@ public class UserBeanDAO {
 			prepstat.setString(4, pwd);
 			prepstat.setString(5, email);
 			prepstat.setString(6, ldn);
-			prepstat.setString(7, date);
+			prepstat.setDate(7, date);
 			prepstat.setString(8, phone);
 
 			int state = prepstat.executeUpdate();

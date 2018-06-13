@@ -40,16 +40,26 @@ public class addProduct extends HttpServlet {
 		String desc = request.getParameter("desc");
 		String color = request.getParameter("color");
 		Double mpx = Double.parseDouble(request.getParameter("mpx"));
-		FileInputStream fis = null;
 		
-		
-		File file = new File(product);
-		fis = new FileInputStream (file);
+//		InputStream inputStream = null; // input stream of the upload file
+//        // obtains the upload file part in this multipart request
+//        Part filePart = request.getPart("photo");
+//        if (filePart != null) {
+//            // prints out some information for debugging
+//            System.out.println(filePart.getName());
+//            System.out.println(filePart.getSize());
+//            System.out.println(filePart.getContentType());
+//
+//            //obtains input stream of the upload file
+//            //the InputStream will point to a stream that contains
+//            //the contents of the file
+//            inputStream = filePart.getInputStream();
+//        }
 		
 		try {
 			
 			ProductBeanDAO pbBeanDAO = new ProductBeanDAO();
-			ProductBean pb = pbBeanDAO.newProd(product, brand, price, mpx, color, desc, fis);
+			ProductBean pb = pbBeanDAO.newProd(product, brand, price, mpx, color, desc);
 			
 			
 			if(pb != null)

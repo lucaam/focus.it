@@ -19,9 +19,8 @@ public class Login extends HttpServlet {
   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 				UserBean userB = getUserPassword(request);
-				System.out.print(userB.toString());
 
-				if (userB == null) {    // no login e/o no password -> redirigo a login form 
+				if (userB.getNome() == null) {    // no login e/o no password -> redirigo a login form 
 					System.out.println("No data input");
 					response.sendRedirect("singinup.jsp");    // non ho bisogno di mandargli parametri. Il nome login.jsp si vedrà nel browser
 				}
@@ -29,10 +28,16 @@ public class Login extends HttpServlet {
 					try{
 						UserBeanDAO ubd = new UserBeanDAO();
 						UserBean ub = ubd.doRetriveByKey(userB.getUsr(), userB.getPwd());
+						
 						HttpSession session = request.getSession();
-						if (ub==null) {    // login e/o password sbagliati -> chiamo login form  con messaggio errore
+
+						if (ub.getNome()==null) {    // login e/o password sbagliati -> chiamo login form  con messaggio errore
 											// il nome login.jsp non si vedrà nel browser
+							System.out.println(ub.getRole());
+							System.out.println(ub.getPwd());
 							System.out.println("Invalid data");
+							
+
 							request.setAttribute("denied", true);
 							RequestDispatcher requestDispatcher = request.getRequestDispatcher("wronglogin.jsp");
 							requestDispatcher.forward(request, response);
@@ -61,7 +66,7 @@ public class Login extends HttpServlet {
 
 							
 							session.setAttribute("userBean", ub);  // l'output ha bisogno di queste informazioni
-							session.setMaxInactiveInterval(60*3);
+							session.setMaxInactiveInterval(60*60*3);
 							System.out.println("Nome: " + ub.getNome());
 					
 

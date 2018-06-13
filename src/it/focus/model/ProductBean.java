@@ -14,7 +14,7 @@ public class ProductBean {
 	private String desc;
 	private Double mpx;
 	private String color;
-	private FileInputStream pic;
+	private InputStream pic;
 	private String type;
 	
 	
@@ -75,11 +75,11 @@ public class ProductBean {
 		this.color = color;
 	}
 
-	public FileInputStream getPic() {
+	public InputStream getPic() {
 		return pic;
 	}
 
-	public void setPic(FileInputStream fis) {
+	public void setPic(InputStream fis) {
 		this.pic = fis;
 	}
 

@@ -4,7 +4,9 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,7 +18,7 @@ import javax.servlet.http.HttpSession;
 import com.mysql.jdbc.Blob;
 
 public class ProductBeanDAO {
-	public synchronized ProductBean newProd (String product, String brand, Double price, Double mpx, String color, String desc, FileInputStream fis)
+	public synchronized ProductBean newProd (String product, String brand, Double price, Double mpx, String color, String desc)
 	{
 		
 		Connection conn = null;
@@ -27,7 +29,7 @@ public class ProductBeanDAO {
 			
 			conn = DriverManagerConnectionPool.getConnection();
 			
-			String sqlInsert = ("insert into product (product_name, price, brand, description, colour, mpx, img) values (?, ?, ?, ?, ?, ?, ?);");
+			String sqlInsert = ("insert into product (product_name, price, brand, description, colour, mpx) values (?, ?, ?, ?, ?, ?);");
 			
 			prepstat = conn.prepareStatement(sqlInsert);
 			prepstat.setString(1, product);
@@ -36,14 +38,14 @@ public class ProductBeanDAO {
 			prepstat.setString(4, desc);
 			prepstat.setString(5, color);
 			prepstat.setDouble(6, mpx);
-			prepstat.setBinaryStream(7, fis);
+//			prepstat.setBlob(7, fis);
 			int state = prepstat.executeUpdate();
 			
 			
 			if(state!=0)
 			{
 				ProductBean pb = new ProductBean(/*id, */product, price, brand, desc, mpx, color);
-				pb.setPic(fis);
+//				pb.setPic(fis);
 				return pb;
 
 			} 

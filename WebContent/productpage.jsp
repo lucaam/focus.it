@@ -27,7 +27,7 @@
               </p>
             </div>
             <div class="col-sm-5">
-              <h4><%= pb.getProduct() %></h4> <h5><%= pb.getPrice() %> euro</h5>
+              <h4><%= pb.getProduct() %></h4> <h5><%= pb.getPrice() %> &euro;</h5>
               <p class="text-justify"> <%= pb.getDesc()%>
               </p>
               <p class="text-justify">
@@ -41,7 +41,7 @@
                   %>
                   
                   </li>
-                  <li>2 years of " <%= pb.getBrand()%> warranty!</li>
+                  <li>2 years of <%= pb.getBrand()%> warranty!</li>
               
                 </ul>
             </div>

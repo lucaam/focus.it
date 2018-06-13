@@ -53,7 +53,7 @@
 						<label for="pic">Pic:</label>
 						<div class="input-group mb-3">
 							<div class="custom-file">
-								<input type="file" class="custom-file-input" id="pic">
+								<input type="file" class="custom-file-input" id="pic" name="pic" required="false">
 								<label class="custom-file-label" for="pic">Choose file</label>
 							</div>
 						</div>

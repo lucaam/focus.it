@@ -6,10 +6,9 @@ body {
 
 }
 
-.container {
-  min-width: 70%;
-
-  min-height: 700px;
+.nores {
+	min-heigt: 700px;
+	min-heigt: 70%;
 }
 
 .fot1 {
@@ -52,7 +51,9 @@ body {
 }
 
 .td-prod{
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+ 
+
 }

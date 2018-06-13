@@ -13,7 +13,7 @@ public class UserBean {
 	private String role;
 	private String birthplace;
 	private String phone;
-	private String date;
+	private Date date;
 	private int id_usrorder;
 	private int id_addr;
 	
@@ -95,12 +95,12 @@ public class UserBean {
 		this.phone = phone;
 	}
 
-	public String getDate() {
+	public Date getDate() {
 		return date;
 	}
 
-	public void setDate(String date) {
-		this.date = date;
+	public void setDate(Date date2) {
+		this.date = date2;
 	}
 
 	public int getId_usrorder() {
