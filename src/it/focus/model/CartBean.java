@@ -20,6 +20,11 @@ public class CartBean {
 	
 	public void addItem(ProductBean pb)
 	{
+		if(items==null) {
+			items = new ArrayList<ProductBean> ();
+			this.items.add(pb);
+	
+		}else
 		this.items.add(pb);
 	}
 	
@@ -52,5 +57,12 @@ public class CartBean {
 		
 		while(!(this.items.isEmpty()))
 				this.items.remove(i);
+	}
+	
+	public boolean isEmpty() {
+		if(this.items.isEmpty())
+			return true;
+		else 
+			return false;
 	}
 }

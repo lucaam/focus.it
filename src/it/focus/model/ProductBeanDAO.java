@@ -67,12 +67,11 @@ public class ProductBeanDAO {
 	
 	
 	
-	public synchronized ArrayList <ProductBean> searchId (String toQuery)
+	public synchronized ProductBean searchId (String toQuery)
 	{
 		Connection conn = null;
 		PreparedStatement prepstat = null;
-		ArrayList<ProductBean> pList = new ArrayList<ProductBean>();
-		
+		ProductBean npb = null;
 	
 		try {
 			
@@ -84,9 +83,9 @@ public class ProductBeanDAO {
 			
 			while(res.next())
 			{		
-					ProductBean npb = new ProductBean(/*res.getInt("id_product"),*/ res.getString("product_name"), res.getDouble("price"), res.getString("brand"), res.getString("description"), res.getDouble("mpx"), res.getString("colour")/*, res.getString("product_type")*/);
+					npb = new ProductBean(/*res.getInt("id_product"),*/ res.getString("product_name"), res.getDouble("price"), res.getString("brand"), res.getString("description"), res.getDouble("mpx"), res.getString("colour")/*, res.getString("product_type")*/);
 					npb.setId(res.getInt("id_product"));
-					pList.add(npb);
+
 					
 				
 					
@@ -103,7 +102,7 @@ public class ProductBeanDAO {
 				e.printStackTrace();
 			}
 	}
-		return pList;
+		return npb;
 }
 	public synchronized ArrayList <ProductBean> searchBrand (String toQuery)
 {

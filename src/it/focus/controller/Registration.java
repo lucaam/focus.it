@@ -41,13 +41,12 @@ public class Registration extends HttpServlet {
 		String email = request.getParameter("email");
 		String ldn = request.getParameter("birthplace");
 		String phone = request.getParameter("phone");
-		String dateString = request.getParameter("datebirht");
 
 		
 		try {
 			
 			UserBeanDAO ubBeanDAO = new UserBeanDAO();
-			UserBean ub = ubBeanDAO.userRegistration(login, name, surname, password, email, ldn, phone, dateString);
+			UserBean ub = ubBeanDAO.userRegistration(login, name, surname, password, email, ldn, phone);
 			
 			
 			if(ub != null)

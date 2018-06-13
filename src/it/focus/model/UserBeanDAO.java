@@ -31,11 +31,7 @@ public class UserBeanDAO {
 				ub.setUsr(res.getString("login"));
 				ub.setEmail(res.getString("email"));
 				ub.setPwd(res.getString("pwd"));
-				ub.setBirthplace(res.getString("city_born"));
-				ub.setDate(res.getDate("bday"));
-				ub.setPhone(res.getString("phone"));
 				
-				System.out.println(ub.getRole());
 				return ub;
 			}
 			
@@ -53,7 +49,7 @@ public class UserBeanDAO {
 		return null;
 	}
 	
-	public synchronized UserBean userRegistration(String login, String nome, String cognome, String pwd, String email, String ldn, String phone, Date date)
+	public synchronized UserBean userRegistration(String login, String nome, String cognome, String pwd, String email, String ldn, String phone)
 	{ 
 		
 		Connection conn = null;
@@ -63,7 +59,7 @@ public class UserBeanDAO {
 			
 			conn = DriverManagerConnectionPool.getConnection();
 			
-			String sqlInsert = ("insert into usr (name, surname, login, pwd, email, city_born, bday, phone) values (?, ?, ?, ?, ?, ?, ?, ?);");
+			String sqlInsert = ("insert into usr (name, surname, login, pwd, email, city_born, , phone) values (?, ?, ?, ?, ?, ?, ?);");
 			
 			prepstat = conn.prepareStatement(sqlInsert);
 			prepstat.setString(1, nome);
@@ -72,7 +68,6 @@ public class UserBeanDAO {
 			prepstat.setString(4, pwd);
 			prepstat.setString(5, email);
 			prepstat.setString(6, ldn);
-			prepstat.setDate(7, date);
 			prepstat.setString(8, phone);
 
 			int state = prepstat.executeUpdate();
@@ -86,7 +81,6 @@ public class UserBeanDAO {
 				ub.setEmail(email);
 				ub.setUsr(login);
 				ub.setBirthplace(ldn);
-				ub.setDate(date);
 				ub.setPhone(phone);
 				System.out.print("Succesfully registered");
 				return ub;

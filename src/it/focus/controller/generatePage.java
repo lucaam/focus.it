@@ -37,9 +37,9 @@ public class generatePage extends HttpServlet {
 		
 		
 		ProductBeanDAO pbd = new ProductBeanDAO();
-		ArrayList<ProductBean> pb = pbd.searchId(toGet);
+		ProductBean pb = pbd.searchId(toGet);
 		
-		request.setAttribute("prod", pb.get(0));
+		request.setAttribute("prod", pb);
 		
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("productpage.jsp");
 		requestDispatcher.forward(request, response);

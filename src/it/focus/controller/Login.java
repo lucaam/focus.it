@@ -20,7 +20,7 @@ public class Login extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 				UserBean userB = getUserPassword(request);
 
-				if (userB.getNome() == null) {    // no login e/o no password -> redirigo a login form 
+				if (userB == null) {    // no login e/o no password -> redirigo a login form 
 					System.out.println("No data input");
 					response.sendRedirect("singinup.jsp");    // non ho bisogno di mandargli parametri. Il nome login.jsp si vedrà nel browser
 				}

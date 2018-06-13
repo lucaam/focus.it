@@ -30,6 +30,8 @@
               <h4><%= pb.getProduct() %></h4> <h5><%= pb.getPrice() %> &euro;</h5>
               <p class="text-justify"> <%= pb.getDesc()%>
               </p>
+              				<%out.print("<button><a href=\"addToCart?idProd="+ pb.getId() +"\"> Add to cart </a></button>"); %>
+              
               <p class="text-justify">
                 <ul style="list-style-type: none; padding:0;">
                   <li><%= pb.getMpx()%> Megapixels</li>
