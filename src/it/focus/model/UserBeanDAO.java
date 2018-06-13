@@ -59,7 +59,7 @@ public class UserBeanDAO {
 			
 			conn = DriverManagerConnectionPool.getConnection();
 			
-			String sqlInsert = ("insert into usr (name, surname, login, pwd, email, city_born, , phone) values (?, ?, ?, ?, ?, ?, ?);");
+			String sqlInsert = ("insert into usr (name, surname, login, pwd, email) values (?, ?, ?, ?, ?");
 			
 			prepstat = conn.prepareStatement(sqlInsert);
 			prepstat.setString(1, nome);
@@ -67,8 +67,8 @@ public class UserBeanDAO {
 			prepstat.setString(3, login);
 			prepstat.setString(4, pwd);
 			prepstat.setString(5, email);
-			prepstat.setString(6, ldn);
-			prepstat.setString(8, phone);
+//			prepstat.setString(6, ldn);
+//			prepstat.setString(8, phone);
 
 			int state = prepstat.executeUpdate();
 			
@@ -80,8 +80,8 @@ public class UserBeanDAO {
 				ub.setCognome(cognome);
 				ub.setEmail(email);
 				ub.setUsr(login);
-				ub.setBirthplace(ldn);
-				ub.setPhone(phone);
+//				ub.setBirthplace(ldn);
+//				ub.setPhone(phone);
 				System.out.print("Succesfully registered");
 				return ub;
 

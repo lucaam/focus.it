@@ -16,6 +16,7 @@
       <div class="row">
         <div class="col-sm-5">
           <h3>Accedi a focusit</h3>
+          <h6 class="text-small text-muted">if you want to test -> id: guest password: guest</h6>
 
           <% Boolean bad = (Boolean) request.getAttribute("denied");%>
             <% if(bad != null) { %>
@@ -42,6 +43,7 @@
 
         <div class="col-sm-7">
           <h3>Registrati a focusit</h3>
+          <h6 class="text-small text-muted">if you want to test -> id: guest password: guest</h6>
           <form action="Registration" method="post" name="formRegistration">
             <!-- get username --->
             <div class="form-group">
