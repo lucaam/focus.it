@@ -17,7 +17,7 @@
 
         <div class="container boxmargin">
           <p>
-            Qualcosa ï¿½ andato storto, registrazione non avvenuta con successo. Stai per essere reindirizzato alla pagina di registrazione.
+            Qualcosa è andato storto, registrazione non avvenuta con successo. Stai per essere reindirizzato alla pagina di registrazione.
           </p>
           <p>
             Nel caso non dovesse funzionare il reindirizzamento, clicca <a href="./singinup.jsp">qui</a>

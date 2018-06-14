@@ -17,7 +17,7 @@
   <%@include file="nav.jsp" %>
     <div class="container boxmargin">
       <p>
-        Qualcosa ï¿½ andato storto, non ti sei loggato con successo. ID e/o password sono errati. Stai per essere reindirizzato alla pagina di registrazione.
+        Qualcosa è andato storto, non ti sei loggato con successo. ID e/o password sono errati. Stai per essere reindirizzato alla pagina di registrazione.
       </p>
       <p>
         Nel caso non dovesse funzionare il reindirizzamento, clicca <a href="./singinup.jsp">qui</a>

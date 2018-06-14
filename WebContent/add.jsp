@@ -12,8 +12,10 @@
 
 	<body>
 		<%@include file="nav.jsp" %>
-			<%if(!"admin".equals(rolecookie.getValue()))
+			<%if(!"admin".equals(rolecookie.getValue())){
 			response.sendRedirect("nopermission.jsp");
+			return;
+			}
 		%>
 
 				<div class="container boxmargin">

@@ -13,8 +13,12 @@
 
 
 		
-	<%UserBean user = (UserBean) session.getAttribute("userBean");%>
-
+	<%UserBean user = (UserBean) session.getAttribute("userBean");
+	if(user==null){
+	  	response.sendRedirect("singinup.jsp");
+	return;
+	}
+	%>
     <div class="container bg-cont">
       <h2>Benvenuto 
       <%= user.getNome() %>

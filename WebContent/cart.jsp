@@ -16,10 +16,20 @@
 
 <div class="container-fluid bg-cont">
 
-  
-	<%CartBean cart = (CartBean) session.getAttribute("cart");
-		
-
+  	
+  	
+  	
+	<%
+	if (session==null){
+	  	response.sendRedirect("nopermission.jsp");
+	return;
+	}
+	CartBean cart = (CartBean) session.getAttribute("cart");
+	if (cart==null){
+	  	response.sendRedirect("nopermission.jsp");
+	return;
+	}
+	
 		
 		if(!cart.isEmpty()){
 			out.print("<table class=\"table\">");

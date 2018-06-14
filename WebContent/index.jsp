@@ -54,7 +54,7 @@
 
 
   <div class="container bg-cont text-center">
-   <div class="row justify-content-center">
+   <div class="row">
    <%
    
    
@@ -98,7 +98,7 @@
     </p>
   </div>
 
-
+</div>
 <%@ include file="footer.jsp" %>
 
 </body>
