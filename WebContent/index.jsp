@@ -69,7 +69,7 @@
    	 	out.print("<div class=\"card-body\">");
    	 	out.print("<h5 class=\"card-title\">" + pb.getProduct() + "</h5>");
    	    out.print("<p class=\"card-text pmax\">"+ pb.getDesc() + "</p>");
-   	    out.print("<a href=\"generatePage?idProd="+ pb.getId() +"\" class=\"btn btn-primary\">" + pb.getProduct() + " </a>");
+   	    out.print("<a href=\"generatePage?idProd="+ pb.getId() +"\" class=\"btn btn-dark\">" + pb.getProduct() + " </a>");
    	    //out.print("<a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>");
 
    	  	out.print("</div>");

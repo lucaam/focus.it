@@ -80,6 +80,11 @@
           <li class="navbar-item active">
             <a class="nav-link" href="singinup.jsp"><i class="nav-link fas fa-sign-in-alt"></i></a>
           </li>
+          <li class="navbar-item active">
+            <a class="nav-link" href="cart.jsp"><i class="nav-link fas fa-shopping-cart"></i></a>
+          </li>
+          
+          
           
           <% } %>
         </ul>

@@ -31,7 +31,7 @@
               <h4><%= pb.getProduct() %></h4> <h5><%= pb.getPrice() %> &euro;</h5>
               <p class="text-justify"> <%= pb.getDesc()%>
               </p>
-              				<%out.print("<button><a href=\"addToCart?idProd="+ pb.getId() +"\"> Add to cart </a></button>"); %>
+              				<%out.print("<a href=\"addToCart?idProd="+ pb.getId() +" \" class=\"btn btn-dark\"> Add to cart </a>"); %>
               
               <p class="text-justify">
                 <ul style="list-style-type: none; padding:0;">
