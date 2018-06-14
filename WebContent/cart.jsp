@@ -32,6 +32,8 @@
 	
 		
 		if(!cart.isEmpty()){
+			out.print("<div class=\"row\">");
+			out.print("<div class=\"col-sm-10\">");
 			out.print("<table class=\"table\">");
 			out.print("<thead>");
 			out.print("<tr>");
@@ -52,7 +54,7 @@
 				out.print("<tr><th scope=\"row\">" + pb.getPic() +"</th>");	
 				else
 					out.print("<tr><th scope=\"row\"><img src=\"./images/notfound.png\" width=\"60px\" height=\"60px\"></th>");	
-				out.print("<td class=\"td-prod\"><a href=\"generatePage?idProd="+ pb.getId() +"\">" + pb.getProduct() + " </a></td>");
+				out.print("<td class=\"td-prod\"><a href=\"generatePage?idProd="+ pb.getId() +"\" class=\"text-dark\">" + pb.getProduct() + " </a></td>");
 				out.print("<td class=\"td-prod\">" + pb.getPrice() + "€ </td>");
 				
 				out.print("<td class=\"td-prod\">" + pb.getMpx() + "</td>");
@@ -62,11 +64,16 @@
 			}
 			out.print("</tbody>");
 			out.print("</table>");
-			out.print("<h2 class=\"text-center\">Total:" + cart.getTotal() + "</h2>");
+			out.print("</div>");
+			out.print("<div class=\"col-sm-2\">");
+			out.print("<div class=\"alert alert-secondary\">Total: " + cart.getTotal() + "</div>");
+			out.print("<a href=\"#\" class=\"btn btn-secondary\">Buy</a>");
+			out.print("</div>");
+			out.print("</div>");
 		}
 		else
 		{
-			out.print("<p class=\"text-center nores \"> <h2>Your cart is empty right now!Click<a href=\"index.jsp\">here</a> and buy something!</p>");
+			out.print("<p class=\"text-center\"><h2>Your cart is empty right now!</p>");
 		}
 	%>
 	

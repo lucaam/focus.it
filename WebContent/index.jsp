@@ -28,7 +28,6 @@
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -84,7 +83,7 @@
    </div>
   </div>
 
-  <div class="container bg-cont">
+  <div class="container">
     <p class="text-center">
       Condimentum id venenatis a condimentum vitae sapien pellentesque. Morbi blandit cursus risus at ultrices. Malesuada fames ac turpis egestas sed tempus. Porttitor eget dolor morbi non. Dolor morbi non arcu risus quis. Sit amet nisl suscipit adipiscing.
       Viverra orci sagittis eu volutpat. Molestie nunc non blandit massa enim nec dui nunc. Suspendisse interdum consectetur libero id faucibus nisl tincidunt. At augue eget arcu dictum varius. Interdum velit laoreet id donec ultrices tincidunt. Magna

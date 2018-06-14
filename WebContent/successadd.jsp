@@ -20,7 +20,7 @@
 			response.sendRedirect("nopermission.jsp");
       return;}
 		%>
-        <div class="container boxmargin">
+        <div class="container bg-cont">
           <p>
             Prodotto aggiunto con successo al database. I campi non sono ancora tutti sotto controllo quindi per il momento ricorda di inserire i parametri in modo corretto. Stai per essere reindirizzato alla pagina di aggiunta del prodotto.
           </p>

@@ -67,8 +67,9 @@
 
              if (namecookie != null) {%>
            <li class="nav-item">
-              <a class="nav-link" href="profile.jsp">Benvenuto <%out.println(namecookie.getValue());%></a>
+              <a class="nav-link" href="profile.jsp">Welcome <%out.println(namecookie.getValue());%></a>
             </li>
+            
             <form class="nav-link" action="Logout" method="post">
             	<button type="submit" id="logout" class="fabutton">
      			 <i class="fas fa-sign-out-alt nav-link"></i>
@@ -80,13 +81,14 @@
           <li class="navbar-item active">
             <a class="nav-link" href="singinup.jsp"><i class="nav-link fas fa-sign-in-alt"></i></a>
           </li>
-          <li class="navbar-item active">
-            <a class="nav-link" href="cart.jsp"><i class="nav-link fas fa-shopping-cart"></i></a>
-          </li>
+          
           
           
           
           <% } %>
+          <li class="navbar-item active">
+            <a class="nav-link" href="cart.jsp"><i class="nav-link fas fa-shopping-cart"></i></a>
+          </li>
         </ul>
     </div>
     
