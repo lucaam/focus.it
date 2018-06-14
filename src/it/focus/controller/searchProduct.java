@@ -33,9 +33,17 @@ public class searchProduct extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String toSearch = request.getParameter("searchnav");
 		ProductBeanDAO pbd = new ProductBeanDAO();
-		ArrayList<ProductBean> pList = pbd.searchName(toSearch);
+		ArrayList<ProductBean> pList = null;
+		String toSearch = null;
+		
+		if((toSearch=request.getParameter("searchnav"))==null)
+		{
+			toSearch = request.getParameter("search");
+			pList = pbd.searchBrand(toSearch);
+		}
+		
+		pList = pbd.searchName(toSearch);
 				
 		request.setAttribute("prod", pList);
 		
