@@ -22,12 +22,21 @@ public class DriverManagerConnectionPool {
 
 	private static synchronized Connection createDBConnection() throws SQLException {
 		Connection newConnection = null;
-		String host = "2.237.17.51";
-		String port = "3306";
-		String db = "focusit";
+//		please, if you are in this section avoid to access into my database.
+//		please, if you are in this section avoid to access into my database.
+//		please, if you are in this section avoid to access into my database.
+//		please, if you are in this section avoid to access into my database.
+//		please, if you are in this section avoid to access into my database.
+//		please, if you are in this section avoid to access into my database.
 		String username = "focusdb";
 		String password = "newpassword2018";
-//		newConnection = DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "/" +db, username, password + "?autoReconnect=true&useSSL=false");
+//		please, if you are in this section avoid to access into my database.
+//		please, if you are in this section avoid to access into my database.
+//		please, if you are in this section avoid to access into my database.
+//		please, if you are in this section avoid to access into my database.
+//		please, if you are in this section avoid to access into my database.
+//		please, if you are in this section avoid to access into my database.
+
 
 		
 		   String url = "jdbc:mysql://db4free.net:3306/"+"focusdb"+"?autoReconnect=true&useSSL=false";
@@ -60,9 +69,7 @@ public class DriverManagerConnectionPool {
 		return connection;
 	}
 
-	public static void releaseConnection(Connection connection) throws SQLException{
-		// TODO Auto-generated method stub
-		
+	public static void releaseConnection(Connection connection) throws SQLException{		
 		if(connection != null) 
 			freeConn.add(connection);
 	}
