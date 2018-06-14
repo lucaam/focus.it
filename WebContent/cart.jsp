@@ -19,6 +19,8 @@
   
 	<%CartBean cart = (CartBean) session.getAttribute("cart");
 		
+
+		
 		if(!cart.isEmpty()){
 			out.print("<table class=\"table\">");
 			out.print("<thead>");
@@ -51,7 +53,6 @@
 			out.print("</tbody>");
 			out.print("</table>");
 			out.print("<h2 class=\"text-center\">Total:" + cart.getTotal() + "</h2>");
-			session.setAttribute("cart", cart);
 		}
 		else
 		{

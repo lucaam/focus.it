@@ -1,5 +1,6 @@
 <%@ page import="it.focus.model.ProductBean" %>
   <%ProductBean pb = (ProductBean) request.getAttribute("prod");
+  	
       %>
     <!DOCTYPE html>
     <html lang="en" dir="ltr">

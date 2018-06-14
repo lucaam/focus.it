@@ -35,18 +35,27 @@ public class addToCart extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
+		session.getAttribute("cart");
 		
 		String toGet = request.getParameter("idProd");
 		
-		CartBean cart = new CartBean ();
+		
+		CartBean cart = (CartBean) session.getAttribute("cart");
+		if(cart==null)
+			cart = new CartBean();
 		ProductBeanDAO pbd = new ProductBeanDAO();
 		ProductBean pb = pbd.searchId(toGet);
 		
 		System.out.println("ADDED: " + pb.getProduct());
 		cart.addItem(pb);
-		
+		System.out.println("TOTAL: " + cart.getTotal());
+
+		session.removeAttribute("cart");
 		session.setAttribute("cart", cart);
 		
+		
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("cartsuccess.jsp");
+		requestDispatcher.forward(request, response);
 		
 		
 	}

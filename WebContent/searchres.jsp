@@ -12,7 +12,7 @@
 </head>
 <body>
 <%@include file="nav.jsp" %>
-<div class="container-fluid bg-cont">
+<div class="container-fluid bg-cont table-responsive">
 
   
 	<% ArrayList<ProductBean> pList = (ArrayList<ProductBean>) request.getAttribute("prod"); 

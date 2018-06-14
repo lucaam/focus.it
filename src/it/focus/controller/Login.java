@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import javax.servlet.RequestDispatcher;
 
+import it.focus.model.CartBean;
 import it.focus.model.UserBean;
 import it.focus.model.UserBeanDAO;
 
@@ -27,6 +28,7 @@ public class Login extends HttpServlet {
 				else {
 					try{
 						UserBeanDAO ubd = new UserBeanDAO();
+						CartBean cart = new CartBean();
 						UserBean ub = ubd.doRetriveByKey(userB.getUsr(), userB.getPwd());
 						
 						HttpSession session = request.getSession();
@@ -64,10 +66,12 @@ public class Login extends HttpServlet {
 							response.addCookie(rolecookie);
 							response.addCookie(namecookie);
 
-							
+							session.setAttribute("cart", cart);
 							session.setAttribute("userBean", ub);  // l'output ha bisogno di queste informazioni
-							session.setMaxInactiveInterval(60*60*3);
+							session.setMaxInactiveInterval(60*60*24);
 							System.out.println("Nome: " + ub.getNome());
+							System.out.println("Cart: " + cart.isEmpty());
+
 					
 
 							RequestDispatcher requestDispatcher = request.getRequestDispatcher("success.jsp");

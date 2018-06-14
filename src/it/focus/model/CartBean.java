@@ -5,8 +5,12 @@ import java.util.ArrayList;
 public class CartBean {
 	
 	private UserBean ub;
-	private ArrayList<ProductBean> items;
+	private ArrayList<ProductBean> items = new ArrayList<ProductBean> ();
 	
+	public CartBean ()
+	{
+		this.items = new ArrayList<ProductBean> ();
+	}
 	public double getTotal()
 	{
 		Double total = 0.0;
@@ -20,12 +24,11 @@ public class CartBean {
 	
 	public void addItem(ProductBean pb)
 	{
-		if(items==null) {
-			items = new ArrayList<ProductBean> ();
-			this.items.add(pb);
-	
-		}else
+		
 		this.items.add(pb);
+		
+		System.out.println("aggiunto");
+
 	}
 	
 	public void removeItem(ProductBean pb)
