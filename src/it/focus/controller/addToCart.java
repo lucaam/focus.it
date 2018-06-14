@@ -47,8 +47,7 @@ public class addToCart extends HttpServlet {
 		
 		session.setAttribute("cart", cart);
 		
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("cart.jsp");
-		requestDispatcher.forward(request, response);
+		
 		
 	}
 

@@ -19,7 +19,7 @@
             <%if (false/*pd.getPic()*/) 
             	out.print("img qui");
             else
-              out.print("<img src=\"/images/notfound.jpg\" class=\"img-prod\" alt=\"img not found\">");
+              out.print("<img src=\"/images/notfound.jpg\" class=\"img-prod\" alt=\"img not found\" width=\"400px\" height=\"400px\">");
             %>
            
               <p class="text-muted text-small">

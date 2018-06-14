@@ -49,4 +49,9 @@ public class CartBeanDAO {
 	}
 
 }
+	public synchronized void restore (CartBean toAdd)
+	{
+		
+	}
+
 }

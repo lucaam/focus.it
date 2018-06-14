@@ -31,7 +31,7 @@ public class Login extends HttpServlet {
 						
 						HttpSession session = request.getSession();
 
-						if (ub.getNome()==null) {    // login e/o password sbagliati -> chiamo login form  con messaggio errore
+						if (ub==null) {    // login e/o password sbagliati -> chiamo login form  con messaggio errore
 											// il nome login.jsp non si vedrà nel browser
 							System.out.println(ub.getRole());
 							System.out.println(ub.getPwd());

@@ -59,7 +59,7 @@ public class UserBeanDAO {
 			
 			conn = DriverManagerConnectionPool.getConnection();
 			
-			String sqlInsert = ("insert into usr (name, surname, login, pwd, email) values (?, ?, ?, ?, ?");
+			String sqlInsert = ("insert into usr (name, surname, login, pwd, email) values (?, ?, ?, ?, ?)");
 			
 			prepstat = conn.prepareStatement(sqlInsert);
 			prepstat.setString(1, nome);
