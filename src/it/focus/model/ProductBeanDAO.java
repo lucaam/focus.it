@@ -143,5 +143,43 @@ public class ProductBeanDAO {
 	return pList;
 }
 
+	public synchronized ArrayList <ProductBean> searchName (String toQuery)
+	{
+		Connection conn = null;
+		PreparedStatement prepstat = null;
+		ArrayList<ProductBean> pList = new ArrayList<ProductBean>();
+		
+
+		try {
+			
+			conn = DriverManagerConnectionPool.getConnection();
+			prepstat = conn.prepareStatement("SELECT * FROM product WHERE product_name LIKE ?;");
+			prepstat.setString(1, "%" + toQuery + "%");
+			
+			ResultSet res = prepstat.executeQuery();
+			
+			while(res.next())
+			{		
+					ProductBean npb = new ProductBean(/*res.getInt("id_product"),*/ res.getString("product_name"), res.getDouble("price"), res.getString("brand"), res.getString("description"), res.getDouble("mpx"), res.getString("colour")/*, res.getString("product_type")*/);
+					npb.setId(res.getInt("id_product"));
+					pList.add(npb);
+					
+				
+					
+			}
+		
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				prepstat.close();
+				DriverManagerConnectionPool.releaseConnection(conn);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+	}
+		return pList;
+	}
 }
 
