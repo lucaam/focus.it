@@ -41,7 +41,7 @@ public class generatePage extends HttpServlet {
 		
 		request.setAttribute("prod", pb);
 		
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("productpage.jsp");
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("./productpage.jsp");
 		requestDispatcher.forward(request, response);
 		
 	}

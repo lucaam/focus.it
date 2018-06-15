@@ -47,7 +47,7 @@ public class searchProduct extends HttpServlet {
 				
 		request.setAttribute("prod", pList);
 		
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("searchres.jsp");
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("./searchres.jsp");
 		requestDispatcher.forward(request, response);
 	}
 

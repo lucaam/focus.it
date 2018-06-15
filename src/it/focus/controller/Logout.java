@@ -19,18 +19,12 @@ public class Logout extends HttpServlet {
 		Cookie usrcookie = new Cookie("usr" , "");
 		usrcookie.setMaxAge(0);
 		usrcookie.setPath("/");
-
 		response.addCookie(usrcookie);
 		
-		Cookie pswcookie = new Cookie("psw" , "");
-		pswcookie.setMaxAge(0);
-		pswcookie.setPath("/");
-		response.addCookie(pswcookie);
+
 		
 		Cookie rolecookie = new Cookie("role" , "");
 		rolecookie.setMaxAge(0);
-		
-		
 		rolecookie.setPath("/");
 		response.addCookie(rolecookie);
 		
@@ -39,9 +33,23 @@ public class Logout extends HttpServlet {
 		namecookie.setPath("/");
 		response.addCookie(namecookie);
 		
-		request.getSession().invalidate();
+		Cookie surnamecookie = new Cookie("surname" , "");
+		surnamecookie.setMaxAge(0);
+		surnamecookie.setPath("/");
+		response.addCookie(surnamecookie);
+
+		Cookie emailcookie = new Cookie("email" , "");
+		emailcookie.setMaxAge(0);
+		emailcookie.setPath("/");
+		response.addCookie(emailcookie);
 		
-		response.sendRedirect("singinup.jsp");
+		Cookie phonecookie = new Cookie("phone" , "");
+		phonecookie.setMaxAge(0);
+		phonecookie.setPath("/");
+		response.addCookie(phonecookie);
+		
+		request.getSession().invalidate();
+		response.sendRedirect("./singinup.jsp");
 	}
 
 	

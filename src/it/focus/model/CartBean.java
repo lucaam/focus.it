@@ -33,7 +33,9 @@ public class CartBean {
 	
 	public void removeItem(ProductBean pb)
 	{
-		this.items.remove(pb);
+		System.out.println(pb.getId());
+		if(this.items.remove(pb))
+			System.out.println("rimosso");
 	}
 	
 	public ProductBean getItem(int i)

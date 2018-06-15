@@ -64,17 +64,17 @@ public class addProduct extends HttpServlet {
 			
 			if(pb != null)
 			{
-				RequestDispatcher req = request.getRequestDispatcher("successadd.jsp");
+				RequestDispatcher req = request.getRequestDispatcher("./servicepage/successadd.jsp");
 				req.forward(request, response);
 			}
 			else
 			{
-				RequestDispatcher req = request.getRequestDispatcher("wrongadd.jsp");
+				RequestDispatcher req = request.getRequestDispatcher("./servicepage/wrongadd.jsp");
 				req.forward(request, response);
 			}
 		} catch (Exception e){
 			request.setAttribute("exception", e);
-			RequestDispatcher requestDispatcher = request.getRequestDispatcher("exception.jsp");
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("./servicepage/exception.jsp");
 			requestDispatcher.forward(request, response);
 			
 		}

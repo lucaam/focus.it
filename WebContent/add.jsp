@@ -4,27 +4,26 @@
   <html lang="en">
 
   <head>
-    <%@include file="meta.jsp" %>
-      <%@include file="head.jsp" %>
+    <%@include file="./parts/meta.jsp" %>
+      <%@include file="./parts/head.jsp" %>
         <title>Pagina riservata - focus.it</title>
   </head>
 
   <body>
-    <%@include file="nav.jsp" %>
+    <%@include file="./parts/nav.jsp" %>
       <%
 
-			UserBean user = (UserBean) session.getAttribute("userBean");
 			if(user==null){
-			  	response.sendRedirect("nopermission.jsp");
+			  	response.sendRedirect("./servicepage/nopermission.jsp");
 			return;
 			}
 
 			if(!"admin".equals(rolecookie.getValue()))
-				response.sendRedirect("nopermission.jsp");
+				response.sendRedirect("./servicepage/nopermission.jsp");
 
 		%>
 
-        <div class="container boxmargin">
+        <div class="container bg-cont">
 
           <h2>Add a new product</h2>
           <form action="addProduct" method="post" name="addProductForm" enctype="multipart/form-data">
@@ -69,7 +68,7 @@
           </form>
         </div>
 
-        <%@include file="footer.jsp" %>
+        <%@include file="./parts/footer.jsp" %>
 
   </body>
 

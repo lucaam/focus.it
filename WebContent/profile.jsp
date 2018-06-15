@@ -4,40 +4,41 @@
   <html>
 
   <head>
-    <%@ include file="meta.jsp" %>
+    <%@ include file="./parts/meta.jsp" %>
       <title>Your profile - focus.it</title>
-      <%@ include file="head.jsp" %>
+      <%@ include file="./parts/head.jsp" %>
   </head>
 
   <body>
-    <%@ include file="nav.jsp" %>
+    <%@ include file="./parts/nav.jsp" %>
 
 
 
-      <%UserBean user = (UserBean) session.getAttribute("userBean");
-	if(user==null){
-	  	response.sendRedirect("singinup.jsp");
+<%	if(cookies==null){
+	  	response.sendRedirect("./singinup.jsp");
 	return;
 	}
 	%>
         <div class="container bg-cont">
           <h2>Benvenuto
-      <%= user.getNome() %>
+      <%= namecookie.getValue() %>
       </h2>
           <h4>Questa è la tua area utente!</h4>
 
           <p>
             Nome e cognome:
-            <%= user.getNome() %>
-              <%= user.getCognome() %> <br> Hai i permessi da:
-                <%= user.getRole() %> <br> Il tuo username è:
-                  <%= user.getUsr() %> <br> L'email di registrazione è:
-                    <%= user.getEmail() %> <br>
+            <%= namecookie.getValue()%>
+              <%= surnamecookie.getValue()%> <br> Hai i permessi da:
+                <%= rolecookie.getValue() %> <br> Il tuo username è:
+                  <%= usrcookie.getValue() %> <br> L'email di registrazione è:
+                    <%= emailcookie.getValue() %> <br> Il tuo numero di telefono è:
+                    <%= phonecookie.getValue() %> <br>
+                    
           </p>
         </div>
 
 
-        <%@ include file="footer.jsp" %>
+        <%@ include file="./parts/footer.jsp" %>
   </body>
 
   </html>

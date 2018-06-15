@@ -46,15 +46,13 @@ public class addToCart extends HttpServlet {
 		ProductBeanDAO pbd = new ProductBeanDAO();
 		ProductBean pb = pbd.searchId(toGet);
 		
-		System.out.println("ADDED: " + pb.getProduct());
 		cart.addItem(pb);
-		System.out.println("TOTAL: " + cart.getTotal());
 
 		session.removeAttribute("cart");
 		session.setAttribute("cart", cart);
 		
 		
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("cartsuccess.jsp");
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("./servicepage/cartsuccess.jsp");
 		requestDispatcher.forward(request, response);
 		
 		

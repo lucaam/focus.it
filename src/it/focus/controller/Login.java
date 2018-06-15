@@ -24,7 +24,7 @@ public class Login extends HttpServlet {
 				if (userB == null) {    // no login e/o no password -> redirigo a login form 
 					System.out.println("No data input");
 					request.setAttribute("nodata", true);
-					RequestDispatcher requestDispatcher = request.getRequestDispatcher("singinup.jsp");
+					RequestDispatcher requestDispatcher = request.getRequestDispatcher("./singinup.jsp");
 					requestDispatcher.forward(request, response);
 				}
 				else {
@@ -40,47 +40,58 @@ public class Login extends HttpServlet {
 							
 							System.out.println("Invalid data");
 							request.setAttribute("denied", true);
-							RequestDispatcher requestDispatcher = request.getRequestDispatcher("singinup.jsp");
+							RequestDispatcher requestDispatcher = request.getRequestDispatcher("./singinup.jsp");
 							requestDispatcher.forward(request, response);
 						}else {
-							// l'utente è ammesso al sito: inserisco dati di login in cookies e do risposta
 							
 							Cookie usrcookie = new Cookie("usr", ub.getUsr());
 							Cookie namecookie = new Cookie("name", ub.getNome());
-							Cookie pswcookie = new Cookie("psw", ub.getPwd());
+							Cookie surnamecookie = new Cookie("surname", ub.getCognome());
 							Cookie rolecookie = new Cookie("role", ub.getRole());
+							Cookie emailcookie = new Cookie("email", ub.getEmail());
+							Cookie phonecookie = new Cookie("phone", ub.getPhone());
+
+
 							
 							usrcookie.setMaxAge(60*60*24);
-							namecookie.setMaxAge(60*60*24);
-							pswcookie.setMaxAge(60*60*24);
+							surnamecookie.setMaxAge(60*60*24);
+							usrcookie.setMaxAge(60*60*24);
+							emailcookie.setMaxAge(60*60*24);
+							phonecookie.setMaxAge(60*60*24);
 							rolecookie.setMaxAge(60*60*24);
 							
+							emailcookie.setPath("/");
+							phonecookie.setPath("/");
+							surnamecookie.setPath("/");
 							namecookie.setPath("/");
 							usrcookie.setPath("/");
-							pswcookie.setPath("/");
 							rolecookie.setPath("/");
 
+							response.addCookie(surnamecookie);
 							response.addCookie(usrcookie);
-							response.addCookie(pswcookie);
+							response.addCookie(emailcookie);
+							response.addCookie(phonecookie);
 							response.addCookie(rolecookie);
 							response.addCookie(namecookie);
 
 							session.setAttribute("cart", cart);
-							session.setAttribute("userBean", ub);  // l'output ha bisogno di queste informazioni
+							session.setAttribute("userBean", ub);
 							session.setMaxInactiveInterval(60*60*24);
+							
+//							testing purpose
 							System.out.println("Nome: " + ub.getNome());
 							System.out.println("Cart: " + cart.isEmpty());
 
 					
 
-							RequestDispatcher requestDispatcher = request.getRequestDispatcher("success.jsp");
+							RequestDispatcher requestDispatcher = request.getRequestDispatcher("./servicepage/success.jsp");
 							requestDispatcher.forward(request, response);
 						}
 					}
 					catch(Exception e)
 					{  
 						request.setAttribute("exception", e);
-						RequestDispatcher requestDispatcher = request.getRequestDispatcher("exception.jsp");
+						RequestDispatcher requestDispatcher = request.getRequestDispatcher("./servicepage/exception.jsp");
 						requestDispatcher.forward(request, response);
 					}
 				}

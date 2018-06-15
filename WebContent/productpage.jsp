@@ -4,15 +4,15 @@
   <html lang="en" dir="ltr">
 
   <head>
-    <%@include file="meta.jsp" %>
-      <%@include file="head.jsp" %>
+    <%@include file="./parts/meta.jsp" %>
+      <%@include file="./parts/head.jsp" %>
         <title>Test page - focus.it</title>
   </head>
 
   <body>
-    <%@include file="nav.jsp" %>
+    <%@include file="./parts/nav.jsp" %>
 
-      <div class="container boxmargin">
+      <div class="container bg-cont">
         <h2><%= pb.getProduct() %></h2>
         <div class="row">
           <div class="col-sm-7">
@@ -32,7 +32,7 @@
             <p class="text-justify">
               <%= pb.getDesc()%>
             </p>
-            <%out.print("<a href=\"addToCart?idProd="+ pb.getId() +" \" class=\"btn btn-dark\"> Add to cart </a>"); %>
+            <%out.print("<a href=\"addToCart?idProd="+ pb.getId() +" \" class=\"btn btn-dark\"><i class=\"fas fa-shopping-cart\"></i> Add to cart </a>"); %>
 
               <p class="text-justify">
                 <ul style="list-style-type: none; padding:0;">
@@ -57,7 +57,7 @@
           </div>
         </div>
       </div>
-      <%@include file="footer.jsp" %>
+      <%@include file="./parts/footer.jsp" %>
   </body>
 
   </html>

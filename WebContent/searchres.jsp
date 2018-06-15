@@ -4,13 +4,13 @@
   <html>
 
   <head>
-    <%@include file="meta.jsp" %>
-      <%@include file="head.jsp" %>
+    <%@include file="./parts/meta.jsp" %>
+      <%@include file="./parts/head.jsp" %>
         <title>Search results - focus.it</title>
   </head>
 
   <body>
-    <%@include file="nav.jsp" %>
+    <%@include file="./parts/nav.jsp" %>
       <div class="container-fluid bg-cont table-responsive">
 
 
@@ -23,8 +23,9 @@
 			out.print("<th scope=\"col\">Image</th>");
 		    out.print("<th scope=\"col\">Name</th>");
 		    out.print("<th scope=\"col\">Price</th>");
-
 			out.print(" <th scope=\"col\">Mpx</th>");
+			out.print(" <th scope=\"col\">Buy</th>");
+
 			out.print("</tr>");
 			out.print("</thead>");
 			out.print("<tbody>");
@@ -38,6 +39,8 @@
 				out.print("<td class=\"td-prod\">" + pb.getPrice() + "€ </td>");
 
 				out.print("<td class=\"td-prod\">" + pb.getMpx() + "</td>");
+	            out.print("<td class=\"td-prod\"><a href=\"addToCart?idProd="+ pb.getId() +" \" class=\"btn btn-dark\"><i class=\"fas fa-shopping-cart\"></i> Add to cart </a></td>");
+
 
 
 
@@ -54,7 +57,7 @@
 
 
       </div>
-      <%@ include file="footer.jsp" %>
+      <%@ include file="./parts/footer.jsp" %>
   </body>
 
   </html>

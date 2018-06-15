@@ -6,14 +6,14 @@
     <html lang="en">
 
     <head>
-      <%@include file="meta.jsp" %>
-        <%@include file="head.jsp" %>
+      <%@include file="./parts/meta.jsp" %>
+        <%@include file="./parts/head.jsp" %>
           <title>Homepage - focus.it</title>
 
     </head>
 
     <body>
-      <%@include file="nav.jsp" %>
+      <%@include file="./parts/nav.jsp" %>
       
         <div class="container bg-cont">
           <p>
@@ -25,13 +25,13 @@
               </ol>
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img class="d-block w-100" src="./images/sales/sale1.jpg" alt="First slide">
+                  <a href="searchProduct?searchnav= "><img class="d-block w-100" src="./images/sales/sale1.jpg" alt="First slide"></a>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="./images/sales/sale2.jpg" alt="Second slide">
+                   <a href="searchProduct?searchnav= "><img class="d-block w-100" src="./images/sales/sale2.jpg" alt="Second slide" href="searchProduct?searchnav= "></a>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="./images/sales/sale3.jpg" alt="Third slide">
+                  <a href="searchProduct?searchnav= "><img class="d-block w-100" src="./images/sales/sale3.jpg" alt="Third slide" href="searchProduct?searchnav= "></a>
                 </div>
               </div>
               <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -92,7 +92,7 @@
               </div>
 
         </div>
-        <%@ include file="footer.jsp" %>
+        <%@ include file="./parts/footer.jsp" %>
 
     </body>
 

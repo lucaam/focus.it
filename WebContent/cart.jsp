@@ -4,13 +4,13 @@
   <html>
 
   <head>
-    <%@include file="meta.jsp" %>
-      <%@include file="head.jsp" %>
+    <%@include file="./parts/meta.jsp" %>
+      <%@include file="./parts/head.jsp" %>
         <title>Cart - focus.it</title>
   </head>
 
   <body>
-    <%@include file="nav.jsp" %>
+    <%@include file="./parts/nav.jsp" %>
 
       <div class="container-fluid bg-cont">
 
@@ -19,12 +19,12 @@
 
         <%
 	if (session==null){
-	  	response.sendRedirect("nopermission.jsp");
+	  	response.sendRedirect("./servicepage/nopermission.jsp");
 	return;
 	}
-	CartBean cart = (CartBean) session.getAttribute("cart");
+	
 	if (cart==null){
-	  	response.sendRedirect("nopermission.jsp");
+	  	response.sendRedirect("./servicepage/nopermission.jsp");
 	return;
 	}
 
@@ -56,6 +56,8 @@
 				out.print("<td class=\"td-prod\">" + pb.getPrice() + "€ </td>");
 
 				out.print("<td class=\"td-prod\">" + pb.getMpx() + "</td>");
+	            out.print("<td class=\"td-prod\"><a href=\"removeFromCart?idProd="+ pb.getId() +" \" class=\"btn btn-dark\"><i class=\"fas fa-shopping-cart\"></i> Remove from cart </a></td>");
+
 
 
 
@@ -79,7 +81,7 @@
 
       </div>
 
-      <%@include file="footer.jsp" %>
+      <%@include file="./parts/footer.jsp" %>
   </body>
 
   </html>

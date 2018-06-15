@@ -4,17 +4,17 @@
   <html lang="en">
 
   <head>
-    <%@include file="meta.jsp" %>
-      <%@include file="head.jsp" %>
+    <%@include file="./parts/meta.jsp" %>
+      <%@include file="./parts/head.jsp" %>
 
 
         <title>Singin or singup - focus.it</title>
   </head>
 
   <body>
-    <%@include file="nav.jsp" %>
+    <%@include file="./parts/nav.jsp" %>
 
-      <div class="container boxmargin">
+      <div class="container bg-cont">
         <div class="row">
           <div class="col-sm-5">
             <h3>Accedi a focusit</h3>
@@ -109,7 +109,7 @@
         </div>
       </div>
 
-      <%@include file="footer.jsp" %>
+      <%@include file="./parts/footer.jsp" %>
 
   </body>
 

@@ -53,18 +53,18 @@ public class Registration extends HttpServlet {
 			if(ub.getUsr()!="duplicate" && ub.getPwd()!="duplicate")
 			{
 				
-				RequestDispatcher req = request.getRequestDispatcher("success.jsp");
+				RequestDispatcher req = request.getRequestDispatcher("./servicepage/success.jsp");
 				req.forward(request, response);
 			}
 			else
 			{
 				request.setAttribute("duplicate", true);
-				RequestDispatcher req = request.getRequestDispatcher("singinup.jsp");
+				RequestDispatcher req = request.getRequestDispatcher("./singinup.jsp");
 				req.forward(request, response);
 			}
 		} catch (Exception e){
 			request.setAttribute("exception", e);
-			RequestDispatcher requestDispatcher = request.getRequestDispatcher("exception.jsp");
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("./servicepage/exception.jsp");
 			requestDispatcher.forward(request, response);
 			
 		}
