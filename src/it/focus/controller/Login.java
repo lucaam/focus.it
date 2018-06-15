@@ -23,7 +23,9 @@ public class Login extends HttpServlet {
 
 				if (userB == null) {    // no login e/o no password -> redirigo a login form 
 					System.out.println("No data input");
-					response.sendRedirect("singinup.jsp");    // non ho bisogno di mandargli parametri. Il nome login.jsp si vedrà nel browser
+					request.setAttribute("nodata", true);
+					RequestDispatcher requestDispatcher = request.getRequestDispatcher("singinup.jsp");
+					requestDispatcher.forward(request, response);
 				}
 				else {
 					try{
@@ -35,13 +37,10 @@ public class Login extends HttpServlet {
 
 						if (ub==null) {    // login e/o password sbagliati -> chiamo login form  con messaggio errore
 											// il nome login.jsp non si vedrà nel browser
-							System.out.println(ub.getRole());
-							System.out.println(ub.getPwd());
-							System.out.println("Invalid data");
 							
-
+							System.out.println("Invalid data");
 							request.setAttribute("denied", true);
-							RequestDispatcher requestDispatcher = request.getRequestDispatcher("wronglogin.jsp");
+							RequestDispatcher requestDispatcher = request.getRequestDispatcher("singinup.jsp");
 							requestDispatcher.forward(request, response);
 						}else {
 							// l'utente è ammesso al sito: inserisco dati di login in cookies e do risposta
@@ -51,10 +50,10 @@ public class Login extends HttpServlet {
 							Cookie pswcookie = new Cookie("psw", ub.getPwd());
 							Cookie rolecookie = new Cookie("role", ub.getRole());
 							
-							usrcookie.setMaxAge(60*60*1);
-							namecookie.setMaxAge(60*60*1);
-							pswcookie.setMaxAge(60*60*1);
-							rolecookie.setMaxAge(60*60*1);
+							usrcookie.setMaxAge(60*60*24);
+							namecookie.setMaxAge(60*60*24);
+							pswcookie.setMaxAge(60*60*24);
+							rolecookie.setMaxAge(60*60*24);
 							
 							namecookie.setPath("/");
 							usrcookie.setPath("/");

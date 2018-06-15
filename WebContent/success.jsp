@@ -1,35 +1,37 @@
-<!DOCTYPE html>
-<html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+  <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  <html>
 
-<head>
+  <head>
 
-  <%@include file="meta.jsp" %>
-    <%@include file="head.jsp" %>
-      <title>Welcome - focus.it</title>
+    <%@include file="meta.jsp" %>
+      <%@include file="head.jsp" %>
+        <title>Welcome - focus.it</title>
 
-      <meta http-equiv="refresh" content="5; url=./index.jsp" />
+        <meta http-equiv="refresh" content="5; url=./index.jsp" />
 
 
-</head>
+  </head>
 
-<body>
+  <body>
 
-  <%@include file="nav.jsp" %>
+    <%@include file="nav.jsp" %>
 
-    <div class="container boxmargin">
-      <p>
-        Sei stato registrato con successo! Stai per essere reindirizzato alla homepage.
-      </p>
-      <p>
-		
+      <div class="container boxmargin">
+        <p>
+          Sei stato registrato con successo! Stai per essere reindirizzato alla homepage.
+        </p>
+        <p>
 
-        Nel caso non dovesse funzionare il reindirizzamento, clicca <a href="./index.jsp">qui</a>
-      </p>
 
-    </div>
+          Nel caso non dovesse funzionare il reindirizzamento, clicca <a href="./index.jsp">qui</a>
+        </p>
 
-    <%@include file="footer.jsp" %>
+      </div>
 
-</body>
+      <%@include file="footer.jsp" %>
 
-</html>
+  </body>
+
+  </html>

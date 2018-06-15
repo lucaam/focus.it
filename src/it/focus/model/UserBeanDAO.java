@@ -24,12 +24,12 @@ public class UserBeanDAO {
 			
 			if(res.next())
 			{
-				ub.setId(res.getInt("id_usr"));
 				ub.setNome(res.getString("name"));
 				ub.setCognome(res.getString("surname"));
 				ub.setRole(res.getString("role"));
 				ub.setUsr(res.getString("login"));
 				ub.setEmail(res.getString("email"));
+				ub.setPhone(res.getString("phone"));
 				ub.setPwd(res.getString("pwd"));
 				
 				return ub;
@@ -49,7 +49,7 @@ public class UserBeanDAO {
 		return null;
 	}
 	
-	public synchronized UserBean userRegistration(String login, String nome, String cognome, String pwd, String email, String ldn, String phone)
+	public synchronized UserBean userRegistration(String login, String nome, String cognome, String pwd, String email, String phone)
 	{ 
 		
 		Connection conn = null;
@@ -59,7 +59,7 @@ public class UserBeanDAO {
 			
 			conn = DriverManagerConnectionPool.getConnection();
 			
-			String sqlInsert = ("insert into usr (name, surname, login, pwd, email) values (?, ?, ?, ?, ?)");
+			String sqlInsert = ("insert into usr (name, surname, login, pwd, email, phone) values (?, ?, ?, ?, ?, ?)");
 			
 			prepstat = conn.prepareStatement(sqlInsert);
 			prepstat.setString(1, nome);
@@ -67,8 +67,7 @@ public class UserBeanDAO {
 			prepstat.setString(3, login);
 			prepstat.setString(4, pwd);
 			prepstat.setString(5, email);
-//			prepstat.setString(6, ldn);
-//			prepstat.setString(8, phone);
+			prepstat.setString(6, phone);
 
 			int state = prepstat.executeUpdate();
 			
@@ -79,16 +78,18 @@ public class UserBeanDAO {
 				ub.setNome(nome);
 				ub.setCognome(cognome);
 				ub.setEmail(email);
-				ub.setUsr(login);
-//				ub.setBirthplace(ldn);
-//				ub.setPhone(phone);
+				ub.setPhone(phone);
 				System.out.print("Succesfully registered");
 				return ub;
 
 			} 
 			
 		}catch (SQLException e) {
-			e.printStackTrace();
+			if(e.getErrorCode()==1062) {
+				
+		         return new UserBean("duplicate", "duplicate");
+				
+			}
 		} finally {
 			try {
 				prepstat.close();

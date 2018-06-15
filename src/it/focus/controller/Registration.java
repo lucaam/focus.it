@@ -15,9 +15,11 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.sun.corba.se.pept.transport.Connection;
 
+import it.focus.model.CartBean;
 import it.focus.model.UserBean;
 import it.focus.model.UserBeanDAO;
 
@@ -39,24 +41,25 @@ public class Registration extends HttpServlet {
 		String login = request.getParameter("username");
 		String password = request.getParameter("password");
 		String email = request.getParameter("email");
-		String ldn = request.getParameter("birthplace");
 		String phone = request.getParameter("phone");
 
 		
 		try {
 			
 			UserBeanDAO ubBeanDAO = new UserBeanDAO();
-			UserBean ub = ubBeanDAO.userRegistration(login, name, surname, password, email, ldn, phone);
+			UserBean ub = ubBeanDAO.userRegistration(login, name, surname, password, email, phone);
 			
 			
-			if(ub != null)
+			if(ub.getUsr()!="duplicate" && ub.getPwd()!="duplicate")
 			{
+				
 				RequestDispatcher req = request.getRequestDispatcher("success.jsp");
 				req.forward(request, response);
 			}
 			else
 			{
-				RequestDispatcher req = request.getRequestDispatcher("wrongreg.jsp");
+				request.setAttribute("duplicate", true);
+				RequestDispatcher req = request.getRequestDispatcher("singinup.jsp");
 				req.forward(request, response);
 			}
 		} catch (Exception e){

@@ -1,19 +1,19 @@
-<%@ page import="it.focus.model.UserBean" language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="UTF-8" isErrorPage="true"%>
-  <%UserBean user = (UserBean) request.getAttribute("userBean"); %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" isErrorPage="true"%>
+  <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  <html>
 
-    <!DOCTYPE html>
-    <html>
+  <head>
 
-    <head>
+    <title>Warning- focus.it</title>
+    <%@include file="meta.jsp" %>
+      <%@include file="head.jsp" %>
+        <meta http-equiv="refresh" content="5; url=./add.jsp" />
 
-      <title>Warning- focus.it</title>
-      <%@include file="meta.jsp" %>
-        <%@include file="head.jsp" %>
-          <meta http-equiv="refresh" content="5; url=./add.jsp" />
+  </head>
 
-    </head>
-
-    <body>
+  <body>
+    <%UserBean user = (UserBean) request.getAttribute("userBean"); %>
       <%@include file="nav.jsp" %>
         <%if(!"admin".equals(rolecookie.getValue())){
 			response.sendRedirect("nopermission.jsp");
@@ -29,6 +29,6 @@
 
           </div>
           <%@include file="footer.jsp" %>
-    </body>
+  </body>
 
-    </html>
+  </html>

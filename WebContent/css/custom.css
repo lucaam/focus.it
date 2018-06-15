@@ -3,27 +3,23 @@ body {
 }
 
 .bg-cont {
-	margin-top: 20px;
-	min-height: 700px;
-	
+  margin-top: 20px;
+  min-height: 700px;
 }
 
-.fot1 {
-  
-}
+.fot1 {}
 
 .fot2 {
-    margin-top: 30px;
-    margin-bottom: 30px;
-  	maring-left: 60;
-  	margin-right: 60;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  maring-left: 60;
+  margin-right: 60;
 }
 
 .iconmargin {
   margin-left: 10px;
   margin-right: 10px;
 }
-
 
 .fontnav {
   color: #494e54;
@@ -44,7 +40,7 @@ body {
   border: none;
 }
 
-.td-prod{
+.td-prod {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -52,6 +48,6 @@ body {
 
 .pmax {
   white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
