@@ -14,7 +14,7 @@
 
 
 
-<%	if(cookies==null){
+<%	if(cookies==null || user.getNome()==null){
 	  	response.sendRedirect("./singinup.jsp");
 	return;
 	}
