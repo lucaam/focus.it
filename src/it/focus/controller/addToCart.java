@@ -12,8 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import it.focus.model.CartBean;
+import it.focus.model.CartBeanDAO;
 import it.focus.model.ProductBean;
 import it.focus.model.ProductBeanDAO;
+import it.focus.model.UserBean;
 
 /**
  * Servlet implementation class addToCart
@@ -47,6 +49,10 @@ public class addToCart extends HttpServlet {
 		ProductBean pb = pbd.searchId(toGet);
 		
 		cart.addItem(pb);
+		CartBeanDAO cbd = new CartBeanDAO();
+		
+		if(session.getAttribute("userBean")!=null)
+		cbd.saveCart((UserBean) session.getAttribute("userBean"), pb);
 
 		session.removeAttribute("cart");
 		session.setAttribute("cart", cart);

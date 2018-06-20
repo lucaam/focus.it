@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class CartBean {
 	
-	private UserBean ub;
+	private String user;
 	private ArrayList<ProductBean> items = new ArrayList<ProductBean> ();
 	
 	public CartBean ()
@@ -43,13 +43,6 @@ public class CartBean {
 		return this.items.get(i);
 	}
 	
-	public void setId(int id) {
-		this.ub.setId(id);
-	}
-	
-	public int getId() {
-		return this.ub.getId();
-	}
 	
 	public ArrayList<ProductBean> getItems()
 	{
@@ -69,5 +62,11 @@ public class CartBean {
 			return true;
 		else 
 			return false;
+	}
+	public String getUser() {
+		return user;
+	}
+	public void setUser(String user) {
+		this.user = user;
 	}
 }

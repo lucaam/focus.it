@@ -18,7 +18,10 @@ public class ProductBean {
 	private String type;
 	
 	
-	public ProductBean(/*id, */String product, Double price, String brand, String desc, Double mpx, String color/*, String type*/) {
+	public ProductBean(String product, Double price, String brand, String desc, Double mpx, String color/*, String type*/) {
+		//used to add
+
+		
 		this.product = product;
 		this.brand = brand;
 		this.price = price;
@@ -27,7 +30,24 @@ public class ProductBean {
 		this.color = color;
 		
 		
-//		this.setId(id);
+
+//		this.setType(type);
+		
+	}
+	
+	public ProductBean(int id,String product, Double price, String brand, String desc, Double mpx, String color/*, String type*/) {
+		//used to retrive
+		
+		
+		this.product = product;
+		this.brand = brand;
+		this.price = price;
+		this.mpx = mpx;
+		this.desc = desc;
+		this.color = color;
+		
+		
+		this.setId(id);
 //		this.setType(type);
 		
 	}

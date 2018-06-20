@@ -7,6 +7,7 @@ import javax.servlet.http.*;
 import javax.servlet.RequestDispatcher;
 
 import it.focus.model.CartBean;
+import it.focus.model.CartBeanDAO;
 import it.focus.model.UserBean;
 import it.focus.model.UserBeanDAO;
 
@@ -31,6 +32,13 @@ public class Login extends HttpServlet {
 					try{
 						UserBeanDAO ubd = new UserBeanDAO();
 						CartBean cart = new CartBean();
+						CartBeanDAO cbd = new CartBeanDAO();
+						
+						cart = cbd.restore(userB.getUsr());
+						if(cart.getTotal()==0)
+							cart = new CartBean();
+						
+						
 						UserBean ub = ubd.doRetriveByKey(userB.getUsr(), userB.getPwd());
 						
 						HttpSession session = request.getSession();
@@ -80,6 +88,7 @@ public class Login extends HttpServlet {
 							
 //							testing purpose
 							System.out.println("Nome: " + ub.getNome());
+							
 							System.out.println("Cart: " + cart.isEmpty());
 
 					

@@ -1,5 +1,4 @@
-<span class="wb-sessto" data-wb-sessto='{"sessionalive": 86400, "logouturl": "./", "refreshCallbackUrl": "./"}'></span>
-<!-- navbar-start -->
+<span class="wb-sessto" data-wb-sessto='{"sessionalive": 86400000, "logouturl": "../index.jsp", "refreshCallbackUrl": "./"}'></span><!-- navbar-start -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
   <a class="navbar-brand" href="../index.jsp">
       <img src="../images/logo.png" width="30" height="30" alt="logo">
