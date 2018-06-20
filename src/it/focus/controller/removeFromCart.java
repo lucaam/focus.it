@@ -11,8 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import it.focus.model.CartBean;
+import it.focus.model.CartBeanDAO;
 import it.focus.model.ProductBean;
 import it.focus.model.ProductBeanDAO;
+import it.focus.model.UserBean;
+import it.focus.model.UserBeanDAO;
 
 /**
  * Servlet implementation class removeFromCart
@@ -35,18 +38,19 @@ public class removeFromCart extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session = request.getSession();
-		session.getAttribute("cart");
-		
-		String toGet = request.getParameter("idProd");
-		
-		
 		CartBean cart = (CartBean) session.getAttribute("cart");
+		String toGet = request.getParameter("idProd");
+		System.out.println("To delete: " + toGet);
+
 		if(cart==null)
 			cart = new CartBean();
+		
 		ProductBeanDAO pbd = new ProductBeanDAO();
 		ProductBean pb = pbd.searchId(toGet);
+		System.out.println("To delete: " + pb.getProduct());
 		
 		cart.removeItem(pb);
+		cart.deleteFromDb(pb);
 
 		session.removeAttribute("cart");
 		session.setAttribute("cart", cart);

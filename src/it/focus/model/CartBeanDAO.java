@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class CartBeanDAO {
 	
 	
-	public synchronized void saveCart (UserBean ub, ProductBean pb)
+	public synchronized void deleteFromCart (String usr, int id)
 	{
 		Connection conn = null;
 		PreparedStatement prepstat = null;
@@ -17,17 +17,11 @@ public class CartBeanDAO {
 		try {
 			
 			conn = DriverManagerConnectionPool.getConnection();
-			prepstat = conn.prepareStatement("INSERT INTO cart (id_usr, id_product) VALUES (?, ?);");
-			System.out.println(ub.getUsr());
-			prepstat.setString(1, ub.getUsr());
-			prepstat.setInt(2, pb.getId());
-			
-			
-			int state = prepstat.executeUpdate();
-			
-			if(state!=0)
-				System.out.println("tutto ok con l'update del carrello nel database");
-			
+			prepstat = conn.prepareStatement("DELETE FROM cart where id_usr = ? AND id_product = ?");
+			prepstat.setString(1, usr);
+			prepstat.setInt(2, id);
+
+			prepstat.executeUpdate();
 			
 		
 		}
@@ -87,5 +81,40 @@ public class CartBeanDAO {
 	return null;
 		
 	}
+	
+	public synchronized void saveCart (UserBean ub, ProductBean pb)
+	{
+		Connection conn = null;
+		PreparedStatement prepstat = null;
+	
+		try {
+			
+			conn = DriverManagerConnectionPool.getConnection();
+			prepstat = conn.prepareStatement("INSERT INTO cart (id_usr, id_product) VALUES (?, ?);");
+			System.out.println(ub.getUsr());
+			prepstat.setString(1, ub.getUsr());
+			prepstat.setInt(2, pb.getId());
+			
+			
+			int state = prepstat.executeUpdate();
+			
+			if(state!=0)
+				System.out.println("tutto ok con l'update del carrello nel database");
+			
+			
+		
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				prepstat.close();
+				DriverManagerConnectionPool.releaseConnection(conn);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+	}
+
+}
 
 }

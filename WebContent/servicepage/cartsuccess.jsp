@@ -20,7 +20,7 @@
 
         <div class="container bg-cont">
           <p>
-            Prodotto aggiunto con successo al carrello.
+            Aggiornamento del carrello eseguito con successo.
             <p>
             <%out.print("<a href=\"cart.jsp\" class=\"btn btn-dark\"><i class=\"fas fa-shopping-cart\"></i> Cart </a>"); %>
             </p>

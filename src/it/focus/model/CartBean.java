@@ -75,4 +75,10 @@ public class CartBean {
 		CartBeanDAO cbd = new CartBeanDAO();
 		return cart = cbd.restore(cart.getUser());
 	}
+	
+	public void deleteFromDb ( ProductBean pb)
+	{
+		CartBeanDAO cbd = new CartBeanDAO();
+		cbd.deleteFromCart(this.getUser(), pb.getId());
+	}
 }
