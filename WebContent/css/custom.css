@@ -7,13 +7,14 @@ body {
   min-height: 700px;
 }
 
-.fot1 {}
+.imcentered {
+	margin: auto;
+}
 
 .fot2 {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  maring-left: 60;
-  margin-right: 60;
+ 
+  margin: auto;
+  float: none;
 }
 
 .iconmargin {

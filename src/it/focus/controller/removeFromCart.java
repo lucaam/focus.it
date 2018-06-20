@@ -11,11 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import it.focus.model.CartBean;
-import it.focus.model.CartBeanDAO;
 import it.focus.model.ProductBean;
 import it.focus.model.ProductBeanDAO;
-import it.focus.model.UserBean;
-import it.focus.model.UserBeanDAO;
 
 /**
  * Servlet implementation class removeFromCart

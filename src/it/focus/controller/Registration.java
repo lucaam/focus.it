@@ -2,24 +2,12 @@ package it.focus.controller;
 
 import java.io.IOException;
 
-import java.sql.SQLException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import com.sun.corba.se.pept.transport.Connection;
-
-import it.focus.model.CartBean;
 import it.focus.model.UserBean;
 import it.focus.model.UserBeanDAO;
 

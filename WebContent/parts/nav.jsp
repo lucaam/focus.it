@@ -34,6 +34,9 @@
       <li class="nav-item">
         <a class="nav-link" href="https://github.com/lucaam/focus.it/commits/master">Changelog</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://www.paypal.me/LucaAmoriello">Donate</a>
+      </li>
     </ul>
 
     <form class="form-inline my-2 my-lg-0" action="searchProduct" method="get">
