@@ -30,7 +30,9 @@
 
 
 		if(!cart.isEmpty()){
-			cart = cart.restoreCart(cart);
+			if(session!=null)
+				cart = cart.restoreCart(cart);
+
 			out.print("<div class=\"row\">");
 			out.print("<div class=\"col-sm-10\">");
 			out.print("<table class=\"table\">");

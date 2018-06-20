@@ -1,7 +1,7 @@
-<div class="footer bg-dark text-light">
-  <!-- <div class="container-fluid"> -->
+<div class="footer bg-dark text-light fot2">
+   <div class="container-fluid fot2"> 
     <div class="row fot2">
-      <div class="col-sm-4 fot2">
+      <div class="col-sm fot2">
         <ul>
           <li><a href="../index.jsp" class="text-secondary">Homepage</a></li>
           <li><a href="../sericepage/wip.jsp" class="text-secondary">About</a></li>
@@ -10,7 +10,7 @@
           <li><a href="../servicepage/wip.jsp" class="text-secondary">Shipping information</a></li>
         </ul>
       </div>
-      <div class="col-sm-4 fot2">
+      <div class="col-sm fot2">
         <ul>
           <li><a href="../cart.jsp" class="text-secondary">Cart</a></li>
           <li><a href="../profile.jsp" class="text-secondary">Your profile</a></li>
@@ -19,7 +19,7 @@
           <li><a href="../servicepage/wip.jsp" class="text-secondary">Shipping information</a></li>
         </ul>
       </div>
-      <div class="col-sm-4 fot2">
+      <div class="col-sm fot2">
         <ul>
           <li><a href="searchProduct?search=Canon" class="text-secondary">Canon</a></li>
           <li><a href="searchProduct?search=Leica" class="text-secondary">Leica</a></li>
@@ -29,26 +29,16 @@
         </ul>
       </div>
     </div>
-    <div class="row">
-    <div class="col-sm-4">
-    </div>
-    <div class="col-sm-4">
-   	 <a href="https://www.paypal.me/LucaAmoriello"><img src="../images/paypal.png" width="320px" height="160px"></a>
-    </div>
-    <div class="col-sm-4">
-    </div>
-    	
-    </div>
-
-
 
   </div>
-<!-- </div> -->
+</div> 
 
 <div class="footer text-dark fot2">
-  <div class="container-fluid">
+
     <p class="text-center small">
       Copyright &copy; 2018 - Focus.it P.IVA 0000000000000000 - Capitale sociale interamente versato 200.000 - Reg #00000 <br> Funzione di ricerca basata su nulla per adesso - All Rights Reserved - Housing and Web Design by Alessio Cuccurullo, Luca Amoriello
-
-  </div>
+		 <br><br> <a href="https://www.paypal.me/LucaAmoriello"><img src="../images/paypal.png" width="320px" height="160px"></a>
+		
+</p>
+  
 </div>

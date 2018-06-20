@@ -82,6 +82,9 @@
     </ul>
   </div>
 
-
 </nav>
+<!-- <div class="container-fluid text-center text-danger">
+Added fully working cart. Stay tuned, functionality to make order is coming!
+</div> -->
+
 <!-- navbar-end -->
