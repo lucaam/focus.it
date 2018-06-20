@@ -69,4 +69,10 @@ public class CartBean {
 	public void setUser(String user) {
 		this.user = user;
 	}
+	
+	public CartBean restoreCart (CartBean cart)
+	{
+		CartBeanDAO cbd = new CartBeanDAO();
+		return cart = cbd.restore(cart.getUser());
+	}
 }
