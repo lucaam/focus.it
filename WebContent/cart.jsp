@@ -30,8 +30,8 @@
 
 
 		if(!cart.isEmpty()){
-			if(session!=null)
-				cart = cart.restoreCart(cart);
+				if(session.getAttribute("user")!=null)
+					cart = cart.restoreCart(cart);
 
 			out.print("<div class=\"row\">");
 			out.print("<div class=\"col-sm-10\">");

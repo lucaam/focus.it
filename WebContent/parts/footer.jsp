@@ -4,7 +4,7 @@
       <div class="col-sm fot2">
         <ul>
           <li><a href="../index.jsp" class="text-secondary">Homepage</a></li>
-          <li><a href="../sericepage/wip.jsp" class="text-secondary">About</a></li>
+          <li><a href="../about.jsp" class="text-secondary">About</a></li>
           <li><a href="https://github.com/lucaam/focus.it/commits/master" class="text-secondary">Changelog</a></li>
           <li><a href="https://github.com/lucaam/focus.it" class="text-secondary">Github project</a></li>
           <li><a href="../servicepage/wip.jsp" class="text-secondary">Shipping information</a></li>
@@ -16,7 +16,7 @@
           <li><a href="../profile.jsp" class="text-secondary">Your profile</a></li>
           <li><a href="https://github.com/lucaam/focus.it/commits/master" class="text-secondary">Changelog</a></li>
           <li><a href="https://github.com/lucaam/focus.it" class="text-secondary">Github project</a></li>
-          <li><a href="../servicepage/wip.jsp" class="text-secondary">Shipping information</a></li>
+          <li><a href="../servicepage/wip.jsp" class="text-secondary">Feedback</a></li>
         </ul>
       </div>
       <div class="col-sm fot2">
