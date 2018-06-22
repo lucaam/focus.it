@@ -8,16 +8,15 @@ body {
 }
 
 .imcentered {
-	margin: auto;
+  margin: auto;
 }
 
 .fot2 {
- 
   margin-left: 50px;
   margin-right: 50px;
   margin-top: 10px;
-  marign-bottom: 10px; 
-  /*  */ 
+  margin-bottom: 10px;
+  /*  */
 }
 
 .iconmargin {
@@ -54,4 +53,9 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.wip {
+  /* background-image: url("../images/wip.png"); */
+  background-color: #ffffff;
 }

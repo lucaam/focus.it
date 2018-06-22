@@ -17,14 +17,11 @@
     <%@ include file="../parts/nav.jsp" %>
 
 
-      <div class="container bg-cont">
+      <div class="container bg-cont wip">
         <p class="text-center">
           Work in progress!
           <a href="../index.jsp" class="txt-seconday">Homepage</a>
-          <br>
-          <br>
-          <br>
-          <img src="../images/wip.png">
+        
         </p>
 
       </div>
