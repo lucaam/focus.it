@@ -14,7 +14,7 @@
 
 
 
-<%	if(user==null){
+      <%	if(user==null){
 	  	response.sendRedirect("./singinup.jsp");
 	return;
 	}
@@ -32,11 +32,11 @@
                 <%= rolecookie.getValue() %> <br> Il tuo username è:
                   <%= usrcookie.getValue() %> <br> L'email di registrazione è:
                     <%= emailcookie.getValue() %> <br> Il tuo numero di telefono è:
-                    <%= phonecookie.getValue() %> <br>
-                    
+                      <%= phonecookie.getValue() %> <br>
+
           </p>
-          
-          
+
+
         </div>
 
 

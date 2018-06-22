@@ -14,7 +14,7 @@
 
     <body>
       <%@include file="./parts/nav.jsp" %>
-      
+
         <div class="container bg-cont">
           <p>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -28,7 +28,7 @@
                   <a href="searchProduct?searchnav= "><img class="d-block w-100" src="./images/sales/sale1.jpg" alt="First slide"></a>
                 </div>
                 <div class="carousel-item">
-                   <a href="searchProduct?searchnav= "><img class="d-block w-100" src="./images/sales/sale2.jpg" alt="Second slide" href="searchProduct?searchnav= "></a>
+                  <a href="searchProduct?searchnav= "><img class="d-block w-100" src="./images/sales/sale2.jpg" alt="Second slide" href="searchProduct?searchnav= "></a>
                 </div>
                 <div class="carousel-item">
                   <a href="searchProduct?searchnav= "><img class="d-block w-100" src="./images/sales/sale3.jpg" alt="Third slide" href="searchProduct?searchnav= "></a>

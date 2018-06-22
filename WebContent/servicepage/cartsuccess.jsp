@@ -8,7 +8,7 @@
     <%@ include file="../parts/meta.jsp" %>
       <%@ include file="../parts/head.jsp" %>
 
-<!--         <meta http-equiv="refresh" content="1; url=../cart.jsp" />
+        <!--         <meta http-equiv="refresh" content="1; url=../cart.jsp" />
  -->
   </head>
 
@@ -16,17 +16,17 @@
 
     <%@ include file="../parts/nav.jsp" %>
 
-      
 
-        <div class="container bg-cont">
+
+      <div class="container bg-cont">
+        <p>
+          Aggiornamento del carrello eseguito con successo.
           <p>
-            Aggiornamento del carrello eseguito con successo.
-            <p>
             <%out.print("<a href=\"cart.jsp\" class=\"btn btn-dark\"><i class=\"fas fa-shopping-cart\"></i> Cart </a>"); %>
-            </p>
+          </p>
 
-        </div>
-        <%@ include file="../parts/footer.jsp" %>
+      </div>
+      <%@ include file="../parts/footer.jsp" %>
 
   </body>
 

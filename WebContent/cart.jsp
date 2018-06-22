@@ -22,7 +22,7 @@
 	  	response.sendRedirect("./servicepage/nopermission.jsp");
 	return;
 	}
-	
+
 	if (cart==null){
 	  	response.sendRedirect("./servicepage/nopermission.jsp");
 	return;

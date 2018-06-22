@@ -1,4 +1,5 @@
-<span class="wb-sessto" data-wb-sessto='{"sessionalive": 86400000, "logouturl": "../index.jsp", "refreshCallbackUrl": "./"}'></span><!-- navbar-start -->
+<span class="wb-sessto" data-wb-sessto='{"sessionalive": 86400000, "logouturl": "../index.jsp", "refreshCallbackUrl": "./"}'></span>
+<!-- navbar-start -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
   <a class="navbar-brand" href="../index.jsp">
       <img src="../images/logo.png" width="30" height="30" alt="logo">
@@ -37,7 +38,7 @@
       <li class="nav-item">
         <a class="nav-link" href="https://www.paypal.me/LucaAmoriello">Donate</a>
       </li>
-       <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link" href="../servicepage/wip.jsp">Feedback</a>
       </li>
     </ul>
@@ -52,44 +53,44 @@
 
     <ul class="navbar-nav navbar-right bg-dark navbar-dark">
 
- <%@ include file="./cookie.jsp" %>
-   
-   
-      
-           <%  if (namecookie != null) {%>
-        <li class="nav-item">
-          <a class="nav-link" href="profile.jsp">Welcome <%out.println(namecookie.getValue());%></a>
-        </li>
-        <li>
-          <form class="nav-link" action="Logout" method="post">
-            <button type="submit" id="logout" class="fabutton">
+      <%@ include file="./cookie.jsp" %>
+
+
+
+        <%  if (namecookie != null) {%>
+          <li class="nav-item">
+            <a class="nav-link" href="profile.jsp">Welcome <%out.println(namecookie.getValue());%></a>
+          </li>
+          <li>
+            <form class="nav-link" action="Logout" method="post">
+              <button type="submit" id="logout" class="fabutton">
      			 <i class="fas fa-sign-out-alt nav-link"></i>
 				</button>
-          </form>
-        </li>
-        <% } else{ %>
-          <li>
-            <a class="nav-link" href="../singinup.jsp"><i class="nav-link fas fa-user-plus"></i></a>
+            </form>
           </li>
-          <li class="navbar-item active">
-            <a class="nav-link" href="../singinup.jsp"><i class="nav-link fas fa-sign-in-alt"></i></a>
-          </li>
-
-
-
-
-          <% } %>
-            <li class="navbar-item active">
-              <a class="nav-link" href="../cart.jsp"><i class="nav-link fas fa-shopping-cart"></i></a>
+          <% } else{ %>
+            <li>
+              <a class="nav-link" href="../singinup.jsp"><i class="nav-link fas fa-user-plus"></i></a>
             </li>
+            <li class="navbar-item active">
+              <a class="nav-link" href="../singinup.jsp"><i class="nav-link fas fa-sign-in-alt"></i></a>
+            </li>
+
+
+
+
+            <% } %>
+              <li class="navbar-item active">
+                <a class="nav-link" href="../cart.jsp"><i class="nav-link fas fa-shopping-cart"></i></a>
+              </li>
     </ul>
   </div>
 
 </nav>
 <br>
 <div class="container-fluid text-center text-danger">
-<h6 class="text-small text-center text-danger"> Added fully working cart. Stay tuned, functionality to make order is coming!</h6>
-<h5 class="text-small"><a href="../servicepage/wip.jsp" class="text-dark">Send a feedback</a></h5>
+  <h6 class="text-small text-center text-danger"> Added fully working cart. Stay tuned, functionality to make order is coming!</h6>
+  <h5 class="text-small"><a href="../servicepage/wip.jsp" class="text-dark">Send a feedback</a></h5>
 </div>
 
 <!-- navbar-end -->

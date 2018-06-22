@@ -8,8 +8,8 @@ Cookie [] cookies = request.getCookies();
 	      Cookie namecookie=null;
 	      Cookie surnamecookie=null;
 	      Cookie phonecookie=null;
-	      
-	
+
+
 		      if(cookies != null){
 		      	for (Cookie temp : cookies){
 		      		if("usr".equals(temp.getName())){
@@ -26,7 +26,6 @@ Cookie [] cookies = request.getCookies();
 		      		 	 phonecookie = temp;}
 		}
 	}
-		      
+
 
 %>
-	        

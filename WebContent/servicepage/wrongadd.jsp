@@ -13,21 +13,21 @@
   </head>
 
   <body>
-      <%@include file="../parts/nav.jsp" %>
-        <%if(!"admin".equals(rolecookie.getValue())){
+    <%@include file="../parts/nav.jsp" %>
+      <%if(!"admin".equals(rolecookie.getValue())){
 			response.sendRedirect("./nopermission.jsp");
         return;}
 		%>
-          <div class="container bg-cont">
-            <p>
-              Spiacente! Prodotto NON aggiunto con successo al database. I campi non sono ancora tutti sotto controllo quindi per il momento ricorda di inserire i parametri in modo corretto. Stai per essere reindirizzato alla pagina di aggiunta del prodotto.
-            </p>
-            <p>
-              Nel caso non dovesse funzionare il reindirizzamento, clicca <a href="../add.jsp">qui</a>
-            </p>
+        <div class="container bg-cont">
+          <p>
+            Spiacente! Prodotto NON aggiunto con successo al database. I campi non sono ancora tutti sotto controllo quindi per il momento ricorda di inserire i parametri in modo corretto. Stai per essere reindirizzato alla pagina di aggiunta del prodotto.
+          </p>
+          <p>
+            Nel caso non dovesse funzionare il reindirizzamento, clicca <a href="../add.jsp">qui</a>
+          </p>
 
-          </div>
-          <%@include file="../parts/footer.jsp" %>
+        </div>
+        <%@include file="../parts/footer.jsp" %>
   </body>
 
   </html>

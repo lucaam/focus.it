@@ -1,5 +1,5 @@
 <div class="footer bg-dark text-light">
-   <div class="container-fluid fot2"> 
+  <div class="container-fluid fot2">
     <div class="row fot2">
       <div class="col-sm fot2">
         <ul>
@@ -31,14 +31,14 @@
     </div>
 
   </div>
-</div> 
+</div>
 
 <div class="footer text-dark fot2">
 
-    <p class="text-center small">
-      Copyright &copy; 2018 - Focus.it P.IVA 0000000000000000 - Capitale sociale interamente versato 200.000 - Reg #00000 <br> Funzione di ricerca basata su nulla per adesso - All Rights Reserved - Housing and Web Design by Alessio Cuccurullo, Luca Amoriello
-		 <br><br> <a href="https://www.paypal.me/LucaAmoriello"><img src="../images/paypal.png" width="320px" height="160px"></a>
-		
-</p>
-  
+  <p class="text-center small">
+    Copyright &copy; 2018 - Focus.it P.IVA 0000000000000000 - Capitale sociale interamente versato 200.000 - Reg #00000 <br> Funzione di ricerca basata su nulla per adesso - All Rights Reserved - Housing and Web Design by Alessio Cuccurullo, Luca Amoriello
+    <br><br> <a href="https://www.paypal.me/LucaAmoriello"><img src="../images/paypal.png" width="320px" height="160px"></a>
+
+  </p>
+
 </div>
