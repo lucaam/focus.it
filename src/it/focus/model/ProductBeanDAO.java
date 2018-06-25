@@ -1,21 +1,13 @@
 package it.focus.model;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import javax.servlet.http.HttpSession;
 
-import com.mysql.jdbc.Blob;
 
 public class ProductBeanDAO {
 	public synchronized ProductBean newProd (String product, String brand, Double price, Double mpx, String color, String desc)

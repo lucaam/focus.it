@@ -1,9 +1,6 @@
 package it.focus.model;
 
-import java.io.FileInputStream;
 import java.io.InputStream;
-
-import com.mysql.jdbc.Blob;
 
 public class ProductBean {
 	
