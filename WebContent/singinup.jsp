@@ -31,12 +31,12 @@
                         <% }if(nodata != null) { %>
                           <h6 class="text-small text-danger"> No data inserted - Please insert data  </h6>
                           <label for="username">Username:</label>
-                          <input type="text" class="form-control" id="user" placeholder="Enter username" name="user" required="true">
+                          <input type="text" class="form-control" id="user" placeholder="Enter username" name="user"  >
                     </div>
 
                     <div class="form-group">
                       <label for="password">Password:</label>
-                      <input type="password" class="form-control" id="psw" placeholder="Enter password" name="psw" required="true">
+                      <input type="password" class="form-control" id="psw" placeholder="Enter password" name="psw"  >
                     </div>
                     <div class="form-check">
                       <label><input type="checkbox" class="form-check-input" id="remember"> Remember me</label>
@@ -48,12 +48,12 @@
                     <form action="Login" method="post">
                       <div class="form-group">
                         <label for="username">Username:</label>
-                        <input type="text" class="form-control" id="user" placeholder="Enter username" name="user" required="true">
+                        <input type="text" class="form-control" id="user" placeholder="Enter username" name="user"  >
                       </div>
 
                       <div class="form-group">
                         <label for="password">Password:</label>
-                        <input type="password" class="form-control" id="psw" placeholder="Enter password" name="psw" required="true">
+                        <input type="password" class="form-control" id="psw" placeholder="Enter password" name="psw"  >
                       </div>
                       <div class="form-check">
                         <label><input type="checkbox" class="form-check-input" id="remember"> Remember me</label>
@@ -76,32 +76,32 @@
               <%} %>
                 <div class="form-group">
                   <label for="username">Username:</label>
-                  <input type="text" class="form-control" id="username" placeholder="Enter username" name="username" required="true">
+                  <input type="text" class="form-control" id="username" placeholder="Enter username" name="username"  >
                 </div>
                 <!-- get password --->
                 <div class="form-group">
                   <label for="password">Password:</label>
-                  <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" required="true">
+                  <input type="password" class="form-control" id="password" placeholder="Enter password" name="password"  >
                 </div>
                 <!-- get name --->
                 <div class="form-group">
                   <label for="name">Name:</label>
-                  <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" required="true">
+                  <input type="text" class="form-control" id="name" placeholder="Enter name" name="name"  >
                 </div>
                 <!-- get surname --->
                 <div class="form-group">
                   <label for="surname">Surname:</label>
-                  <input type="text" class="form-control" id="surname" placeholder="Enter surname" name="surname" required="true">
+                  <input type="text" class="form-control" id="surname" placeholder="Enter surname" name="surname"  >
                 </div>
                 <!-- get email --->
                 <div class="form-group">
                   <label for="email">Email:</label>
-                  <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required="true">
+                  <input type="email" class="form-control" id="email" placeholder="Enter email" name="email"  >
                 </div>
 
                 <div class="form-group">
                   <label for="username">Phone number:</label>
-                  <input type="text" class="form-control" id="phone" placeholder="Enter phone number" name="phone" required="true">
+                  <input type="text" class="form-control" id="phone" placeholder="Enter phone number" name="phone"  >
                 </div>
                 <input type="submit" class="btn btn-default" value="Submit" onclick="return validateRegistration(this.form)">
           </form>

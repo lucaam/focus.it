@@ -12,10 +12,11 @@
 
     </head>
 
-    <body>
+    <body class="background">
       <%@include file="./parts/nav.jsp" %>
 
-        <div class="container bg-cont">
+        <div class="container-fluid bg-cont">
+        <div class="container">
           <p>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
               <ol class="carousel-indicators">
@@ -46,8 +47,8 @@
             <p>
 
 
-              <div class="container bg-cont text-center">
-                <div class="row">
+              <div class="container bg-cont text-center imcentered">
+                <div class="row imcentered">
                   <%
 
 
@@ -60,7 +61,7 @@
    		ProductBeanDAO pbd = new ProductBeanDAO();
    		ProductBean pb = pbd.searchId(""+int1);
 
-   		out.print("<div class=\"col\">");
+   		out.print("<div class=\"col imcentered\">");
    	    out.print("<div class=\"card\" style=\"width: 18rem;\">");
    	 	out.print("<img class=\"card-img-top\" src=\"./images/img" + int1 + ".jpg\" alt=\"Card image cap\">");
    	 	out.print("<div class=\"card-body\">");
@@ -78,7 +79,7 @@
               </div>
 
               <div class="container">
-                <p class="text-center">
+                <p class="imcentered">
                   Condimentum id venenatis a condimentum vitae sapien pellentesque. Morbi blandit cursus risus at ultrices. Malesuada fames ac turpis egestas sed tempus. Porttitor eget dolor morbi non. Dolor morbi non arcu risus quis. Sit amet nisl suscipit adipiscing.
                   Viverra orci sagittis eu volutpat. Molestie nunc non blandit massa enim nec dui nunc. Suspendisse interdum consectetur libero id faucibus nisl tincidunt. At augue eget arcu dictum varius. Interdum velit laoreet id donec ultrices tincidunt.
                   Magna sit amet purus gravida quis. Ornare suspendisse sed nisi lacus sed viverra tellus. Volutpat est velit egestas dui. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. In hac habitasse platea dictumst quisque
@@ -90,7 +91,7 @@
                   et leo duis ut diam quam. Tortor aliquam nulla facilisi cras fermentum. Faucibus vitae aliquet nec ullamcorper sit. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Sed enim ut sem viverra.
                 </p>
               </div>
-
+			</div>
         </div>
         <%@ include file="./parts/footer.jsp" %>
 

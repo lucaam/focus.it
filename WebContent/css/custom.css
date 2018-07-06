@@ -1,5 +1,4 @@
 body {
-  background-color: #eaecef;
 }
 
 .bg-cont {
@@ -7,8 +6,11 @@ body {
   min-height: 700px;
 }
 
+.background{
+	background-color: #6D6A75;
+}
 .imcentered {
-  margin: auto;
+  margin: 0px auto;
 }
 
 .fot2 {
@@ -16,6 +18,7 @@ body {
   margin-right: 50px;
   margin-top: 10px;
   margin-bottom: 10px;
+  padding: 30px;
   /*  */
 }
 

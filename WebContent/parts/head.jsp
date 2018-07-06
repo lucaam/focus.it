@@ -16,7 +16,5 @@
   <%@ page import="it.focus.model.ProductBeanDAO"%>
     <%@ page import="it.focus.model.CartBean"%>
       <%@ page import="java.util.ArrayList"%>
-        <%@ page import="it.focus.model.UserBean"%>
 
-          <%UserBean user = (UserBean) session.getAttribute("userBean");%>
             <%CartBean cart = (CartBean) session.getAttribute("cart");%>
