@@ -17,7 +17,7 @@
   <body>
 
     <%@include file="../parts/nav.jsp" %>
-    <%@ include file="./cookie.jsp" %>
+    <%@ include file="../cookie.jsp" %>
 
       <div class="container bg-cont">
         <%  if (namecookie != null) {%>
