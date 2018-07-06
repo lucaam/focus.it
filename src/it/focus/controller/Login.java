@@ -18,11 +18,11 @@ import it.focus.model.UserBeanDAO;
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-  
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 				UserBean userB = getUserPassword(request);
 
-				if (userB == null) {    // no login e/o no password -> redirigo a login form 
+				if (userB == null) {    // no login e/o no password -> redirigo a login form
 					System.out.println("No data input");
 					request.setAttribute("nodata", true);
 					RequestDispatcher requestDispatcher = request.getRequestDispatcher("./singinup.jsp");
@@ -33,25 +33,25 @@ public class Login extends HttpServlet {
 						UserBeanDAO ubd = new UserBeanDAO();
 						CartBean cart = new CartBean();
 						CartBeanDAO cbd = new CartBeanDAO();
-						
+
 						cart = cbd.restore(userB.getUsr());
 						if(cart.getTotal()==0)
 							cart = new CartBean();
-						
-						
+
+
 						UserBean ub = ubd.doRetriveByKey(userB.getUsr(), userB.getPwd());
-						
+
 						HttpSession session = request.getSession();
 
 						if (ub==null) {    // login e/o password sbagliati -> chiamo login form  con messaggio errore
 											// il nome login.jsp non si vedrà nel browser
-							
+
 							System.out.println("Invalid data");
 							request.setAttribute("denied", true);
 							RequestDispatcher requestDispatcher = request.getRequestDispatcher("./singinup.jsp");
 							requestDispatcher.forward(request, response);
 						}else {
-							
+
 							Cookie usrcookie = new Cookie("usr", ub.getUsr());
 							Cookie namecookie = new Cookie("name", ub.getNome());
 							Cookie surnamecookie = new Cookie("surname", ub.getCognome());
@@ -60,14 +60,14 @@ public class Login extends HttpServlet {
 							Cookie phonecookie = new Cookie("phone", ub.getPhone());
 
 
-							
+
 							usrcookie.setMaxAge(60*60*24);
 							surnamecookie.setMaxAge(60*60*24);
 							usrcookie.setMaxAge(60*60*24);
 							emailcookie.setMaxAge(60*60*24);
 							phonecookie.setMaxAge(60*60*24);
 							rolecookie.setMaxAge(60*60*24);
-							
+
 							emailcookie.setPath("/");
 							phonecookie.setPath("/");
 							surnamecookie.setPath("/");
@@ -85,20 +85,20 @@ public class Login extends HttpServlet {
 							session.setAttribute("cart", cart);
 							session.setAttribute("userBean", ub);
 							session.setMaxInactiveInterval(60*60*24);
-							
+
 //							testing purpose
 							System.out.println("Nome: " + ub.getNome());
-							
+
 							System.out.println("Cart: " + cart.isEmpty());
 
-					
 
-							RequestDispatcher requestDispatcher = request.getRequestDispatcher("./servicepage/success.jsp");
+
+							RequestDispatcher requestDispatcher = request.getRequestDispatcher("./servicepage/successLogin.jsp");
 							requestDispatcher.forward(request, response);
 						}
 					}
 					catch(Exception e)
-					{  
+					{
 						request.setAttribute("exception", e);
 						RequestDispatcher requestDispatcher = request.getRequestDispatcher("./servicepage/exception.jsp");
 						requestDispatcher.forward(request, response);
@@ -106,12 +106,12 @@ public class Login extends HttpServlet {
 				}
 			}
 
-	
-	
+
+
 	private UserBean getUserPassword(HttpServletRequest request) {
 		UserBean ub = null;
 		String usr = null, pwd = null;
-		
+
 		Cookie[] c = request.getCookies();
 		if(c!=null) {
 			for(int i=0; i<c.length;i++) {
@@ -131,14 +131,14 @@ public class Login extends HttpServlet {
 				pwd=tmp;
 			}
 		}
-		
+
 		if(usr!=null && pwd!=null)
 			ub = new UserBean(usr, pwd);
-		
+
 		return ub;
-			
+
 		}
-	
+
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
