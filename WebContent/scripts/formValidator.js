@@ -30,7 +30,7 @@
 
 function validateRegistration(formRegistration) {
 
-  var usrValidator = /^\w+[_\.-]*\w*$/;
+  var usrValidator = /^\w+[_\.\-]*\w*$/;
 
   if(formRegistration.username.value.match(usrValidator))
   {
@@ -38,12 +38,12 @@ function validateRegistration(formRegistration) {
   }
   else
   {
-   alert('You can use only letters, "."|"-"|"_" in your username.');
+    alert('You can use only letters, "."|"-"|"_" in your username.');
     formRegistration.username.focus();
     return false;
   }
 
-  var pswValidator = /^([a-z]+[A-Z]+[0-9]+[@\.-_!\?]){8,}$/;
+  var pswValidator = /^([a-z]+[A-Z]+[0-9]+[\@\.\_\!\?\-]){8,}$/;
   if(formRegistration.password.value.match(pswValidator))
   {
     return true;
@@ -82,7 +82,7 @@ function validateRegistration(formRegistration) {
     return false;
   }
 
-  var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w+)+$/;
+  var mailformat = /^\w+([\.\-]?\w+)*@\w+([\.\-]?\w+)*(\.\w+)+$/;
     if (formRegistration.email.value.match(mailformat)) {
       return true;
     }
