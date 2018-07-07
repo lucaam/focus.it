@@ -28,7 +28,7 @@ maxRequestSize=1024*1024*50)   // 50MB
 
 public class addProduct extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final String SAVE_DIR = "/images/cameras";
+	private static final String SAVE_DIR = "images/cameras";
 
   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
