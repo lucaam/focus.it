@@ -22,9 +22,7 @@
           <li><a class="dropdown-item" href="searchProduct?search=Nikon">Nikon</a></li>
           <li><a class="dropdown-item" href="searchProduct?search=Leica">Leica</a></li>
           <li><a class="dropdown-item" href="searchProduct?search=Olympus">Olympus</a></li>
-          <li class="dropdown-divider"></li>
-
-          <li><a class="dropdown-item" href="../add.jsp">Add product</a></li>
+         
         </ul>
       </li>
       <li class="nav-item">
@@ -55,9 +53,9 @@
 
 
 
-        <%  if (session != null) {%>
+        <%  if (user != null) {%>
           <li class="nav-item">
-            <a class="nav-link" href="profile.jsp">Welcome <%out.println(namecookie.getValue());%></a>
+            <a class="nav-link" href="profile.jsp">Welcome <%=user.getNome()%></a>
           </li>
           <li>
             <form class="nav-link" action="Logout" method="post">
