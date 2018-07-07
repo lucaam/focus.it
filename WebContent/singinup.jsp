@@ -78,11 +78,12 @@
               <label for="username">Username:</label>
               <input type="text" class="form-control is-invalid" id="username" placeholder="Enter username" name="username"  >
             </div>
-              <%} %>
+              <%}else{ %>
               <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" class="form-control" id="username" placeholder="Enter username" name="username"  >
               </div>
+              <%} %>
                 <!-- get password --->
                 <div class="form-group">
                   <label for="password">Password:</label>
