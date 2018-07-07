@@ -16,8 +16,8 @@
         <h2><%= pb.getProduct() %></h2>
         <div class="row">
           <div class="col-sm-7">
-            <%if (false/*pd.getPic()*/)
-            	out.print("img qui");
+            <%if (pb.getPic()!=null)
+            	out.print("<img src=\"/"+ pb.getPic() +"\" class=\"img-prod\" alt=\"img not found\" width=\"400px\" height=\"400px\">");
             else
               out.print("<img src=\"/images/notfound.jpg\" class=\"img-prod\" alt=\"img not found\" width=\"400px\" height=\"400px\">");
             %>
