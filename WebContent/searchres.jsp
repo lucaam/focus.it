@@ -35,7 +35,7 @@
 				out.print("<tr><th scope=\"row\">" + pb.getPic() +"</th>");
 				else
 					out.print("<tr><th scope=\"row\"><img src=\"./images/notfound.png\" width=\"60px\" height=\"60px\"></th>");
-				out.print("<td class=\"td-prod\"><a href=\"generatePage?idProd="+ pb.getId() +"\">" + pb.getProduct() + " </a></td>");
+				out.print("<td class=\"td-prod\"><a href=\"generatePage?idProd="+ pb.getId() +"\" class=\"text-dark\">" + pb.getProduct() + " </a></td>");
 				out.print("<td class=\"td-prod\">" + pb.getPrice() + "€ </td>");
 
 				out.print("<td class=\"td-prod\">" + pb.getMpx() + "</td>");
