@@ -19,9 +19,9 @@
     <%@include file="../parts/nav.jsp" %>
 
       <div class="container bg-cont">
-        <%  if (namecookie.getValue() != null) {%>
+        <%  if (user != null) {%>
         <p>
-          Benvenuto, <%=out.println(namecookie.getValue());%>! Stai per essere reindirizzato alla homepage.
+          Benvenuto, <%=user.getNome()%>! Stai per essere reindirizzato alla homepage.
         </p>
         <p>
 
