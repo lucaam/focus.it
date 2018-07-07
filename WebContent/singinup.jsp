@@ -74,7 +74,7 @@
             <% if(duplicate != null) { %>
             <div class="form-group">
               <span class="text-small text-danger"> Username/email already exists  </span>
-
+              <br>
               <label for="username">Username:</label>
               <input type="text" class="form-control is-invalid" id="username" placeholder="Enter username" name="username"  >
             </div>
