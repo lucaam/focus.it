@@ -51,7 +51,7 @@
 
 			for(ProductBean pb : pList)
 			{
-				if (pb.getPic()!=null)
+				if (pb.getPic()!="")
 	            	out.print("<tr><th scope=\"row\"><img src=\"/"+ pb.getPic() +"\" width=\"60px\" height=\"60px\"></th>");
 	            
 				else

@@ -31,8 +31,8 @@
 			out.print("<tbody>");
 			for(ProductBean pb : pList)
 			{
-				if (pb.getPic()!=null)
-	            	out.print("<tr><th scope=\"row\"><img src=\"/"+ pb.getPic() +"\" width=\"60px\" height=\"60px\"></th>");
+				if (pb.getPic()!="")
+	            	out.print("<tr><th scope=\"row\"><img src=\"/"+ pb.getPic() +"\" width=\"60px\" height=\"60px\"></th>e");
 	            
 				else
 					out.print("<tr><th scope=\"row\"><img src=\"./images/notfound.png\" width=\"60px\" height=\"60px\"></th>");
