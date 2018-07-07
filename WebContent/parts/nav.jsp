@@ -90,5 +90,5 @@
   <h6 class="text-small text-center text-danger"> Added fully working cart. Stay tuned, functionality to make order is coming!</h6>
   <h5 class="text-small"><a href="../servicepage/wip.jsp" class="text-dark">Send a feedback</a></h5>
 </div>
-
+<script src="../scripts/navAnimation.js"></script>
 <!-- navbar-end -->
