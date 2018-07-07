@@ -19,12 +19,12 @@
 
         <%
 	if (session==null){
-	  	response.sendRedirect("./servicepage/nopermission.jsp");
+		out.print("<p class=\"text-center\"><h2>Your cart is empty right now!</p>");
 	return;
 	}
 
 	if (cart==null){
-	  	response.sendRedirect("./servicepage/nopermission.jsp");
+		out.print("<p class=\"text-center\"><h2>Your cart is empty right now!</p>");
 	return;
 	}
 
