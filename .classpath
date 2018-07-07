@@ -10,5 +10,7 @@
 	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="/usr/lib/jvm/java-8-oracle/lib/tools.jar"/>
 	<classpathentry kind="lib" path="/home/lucaamoriello/Documents/apache-tomcat-9.0.8/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="/home/lucaamoriello/Documents/apache-tomcat-9.0.8/lib/commons-fileupload-1.3.3.jar"/>
+	<classpathentry kind="lib" path="/home/lucaamoriello/Documents/apache-tomcat-9.0.8/lib/commons-io-2.6.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
