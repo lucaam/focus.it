@@ -67,12 +67,12 @@
               <label for="username">Username:</label>
               <input type="text" class="form-control is-invalid" id="username" placeholder="Enter username" name="username"  >
             </div>
-              <%}else{ %>
+              <%} %>
               <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" class="form-control" id="username" placeholder="Enter username" name="username"  >
               </div>
-              <%} %>
+            
                 <!-- get password --->
                 <div class="form-group">
                   <label for="password">Password:</label>
@@ -90,10 +90,6 @@
                 </div>
                 <!-- get email --->
                 <div class="form-group">
-                    <% if(duplicate != null) { %>
-                  <label for="email">Email:</label>
-                  <input type="email" class="form-control is-invalid" id="email" placeholder="Enter email" name="email"  >
-                    <%} %>
                     <label for="email">Email:</label>
                     <input type="email" class="form-control" id="email" placeholder="Enter email" name="email"  >
                 </div>
