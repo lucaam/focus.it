@@ -51,8 +51,9 @@
 
 			for(ProductBean pb : pList)
 			{
-				if(/*pb.getPic()!=null*/false)
-				out.print("<tr><th scope=\"row\">" + pb.getPic() +"</th>");
+				if (pb.getPic()!=null)
+	            	out.print("<img src=\"/"+ pb.getPic() +"\" class=\"img-prod\" alt=\"img not found\" width=\"400px\" height=\"400px\">");
+	            
 				else
 					out.print("<tr><th scope=\"row\"><img src=\"./images/notfound.png\" width=\"60px\" height=\"60px\"></th>");
 				out.print("<td class=\"td-prod\"><a href=\"generatePage?idProd="+ pb.getId() +"\" class=\"text-dark\">" + pb.getProduct() + " </a></td>");
