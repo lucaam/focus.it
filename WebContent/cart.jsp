@@ -12,7 +12,7 @@
   <body>
     <%@include file="./parts/nav.jsp" %>
 
-      <div class="container-fluid bg-cont">
+      <div class="container bg-cont">
 
 
 
