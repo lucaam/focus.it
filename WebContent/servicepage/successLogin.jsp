@@ -21,7 +21,7 @@
       <div class="container bg-cont">
         <%  if (namecookie.getValue() != null) {%>
         <p>
-          Benvenuto, <%out.println(namecookie.getValue());%>! Stai per essere reindirizzato alla homepage.
+          Benvenuto, <%=out.println(namecookie.getValue());%>! Stai per essere reindirizzato alla homepage.
         </p>
         <p>
 
