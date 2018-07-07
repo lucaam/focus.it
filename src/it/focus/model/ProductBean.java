@@ -1,7 +1,5 @@
 package it.focus.model;
 
-import java.io.InputStream;
-
 public class ProductBean {
 	
 	private int id;
@@ -11,11 +9,11 @@ public class ProductBean {
 	private String desc;
 	private Double mpx;
 	private String color;
-	private InputStream pic;
+	private String pic;
 	private String type;
 	
 	
-	public ProductBean(String product, Double price, String brand, String desc, Double mpx, String color/*, String type*/) {
+	public ProductBean(String product, Double price, String brand, String desc, Double mpx, String color/*, String type*/, String pic) {
 		//used to add
 
 		
@@ -25,6 +23,7 @@ public class ProductBean {
 		this.mpx = mpx;
 		this.desc = desc;
 		this.color = color;
+		this.pic = pic;
 		
 		
 
@@ -92,11 +91,11 @@ public class ProductBean {
 		this.color = color;
 	}
 
-	public InputStream getPic() {
+	public String getPic() {
 		return pic;
 	}
 
-	public void setPic(InputStream fis) {
+	public void setPic(String fis) {
 		this.pic = fis;
 	}
 

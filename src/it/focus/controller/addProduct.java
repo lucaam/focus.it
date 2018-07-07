@@ -1,5 +1,6 @@
 package it.focus.controller;
 
+import java.io.File;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,6 +9,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
+
 import it.focus.model.ProductBean;
 import it.focus.model.ProductBeanDAO;
 
@@ -15,10 +18,17 @@ import it.focus.model.ProductBeanDAO;
 /**
  * Servlet implementation class Registration
  */
-@MultipartConfig
+
 @WebServlet("/addProduct")
+@MultipartConfig(fileSizeThreshold=1024*1024*2, // 2MB
+maxFileSize=1024*1024*10,      // 10MB
+maxRequestSize=1024*1024*50)   // 50MB
+
+
+
 public class addProduct extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static final String SAVE_DIR = "/images/cameras";
 
   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -29,26 +39,31 @@ public class addProduct extends HttpServlet {
 		String desc = request.getParameter("desc");
 		String color = request.getParameter("color");
 		Double mpx = Double.parseDouble(request.getParameter("mpx"));
+		String appPath = request.getServletContext().getRealPath("");
+		String savePath = appPath + File.separator + SAVE_DIR;
+
+		// creates the save directory if it does not exists
+		File fileSaveDir = new File(savePath);
+		if (!fileSaveDir.exists()) {
+			fileSaveDir.mkdir();
+		}
+
+		for (Part part : request.getParts()) {
+			String fileName = extractFileName(part);
+			if (fileName != null && !fileName.equals("")){
+			// refines the fileName in case it is an absolute path
+				fileName = new File(fileName).getName();
+				part.write(savePath + File.separator + fileName);
+				request.setAttribute("filename", fileName);
+			}
+		}
 		
-//		InputStream inputStream = null; // input stream of the upload file
-//        // obtains the upload file part in this multipart request
-//        Part filePart = request.getPart("photo");
-//        if (filePart != null) {
-//            // prints out some information for debugging
-//            System.out.println(filePart.getName());
-//            System.out.println(filePart.getSize());
-//            System.out.println(filePart.getContentType());
-//
-//            //obtains input stream of the upload file
-//            //the InputStream will point to a stream that contains
-//            //the contents of the file
-//            inputStream = filePart.getInputStream();
-//        }
+
 		
 		try {
 			
 			ProductBeanDAO pbBeanDAO = new ProductBeanDAO();
-			ProductBean pb = pbBeanDAO.newProd(product, brand, price, mpx, color, desc);
+			ProductBean pb = pbBeanDAO.newProd(product, brand, price, mpx, color, desc, savePath);
 			
 			
 			if(pb != null)
@@ -73,5 +88,24 @@ public class addProduct extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
+	private String extractFileName(Part part) {
+		String contentDisp = part.getHeader("content-disposition");
+		System.out.println("contentDisp= " + contentDisp);
+		String[] items = contentDisp.split(";");
+		for (String s : items) {
+			if (s.trim().startsWith("filename")) {
+				return s.substring(s.indexOf("=") + 2, s.length()-1);
+			}
+		}
+		return "";
+	}
+
+	private String replaceIfMissing (String orig, String replacement){
+		if ((orig==null) || orig.trim().equals(""))
+			return replacement;
+		else
+			return orig;
+	}
+
 
 }

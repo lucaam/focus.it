@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 
 public class ProductBeanDAO {
-	public synchronized ProductBean newProd (String product, String brand, Double price, Double mpx, String color, String desc)
+	public synchronized ProductBean newProd (String product, String brand, Double price, Double mpx, String color, String desc, String pic)
 	{
 		
 		Connection conn = null;
@@ -21,7 +21,7 @@ public class ProductBeanDAO {
 			
 			conn = DriverManagerConnectionPool.getConnection();
 			
-			String sqlInsert = ("insert into product (product_name, price, brand, description, colour, mpx) values (?, ?, ?, ?, ?, ?);");
+			String sqlInsert = ("insert into product (product_name, price, brand, description, colour, mpx, img) values (?, ?, ?, ?, ?, ?, ?);");
 			
 			prepstat = conn.prepareStatement(sqlInsert);
 			prepstat.setString(1, product);
@@ -30,14 +30,13 @@ public class ProductBeanDAO {
 			prepstat.setString(4, desc);
 			prepstat.setString(5, color);
 			prepstat.setDouble(6, mpx);
-//			prepstat.setBlob(7, fis);
+			prepstat.setString(7, pic);
 			int state = prepstat.executeUpdate();
 			
 			
 			if(state!=0)
 			{
-				ProductBean pb = new ProductBean(/*id, */product, price, brand, desc, mpx, color);
-//				pb.setPic(fis);
+				ProductBean pb = new ProductBean(/*id, */product, price, brand, desc, mpx, color, pic);
 				return pb;
 
 			} 
@@ -75,7 +74,7 @@ public class ProductBeanDAO {
 			
 			while(res.next())
 			{		
-					npb = new ProductBean(/*res.getInt("id_product"),*/ res.getString("product_name"), res.getDouble("price"), res.getString("brand"), res.getString("description"), res.getDouble("mpx"), res.getString("colour")/*, res.getString("product_type")*/);
+					npb = new ProductBean(/*res.getInt("id_product"),*/ res.getString("product_name"), res.getDouble("price"), res.getString("brand"), res.getString("description"), res.getDouble("mpx"), res.getString("colour")/*, res.getString("product_type")*/, res.getString("img"));
 					npb.setId(res.getInt("id_product"));
 
 					
@@ -113,7 +112,7 @@ public class ProductBeanDAO {
 		
 		while(res.next())
 		{		
-				ProductBean npb = new ProductBean(/*res.getInt("id_product"),*/ res.getString("product_name"), res.getDouble("price"), res.getString("brand"), res.getString("description"), res.getDouble("mpx"), res.getString("colour")/*, res.getString("product_type")*/);
+				ProductBean npb = new ProductBean(/*res.getInt("id_product"),*/ res.getString("product_name"), res.getDouble("price"), res.getString("brand"), res.getString("description"), res.getDouble("mpx"), res.getString("colour")/*, res.getString("product_type")*/, res.getString("img"));
 				npb.setId(res.getInt("id_product"));
 				pList.add(npb);
 				
@@ -152,7 +151,7 @@ public class ProductBeanDAO {
 			
 			while(res.next())
 			{		
-					ProductBean npb = new ProductBean(/*res.getInt("id_product"),*/ res.getString("product_name"), res.getDouble("price"), res.getString("brand"), res.getString("description"), res.getDouble("mpx"), res.getString("colour")/*, res.getString("product_type")*/);
+					ProductBean npb = new ProductBean(/*res.getInt("id_product"),*/ res.getString("product_name"), res.getDouble("price"), res.getString("brand"), res.getString("description"), res.getDouble("mpx"), res.getString("colour")/*, res.getString("product_type")*/, res.getString("img"));
 					npb.setId(res.getInt("id_product"));
 					pList.add(npb);
 					
@@ -174,4 +173,5 @@ public class ProductBeanDAO {
 		return pList;
 	}
 }
+
 
