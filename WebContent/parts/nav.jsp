@@ -17,17 +17,15 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Fotocamere
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="searchProduct?search=Canon">Canon</a>
-          <a class="dropdown-item" href="searchProduct?search=Nikon">Nikon</a>
-          <a class="dropdown-item" href="searchProduct?search=Leica">Leica</a>
-          <a class="dropdown-item" href="searchProduct?search=Olympus">Olympus</a>
-          <div class="dropdown-divider"></div>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="brandList">
+          <li><a class="dropdown-item" href="searchProduct?search=Canon">Canon</a></li>
+          <li><a class="dropdown-item" href="searchProduct?search=Nikon">Nikon</a></li>
+          <li><a class="dropdown-item" href="searchProduct?search=Leica">Leica</a></li>
+          <li><a class="dropdown-item" href="searchProduct?search=Olympus">Olympus</a></li>
+          <li class="dropdown-divider"></li>
 
-          <a class="dropdown-item" href="../add.jsp">Add product</a>
-
-
-        </div>
+          <li><a class="dropdown-item" href="../add.jsp">Add product</a></li>
+        </ul>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="about.jsp">About</a>
