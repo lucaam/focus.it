@@ -19,7 +19,7 @@
     <%@include file="../parts/nav.jsp" %>
 
       <div class="container bg-cont">
-        <%  if (namecookie != null) {%>
+        <%  if (namecookie.getValue() != null) {%>
         <p>
           Benvenuto, <%out.println(namecookie.getValue());%>! Stai per essere reindirizzato alla homepage.
         </p>
