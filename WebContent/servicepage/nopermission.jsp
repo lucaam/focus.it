@@ -15,7 +15,7 @@
       <div class="container bg-cont text-center">
         <h1>Non hai i permessi sufficienti per accedere a questa pagina.
 					Controlla di essere loggato o di essere amministratore.
-
+	<br><a href='../singinup.jsp' class="btn btn-dark">Login</a>
 		</h1>
 
 
@@ -23,7 +23,7 @@
         <br />
 
         <br>
-        <a href='../index.jsp'>Torna alla home</a>
+        <a href='../index.jsp' class="text-dark">Torna alla home</a>
       </div>
       <%@include file="../parts/footer.jsp" %>
   </body>
