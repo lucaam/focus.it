@@ -20,6 +20,8 @@
 	}
 	%>
         <div class="container bg-cont">
+        <div class="row">
+        <div class="col">
           <h2>Benvenuto
       <%= namecookie.getValue() %>
       </h2>
@@ -35,8 +37,18 @@
                       <%= phonecookie.getValue() %> <br>
 
           </p>
-
-
+</div>
+<div class="col">
+<h4>Administartion panel for <%=rolecookie.getValue() %></h4>
+<%if("admin".equals(rolecookie.getValue())) {%>
+<a href="../add.jsp" class="btn btn-dark">Add product</a>
+<%}else{ %>
+Sei solo un utente, mi disp.<br>
+A breve cambio password email e altre funzioni.
+<br>
+<%} %>
+</div>
+</div>
         </div>
 
 
