@@ -2,6 +2,8 @@ package it.focus.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -10,6 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
+
+import org.omg.CORBA.portable.InputStream;
 
 import it.focus.model.ProductBean;
 import it.focus.model.ProductBeanDAO;
@@ -41,7 +45,7 @@ public class addProduct extends HttpServlet {
 		Double mpx = Double.parseDouble(request.getParameter("mpx"));
 		String appPath = request.getServletContext().getRealPath("");
 		String savePath = appPath + File.separator + SAVE_DIR;
-
+		String res = null;
 		// creates the save directory if it does not exists
 		File fileSaveDir = new File(savePath);
 		if (!fileSaveDir.exists()) {
@@ -55,7 +59,16 @@ public class addProduct extends HttpServlet {
 				fileName = new File(fileName).getName();
 				part.write(savePath + File.separator + fileName);
 				request.setAttribute("filename", fileName);
+				res=fileName;
+				File uploads = new File(appPath);
+
+				File file = new File(uploads, fileName);
+
+				try (java.io.InputStream input = part.getInputStream()) {
+				    Files.copy(input, file.toPath());
+				}
 			}
+			
 		}
 		
 
@@ -63,7 +76,7 @@ public class addProduct extends HttpServlet {
 		try {
 			
 			ProductBeanDAO pbBeanDAO = new ProductBeanDAO();
-			ProductBean pb = pbBeanDAO.newProd(product, brand, price, mpx, color, desc, savePath);
+			ProductBean pb = pbBeanDAO.newProd(product, brand, price, mpx, color, desc, "images/cameras/" + res);
 			
 			
 			if(pb != null)
