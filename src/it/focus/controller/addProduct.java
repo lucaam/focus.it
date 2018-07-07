@@ -40,7 +40,7 @@ public class addProduct extends HttpServlet {
 		String color = request.getParameter("color");
 		Double mpx = Double.parseDouble(request.getParameter("mpx"));
 		String appPath = request.getServletContext().getRealPath("");
-		String savePath = File.separator + SAVE_DIR;
+		String savePath = appPath + File.separator + SAVE_DIR;
 
 		// creates the save directory if it does not exists
 		File fileSaveDir = new File(savePath);
