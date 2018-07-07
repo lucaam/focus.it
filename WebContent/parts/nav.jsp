@@ -55,7 +55,7 @@
 
 
 
-        <%  if (namecookie != null) {%>
+        <%  if (session != null) {%>
           <li class="nav-item">
             <a class="nav-link" href="profile.jsp">Welcome <%out.println(namecookie.getValue());%></a>
           </li>
