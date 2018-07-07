@@ -31,12 +31,12 @@
                         <% }if(nodata != null) { %>
                           <h6 class="text-small text-danger"> No data inserted - Please insert data  </h6>
                           <label for="username">Username:</label>
-                          <input type="text" class="form-control" id="user" placeholder="Enter username" name="user"  >
+                          <input type="text" class="form-control is-invalid" id="user" placeholder="Enter username" name="user"  >
                     </div>
 
                     <div class="form-group">
                       <label for="password">Password:</label>
-                      <input type="password" class="form-control" id="psw" placeholder="Enter password" name="psw"  >
+                      <input type="password" class="form-control is-invalid" id="psw" placeholder="Enter password" name="psw"  >
                     </div>
                     <div class="form-check">
                       <label><input type="checkbox" class="form-check-input" id="remember"> Remember me</label>
@@ -72,12 +72,17 @@
           <form action="Registration" method="post" name="formRegistration">
             <!-- get username --->
             <% if(duplicate != null) { %>
+            <div class="form-group">
               <span class="text-small text-danger"> Username/email already exists  </span>
+
+              <label for="username">Username:</label>
+              <input type="text" class="form-control is-invalid" id="username" placeholder="Enter username" name="username"  >
+            </div>
               <%} %>
-                <div class="form-group">
-                  <label for="username">Username:</label>
-                  <input type="text" class="form-control" id="username" placeholder="Enter username" name="username"  >
-                </div>
+              <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter username" name="username"  >
+              </div>
                 <!-- get password --->
                 <div class="form-group">
                   <label for="password">Password:</label>
@@ -95,8 +100,12 @@
                 </div>
                 <!-- get email --->
                 <div class="form-group">
+                    <% if(duplicate != null) { %>
                   <label for="email">Email:</label>
-                  <input type="email" class="form-control" id="email" placeholder="Enter email" name="email"  >
+                  <input type="email" class="form-control is-invalid" id="email" placeholder="Enter email" name="email"  >
+                    <%} %>
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email"  >
                 </div>
 
                 <div class="form-group">
