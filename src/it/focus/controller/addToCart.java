@@ -38,7 +38,7 @@ public class addToCart extends HttpServlet {
 		session.getAttribute("cart");
 		
 		String toGet = request.getParameter("idProd");
-		
+		System.out.println(toGet);
 		
 		CartBean cart = (CartBean) session.getAttribute("cart");
 		if(cart==null)
@@ -50,14 +50,14 @@ public class addToCart extends HttpServlet {
 		CartBeanDAO cbd = new CartBeanDAO();
 		
 		if(session.getAttribute("userBean")!=null)
+			
 		cbd.saveCart((UserBean) session.getAttribute("userBean"), pb);
 
 		session.removeAttribute("cart");
 		session.setAttribute("cart", cart);
 		
+		//request.setAttribute("added", true); //to modify the page
 		
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("./servicepage/cartsuccess.jsp");
-		requestDispatcher.forward(request, response);
 		
 		
 	}

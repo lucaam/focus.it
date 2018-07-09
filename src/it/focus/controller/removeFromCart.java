@@ -68,7 +68,7 @@ public class removeFromCart extends HttpServlet {
 		
 		//Debugging purpose
 
-		RequestDispatcher req = request.getRequestDispatcher("./servicepage/cartsuccess.jsp");
+		RequestDispatcher req = request.getRequestDispatcher("cart.jsp");
 		req.forward(request, response);
 	}
 

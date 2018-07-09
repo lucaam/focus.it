@@ -33,11 +33,7 @@ public class CartBean {
 	
 	public void removeItem(ProductBean pb)
 	{
-		
-		 if(this.items.remove(pb))
-		 System.out.println("removed!");
-		 
-		
+		this.items.remove(pb);
 	}
 	
 	public ProductBean getItem(int i)
@@ -57,6 +53,7 @@ public class CartBean {
 		
 		while(!(this.items.isEmpty()))
 				this.items.remove(i);
+				i++;
 	}
 	
 	public boolean isEmpty() {

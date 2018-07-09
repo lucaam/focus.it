@@ -13,8 +13,8 @@ public class ProductBean {
 	private String type; //product_type
 	
 	
-	public ProductBean(String product, Double price, String brand, String desc, Double mpx, String color/*, String type*/, String pic) {
-		//used to add
+	public ProductBean(String product, Double price, String brand, String desc, Double mpx, String color, String pic /*, String type*/) {
+		//used to add can't add id because is auto-generated from the database
 
 		
 		this.product = product;
@@ -25,16 +25,14 @@ public class ProductBean {
 		this.color = color;
 		this.pic = pic;
 		
-		
-
-//		this.setType(type);
+//		this.type=type;
 		
 	}
 	
-	public ProductBean(int id, String product, Double price, String brand, String desc, Double mpx, String color/*, String type*/, String pic) {
+	public ProductBean(int id, String product, Double price, String brand, String desc, Double mpx, String color, String pic /*, String type*/) {
 		//used to retrive
 		
-		
+		this.id = id;
 		this.product = product;
 		this.brand = brand;
 		this.price = price;
@@ -43,8 +41,8 @@ public class ProductBean {
 		this.color = color;
 		this.pic = pic;
 		
-		this.setId(id);
-//		this.setType(type);
+		
+//		this.type=type;
 		
 	}
 	

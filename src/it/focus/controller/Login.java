@@ -22,8 +22,8 @@ public class Login extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 				UserBean userB = getUserPassword(request);
 
-				if (userB == null) {    // no login e/o no password -> redirigo a login form
-					System.out.println("No data input");
+				if (userB == null) {
+					
 					request.setAttribute("nodata", true);
 					RequestDispatcher requestDispatcher = request.getRequestDispatcher("./singinup.jsp");
 					requestDispatcher.forward(request, response);
@@ -43,10 +43,8 @@ public class Login extends HttpServlet {
 
 						HttpSession session = request.getSession();
 
-						if (ub==null) {    // login e/o password sbagliati -> chiamo login form  con messaggio errore
-											// il nome login.jsp non si vedrà nel browser
+						if (ub==null) {
 
-							System.out.println("Invalid data");
 							request.setAttribute("denied", true);
 							RequestDispatcher requestDispatcher = request.getRequestDispatcher("./singinup.jsp");
 							requestDispatcher.forward(request, response);
