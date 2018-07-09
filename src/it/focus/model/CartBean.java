@@ -33,20 +33,8 @@ public class CartBean {
 	
 	public void removeItem(ProductBean pb)
 	{
-		int i=-1;
-		for(ProductBean temp : this.items)
-		{
-			if(temp.getId()==pb.getId())
-			{
-				 i = items.indexOf(temp);
-				 if(i!=-1)
-				 {
-					break;
-				 }
-			}
-			
-		}
-		 this.items.remove(i);
+		
+		 if(this.items.remove(pb))
 		 System.out.println("removed!");
 		 
 		

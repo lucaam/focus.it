@@ -74,8 +74,8 @@ public class ProductBeanDAO {
 			
 			while(res.next())
 			{		
-					npb = new ProductBean(/*res.getInt("id_product"),*/ res.getString("product_name"), res.getDouble("price"), res.getString("brand"), res.getString("description"), res.getDouble("mpx"), res.getString("colour")/*, res.getString("product_type")*/, res.getString("img"));
-					npb.setId(res.getInt("id_product"));
+					npb = new ProductBean(res.getInt("id_product"),res.getString("product_name"), res.getDouble("price"), res.getString("brand"), res.getString("description"), res.getDouble("mpx"), res.getString("colour")/*, res.getString("product_type")*/, res.getString("img"));
+					
 
 					
 				

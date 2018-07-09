@@ -2,15 +2,15 @@ package it.focus.model;
 
 public class ProductBean {
 	
-	private int id;
-	private String product;
-	private String brand;
-	private Double price;
-	private String desc;
-	private Double mpx;
-	private String color;
-	private String pic;
-	private String type;
+	private int id; //id_product
+	private String product; // product_name
+	private String brand; //brand
+	private Double price; //price
+	private String desc; //description
+	private Double mpx; //mpx
+	private String color; //colour
+	private String pic; //img
+	private String type; //product_type
 	
 	
 	public ProductBean(String product, Double price, String brand, String desc, Double mpx, String color/*, String type*/, String pic) {
@@ -31,7 +31,7 @@ public class ProductBean {
 		
 	}
 	
-	public ProductBean(int id, String product, Double price, String brand, String desc, Double mpx, String color/*, String type*/) {
+	public ProductBean(int id, String product, Double price, String brand, String desc, Double mpx, String color/*, String type*/, String pic) {
 		//used to retrive
 		
 		
@@ -41,7 +41,7 @@ public class ProductBean {
 		this.mpx = mpx;
 		this.desc = desc;
 		this.color = color;
-		
+		this.pic = pic;
 		
 		this.setId(id);
 //		this.setType(type);
