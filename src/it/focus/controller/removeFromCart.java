@@ -1,6 +1,7 @@
 package it.focus.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -36,26 +37,39 @@ public class removeFromCart extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		CartBean cart = (CartBean) session.getAttribute("cart");
-		String toGet = request.getParameter("idProd");
-		System.out.println("To delete: " + toGet);
-
-		if(cart==null)
-			cart = new CartBean();
 		
+		
+
+		
+		String toGet = request.getParameter("idProd");
+
 		ProductBeanDAO pbd = new ProductBeanDAO();
 		ProductBean pb = pbd.searchId(toGet);
 		System.out.println("To delete: " + pb.getProduct());
 		
+		
+		
 		cart.removeItem(pb);
+		if(session.getAttribute("user")!=null)
 		cart.deleteFromDb(pb);
 
+		
 		session.removeAttribute("cart");
 		session.setAttribute("cart", cart);
 		
 		
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("./servicepage/cartsuccess.jsp");
-		requestDispatcher.forward(request, response);
+		//Debugging purpose
+		ArrayList<ProductBean> tmp = cart.getItems();
 		
+		for(ProductBean pbtemp : tmp)
+		{
+			System.out.println("lista presenti dopo rimozione: " + pbtemp.getProduct());
+		}
+		
+		//Debugging purpose
+
+		RequestDispatcher req = request.getRequestDispatcher("./servicepage/cartsuccess.jsp");
+		req.forward(request, response);
 	}
 
 	/**

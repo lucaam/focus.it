@@ -31,7 +31,7 @@ public class ProductBean {
 		
 	}
 	
-	public ProductBean(int id,String product, Double price, String brand, String desc, Double mpx, String color/*, String type*/) {
+	public ProductBean(int id, String product, Double price, String brand, String desc, Double mpx, String color/*, String type*/) {
 		//used to retrive
 		
 		

@@ -25,17 +25,31 @@ public class CartBean {
 	public void addItem(ProductBean pb)
 	{
 		
-		this.items.add(pb);
+		if(this.items.add(pb))
 		
-		System.out.println("aggiunto");
+		System.out.println("aggiunto correttamente al carrello");
 
 	}
 	
 	public void removeItem(ProductBean pb)
 	{
-		System.out.println(pb.getId());
-		if(this.items.remove(pb))
-			System.out.println("rimosso");
+		int i=-1;
+		for(ProductBean temp : this.items)
+		{
+			if(temp.getId()==pb.getId())
+			{
+				 i = items.indexOf(temp);
+				 if(i!=-1)
+				 {
+					break;
+				 }
+			}
+			
+		}
+		 this.items.remove(i);
+		 System.out.println("removed!");
+		 
+		
 	}
 	
 	public ProductBean getItem(int i)

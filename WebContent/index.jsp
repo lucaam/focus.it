@@ -63,7 +63,10 @@
 
    		out.print("<div class=\"col imcentered\">");
    	    out.print("<div class=\"card\" style=\"width: 18rem;\">");
-   	 	out.print("<img class=\"card-img-top\" src=\"./images/img" + int1 + ".jpg\" alt=\"Card image cap\">");
+   	    if(pb.getPic()!="")
+   	 	out.print("<img class=\"card-img-top\" src=\" "+ pb.getPic() + "\" alt=\"Card image cap\">");
+   	    else
+   	 out.print("<img class=\"card-img-top\" src=\"./images/notfound.jpg\" alt=\"Card image cap\">");  
    	 	out.print("<div class=\"card-body\">");
    	 	out.print("<h5 class=\"card-title\">" + pb.getProduct() + "</h5>");
    	    out.print("<p class=\"card-text pmax\">"+ pb.getDesc() + "</p>");
