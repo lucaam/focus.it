@@ -32,12 +32,17 @@
             <p class="text-justify">
               <%= pb.getDesc()%>
             </p>
-            <%out.print("<a href=\"addToCart?idProd="+ pb.getId() +" \" class=\"btn btn-dark\"><i class=\"fas fa-shopping-cart\"></i> Add to cart </a>"); %>
-
+            
+          <!-- ("<a href=\"\" class=\"btn btn-dark\" id=\"addtocart\" onclick=\"added();\"><i class=\"fas fa-shopping-cart\"></i> Add to cart </a>") -->
+            <button class="btn btn-dark" onclick="added(<%=pb.getId()%>)">Add to Cart</button>
+            <span id="added" class="text-success"></span>
+						
+							
+						
               <p class="text-justify">
                 <ul style="list-style-type: none; padding:0;">
                   <li>
-                    <%= pb.getMpx()%> Megapixels</li>
+                    <%=pb.getMpx()%> Megapixels</li>
                   <li>
                     <%if(pb.getPrice()>50)
                 	  out.print("Free shipping eigible on this product.");
