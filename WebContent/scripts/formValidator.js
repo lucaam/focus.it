@@ -1,31 +1,31 @@
-// function validateLogin(formLogin) {
-//
-//   var usrValidator = /^\w+[_\.-]*\w*$/;
-//
-//   if(formLogin.value.match(usrValidator))
-//   {
-//     return true;
-//   }
-//   else
-//   {
-//     alert('You can use only letters, "."|"-"|"_" in your username.');
-//     formLogin.focus();
-//     return false;
-//   }
-//
-//   var pswValidator = /^([a-z]+[A-Z]+[0-9]+[@\.-_!\?]){8,}$/;
-//   if(formLogin.value.match(pswValidator))
-//   {
-//     return true;
-//   }
-//   else
-//   {
-//     alert('You must insert a capital letter, numbers and symbols at least 8.');
-//     formLogin.focus();
-//     return false;
-//   }
-//
-// }
+ function validateLogin(formLogin) {
+
+   var usrValidator = /^\w+[_\.-]*\w*$/;
+
+   if(formLogin.value.match(usrValidator))
+   {
+     return true;
+   }
+   else
+   {
+     alert('You can use only letters, "."|"-"|"_" in your username.');
+     formLogin.focus();
+     return false;
+   }
+
+   var pswValidator = /^([a-z]+[A-Z]+[0-9]+[@\.-_!\?]){8,}$/;
+   if(formLogin.value.match(pswValidator))
+   {
+     return true;
+   }
+   else
+   {
+     alert('You must insert a capital letter, numbers and symbols at least 8.');
+     formLogin.focus();
+     return false;
+   }
+
+ }
 
 
 function validateRegistration(formRegistration) {

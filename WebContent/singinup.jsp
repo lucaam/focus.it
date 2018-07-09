@@ -42,8 +42,8 @@
                           <div class="form-check">
                           <label><input type="checkbox" class="form-check-input" id="remember"> Remember me</label>
                           </div>
-                          <input type="submit" class="btn btn-default" value="Submit">
-
+                          <input type="submit" class="btn btn-default" value="Submit" onclick="return validateLogin(this.form)">
+								</form>
                   <% }else { %>
                     <form action="Login" method="post">
                       <div class="form-group">
@@ -58,7 +58,7 @@
                       <div class="form-check">
                         <label><input type="checkbox" class="form-check-input" id="remember"> Remember me</label>
                       </div>
-                      <input type="submit" class="btn btn-default" value="Submit">
+                      <input type="submit" class="btn btn-dark" value="Submit" onclick="return validateLogin(this.form)">
                     </form>
 
 
@@ -109,7 +109,7 @@
                   <label for="username">Phone number:</label>
                   <input type="text" class="form-control" id="phone" placeholder="Enter phone number" name="phone"  >
                 </div>
-                <input type="submit" class="btn btn-default" value="Submit" onclick="return validateRegistration(this.form)">
+                <input type="submit" class="btn btn-dark" value="Register" onclick="return validateRegistration(this.form)">
           </form>
         </div>
       </div>
