@@ -19,7 +19,7 @@ import it.focus.model.ProductBeanDAO;
 public class generateThumb extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	//private static final String SAVE_DIR = "WebContent/jsonfiles/";//local in eclipse
-	private static final String SAVE_DIR = "./jsonfiles/";//server 
+	private static final String SAVE_DIR = "jsonfiles/";//server 
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
