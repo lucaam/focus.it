@@ -58,7 +58,7 @@
                       <div class="form-check">
                         <label><input type="checkbox" class="form-check-input" id="remember"> Remember me</label>
                       </div>
-                      <input type="submit" class="btn btn-dark" value="Submit" onclick="return validateRegistration(this.form)">
+                      <input type="submit" class="btn btn-dark" value="Submit" onclick="return validateLogin(this.form)">
                     </form>
 
 
