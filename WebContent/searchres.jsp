@@ -40,14 +40,21 @@
 				out.print("<td class=\"td-prod\">" + pb.getPrice() + "€ </td>");
 
 				out.print("<td class=\"td-prod\">" + pb.getMpx() + "</td>");
-	            out.print("<td class=\"td-prod\"><a href=\"addToCart?idProd="+ pb.getId() +" \" class=\"btn btn-dark\"><i class=\"fas fa-shopping-cart\"></i> Add to cart </a></td>");
+				out.print("<td class=\"td-prod\"><button class=\"btn btn-dark\" id=\"added"+pb.getId() +"\" onclick=\"addFromSearch( "+pb.getId()+ ")\" >Cart</button></td>");
+				
 
-
+// 	            out.print("<td class=\"td-prod\"><a href=\"addToCart?idProd="+ pb.getId() +" \" class=\"btn btn-dark\"><i class=\"fas fa-shopping-cart\"></i> Add to cart </a></td>");
+ 
+ 
+ 				
 
 
 			}
 			out.print("</tbody>");
 			out.print("</table>");
+			out.print("<div id=\"dialog\" title=\"Confirmation\">");
+			
+			out.print("</div>​");
 		}
 		else
 		{
