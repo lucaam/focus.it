@@ -64,13 +64,13 @@
    		out.print("<div class=\"col imcentered\">");
    	    out.print("<div class=\"card\" style=\"width: 18rem;\">");
    	    if(pb.getPic()!="")
-   	 	out.print("<img class=\"card-img-top\" src=\" "+ pb.getPic() + "\" alt=\"Card image cap\">");
+   	 	out.print("<label for=\"prodbutton\"><img class=\"card-img-top\" src=\" "+ pb.getPic() + "\" alt=\"Card image cap\"></label>");
    	    else
-   	 out.print("<img class=\"card-img-top\" src=\"./images/notfound.jpg\" alt=\"Card image cap\">");  
+   	 out.print("<label for=\"prodbutton\"><img class=\"card-img-top\" src=\"./images/notfound.jpg\" alt=\"Card image cap\"></label>");  
    	 	out.print("<div class=\"card-body\">");
    	 	out.print("<h5 class=\"card-title\">" + pb.getProduct() + "</h5>");
    	    out.print("<p class=\"card-text pmax\">"+ pb.getDesc() + "</p>");
-   	    out.print("<a href=\"generatePage?idProd="+ pb.getId() +"\" class=\"btn btn-dark\">" + pb.getProduct() + " </a>");
+   	    out.print("<a id=\"prodbutton\" href=\"generatePage?idProd="+ pb.getId() +"\" class=\"btn btn-dark\">" + pb.getProduct() + " </a>");
    	  	out.print("</div>");
    		out.print("</div>");
    	    out.print("</div>");
