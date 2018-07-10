@@ -49,7 +49,7 @@
 
               <div class="container bg-cont text-center imcentered">
                 <div class="row imcentered" id="cardContainer">
-              <button onclick="retriveProd()">Generate</button>
+             	<script>retriveProd()</script>
 
                 </div>
               </div>
