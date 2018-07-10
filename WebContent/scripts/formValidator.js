@@ -62,8 +62,8 @@ function validateLogin(formLogin){
   var pswValidator = /^[a-zA-Z 0-9 \@\._\!\?\-]{8,}$/;
 
   //Save all matches in a variable
-  var usrIsOK = formLogin.username.value.match(usrValidator);
-  var pswIsOK = formLogin.password.value.match(pswValidator);
+  var usrIsOK = formLogin.usr.value.match(usrValidator);
+  var pswIsOK = formLogin.psw.value.match(pswValidator);
 
 
   if (!usrIsOK) { //Check username
