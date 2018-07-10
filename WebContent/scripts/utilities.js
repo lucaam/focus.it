@@ -89,7 +89,7 @@ function retriveProd(){
 				}
 			}
 		}
-		file.open("GET", "/jsonfiles/generateThumb.json", true);
+		file.open("GET", "jsonfiles/generateThumb.json", true);
 		file.send();
 	}
 	xhttp.open("GET", "generateThumb?idProd=" + id + "", true);
