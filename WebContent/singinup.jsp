@@ -31,18 +31,8 @@
 
                         <% }if(nodata != null) { %>
                           <h6 class="text-small text-danger"> No data inserted - Please insert data  </h6>
-                          <label for="username">Username:</label>
-                          <input type="text" class="form-control" id="user" placeholder="Enter username" name="user"  >
-                          </div>
 
-                          <div class="form-group">
-                          <label for="password">Password:</label>
-                          <input type="password" class="form-control" id="psw" placeholder="Enter password" name="psw"  >
-                          </div>
-                          <div class="form-check">
-                          <label><input type="checkbox" class="form-check-input" id="remember"> Remember me</label>
-                          </div>
-                          <input type="submit" class="btn btn-default" value="Submit" onclick="return validateLogin(this.form)">
+
 								</form>
                   <% }else { %>
                     <form action="Login" method="post">
@@ -78,12 +68,12 @@
               <label for="username">Username:</label>
               <input type="text" class="form-control is-invalid" id="username" placeholder="Enter username" name="username"  >
             </div>
-              <%} %>
+              <%}else{ %>
               <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" class="form-control" id="username" placeholder="Enter username" name="username"  >
               </div>
-
+              <%}%>
                 <!-- get password --->
                 <div class="form-group">
                   <label for="password">Password:</label>
