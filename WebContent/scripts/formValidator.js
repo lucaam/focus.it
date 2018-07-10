@@ -20,31 +20,31 @@ function validateRegistration(formRegistration) {
     alert('Lo username deve contenere lettere, numeri o i caratteri "_", "." "-"  e deve essere lungo almeno 8');
     document.getElementById("username").focus(); //Set focus
     return false; //Negate access
-  } else document.getElementById("errorREGUSR").innerHTML= ""; //Remove error message
+  } else
 
   if (!pswIsOK) { //Check password
     alert("La password deve contenere almeno 8 caratteri tra lettere, numeri e simboli");
     document.getElementById("password").focus(); //Set focus
     return false; //Negate access
-  } else document.getElementById("errorREGPSW").innerHTML= ""; //Remove error message
+  } else
 
    if (!nameIsOK) { //Check name
     alert("Solo lettere per il nome");
     document.getElementById("name").focus(); //Set focus
     return false; //Negate access
-  } else document.getElementById("errorNAME").innerHTML=""; //Remove error message
+  } else
 
    if (!surnameIsOK) { //Check surname
     alert("Solo lettere per il cognome");
     document.getElementById("surname").focus(); //Set focus
     return false; //Negate access
-  } else document.getElementById("errorSURNAME").innerHTML=""; //Remove error message
+  } else
 
   if (!mailIsOK) { //Check email
     alert("Inserisci email valida")
     document.getElementById("email").focus(); //Set focus
     return false; //Negate access
-  } else document.getElementById("errorEMAIL").innerHTML=""; //Remove error message
+  } else
 
    if (!phoneIsOK) { //Check phone number
     alert("Inserisci un numero di telefono con 10 cifre");
@@ -70,12 +70,12 @@ function validateLogin(formLogin){
     alert('Lo username deve contenere lettere, numeri o i caratteri "_", "." "-"  e deve essere lungo almeno 8');
     document.getElementById("username").focus(); //Set focus
     return false; //Negate access
-  } else document.getElementById("errorREGUSR").innerHTML= ""; //Remove error message
+  } else
 
   if (!pswIsOK) { //Check password
     alert("La password deve contenere almeno 8 caratteri tra lettere, numeri e simboli");
     document.getElementById("password").focus(); //Set focus
     return false; //Negate access
-  } else document.getElementById("errorREGPSW").innerHTML= ""; //Remove error message
+  } else
   return true;
 }
