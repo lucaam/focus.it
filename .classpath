@@ -12,5 +12,8 @@
 	<classpathentry kind="lib" path="/home/lucaamoriello/Documents/apache-tomcat-9.0.8/lib/servlet-api.jar"/>
 	<classpathentry kind="lib" path="/home/lucaamoriello/Documents/apache-tomcat-9.0.8/lib/commons-fileupload-1.3.3.jar"/>
 	<classpathentry kind="lib" path="/home/lucaamoriello/Documents/apache-tomcat-9.0.8/lib/commons-io-2.6.jar"/>
+	<classpathentry kind="lib" path="/home/lucaamoriello/eclipse-workspace/ROOT/WebContent/WEB-INF/lib/jackson-annotations-2.9.6.jar"/>
+	<classpathentry kind="lib" path="/home/lucaamoriello/eclipse-workspace/ROOT/WebContent/WEB-INF/lib/jackson-core-2.9.6.jar"/>
+	<classpathentry kind="lib" path="/home/lucaamoriello/eclipse-workspace/ROOT/WebContent/WEB-INF/lib/jackson-databind-2.9.6.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
