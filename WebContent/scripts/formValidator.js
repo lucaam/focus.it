@@ -17,50 +17,42 @@ function validateRegistration(formRegistration) {
   var phoneIsOK = formRegistration.phone.value.match(phoneValidator);
 
   if (!usrIsOK) { //Check username
-  //  document.getElementById("errorREGUSR").innerHTML= 'Lo username deve contenere lettere, numeri o i caratteri "_", "." "-" '; //Write inline error message
     alert('Lo username deve contenere lettere, numeri o i caratteri "_", "." "-"  e deve essere lungo almeno 8');
     document.getElementById("username").focus(); //Set focus
     return false; //Negate access
   } else document.getElementById("errorREGUSR").innerHTML= ""; //Remove error message
 
   if (!pswIsOK) { //Check password
-  //  document.getElementById("errorREGPSW").innerHTML="La password deve contenere almeno 8 caratteri tra lettere, numeri e simboli"; //Write inline error message
     alert("La password deve contenere almeno 8 caratteri tra lettere, numeri e simboli");
     document.getElementById("password").focus(); //Set focus
     return false; //Negate access
   } else document.getElementById("errorREGPSW").innerHTML= ""; //Remove error message
 
    if (!nameIsOK) { //Check name
-  //  document.getElementById("errorNAME").innerHTML="Solo lettere per il nome"; //Write inline error message
     alert("Solo lettere per il nome");
     document.getElementById("name").focus(); //Set focus
     return false; //Negate access
   } else document.getElementById("errorNAME").innerHTML=""; //Remove error message
 
    if (!surnameIsOK) { //Check surname
-  //  document.getElementById("errorSURNAME").innerHTML="Solo lettere per il cognome"; //Write inline error message
     alert("Solo lettere per il cognome");
     document.getElementById("surname").focus(); //Set focus
     return false; //Negate access
   } else document.getElementById("errorSURNAME").innerHTML=""; //Remove error message
 
   if (!mailIsOK) { //Check email
-  //  document.getElemenMtById("errorEMAIL").innerHTML="Inserisci email valida"; //Write inline error message
     alert("Inserisci email valida")
     document.getElementById("email").focus(); //Set focus
     return false; //Negate access
   } else document.getElementById("errorEMAIL").innerHTML=""; //Remove error message
 
    if (!phoneIsOK) { //Check phone number
-  //  document.getElementById("errorPHONE").innerHTML="Inserisci un numero di telefono con 10 cifre"; //Write inline error message
     alert("Inserisci un numero di telefono con 10 cifre");
     document.getElementById("phone").focus(); //Set focus
     return false; //Negate access
   }
 
-else //document.getElementById("errorPHONE").innerHTML=""; //Remove error message
-
-//alert("COMPLIMENTI DOC");
+else
 return true; //Grant access
 }
 
@@ -75,14 +67,12 @@ function validateLogin(formLogin){
 
 
   if (!usrIsOK) { //Check username
-  //  document.getElementById("errorREGUSR").innerHTML= 'Lo username deve contenere lettere, numeri o i caratteri "_", "." "-" '; //Write inline error message
     alert('Lo username deve contenere lettere, numeri o i caratteri "_", "." "-"  e deve essere lungo almeno 8');
     document.getElementById("username").focus(); //Set focus
     return false; //Negate access
   } else document.getElementById("errorREGUSR").innerHTML= ""; //Remove error message
 
   if (!pswIsOK) { //Check password
-  //  document.getElementById("errorREGPSW").innerHTML="La password deve contenere almeno 8 caratteri tra lettere, numeri e simboli"; //Write inline error message
     alert("La password deve contenere almeno 8 caratteri tra lettere, numeri e simboli");
     document.getElementById("password").focus(); //Set focus
     return false; //Negate access
