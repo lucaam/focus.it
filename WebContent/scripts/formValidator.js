@@ -68,13 +68,13 @@ function validateLogin(formLogin){
 
   if (!usrIsOK) { //Check username
     alert('Lo username deve contenere lettere, numeri o i caratteri "_", "." "-"  e deve essere lungo almeno 8');
-    document.getElementById("username").focus(); //Set focus
+    document.getElementById("user").focus(); //Set focus
     return false; //Negate access
   } else
 
   if (!pswIsOK) { //Check password
     alert("La password deve contenere almeno 8 caratteri tra lettere, numeri e simboli");
-    document.getElementById("password").focus(); //Set focus
+    document.getElementById("psw").focus(); //Set focus
     return false; //Negate access
   } else
   return true;
