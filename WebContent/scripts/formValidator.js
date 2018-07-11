@@ -56,27 +56,27 @@ function validateRegistration(formRegistration) {
 else
 return true; //Grant access
 }
-
-function validateLogin(formLogin){
-  //Define login regExp validators
-  var usrValidator = /^(\w+[_\.\-]*\w*){4,}$/;
-  var pswValidator = /^[a-zA-Z 0-9 \@\._\!\?\-]{8,}$/;
-
-  //Save all matches in a variable
-  var usrIsOK = formLogin.user.value.match(usrValidator);
-  var pswIsOK = formLogin.psw.value.match(pswValidator);
-
-
-  if (!usrIsOK) { //Check username
-    alert('Lo username deve contenere lettere, numeri o i caratteri "_", "." "-"  e deve essere lungo almeno 8');
-    document.getElementById("user").focus(); //Set focus
-    return false; //Negate access
-  } else
-
-  if (!pswIsOK) { //Check password
-    alert("La password deve contenere almeno 8 caratteri tra lettere, numeri e simboli");
-    document.getElementById("psw").focus(); //Set focus
-    return false; //Negate access
-  } else
-  return true;
-}
+//
+//function validateLogin(formLogin){
+//  //Define login regExp validators
+//  var usrValidator = /^(\w+[_\.\-]*\w*){4,}$/;
+//  var pswValidator = /^[a-zA-Z 0-9 \@\._\!\?\-]{8,}$/;
+//
+//  //Save all matches in a variable
+//  var usrIsOK = formLogin.user.value.match(usrValidator);
+//  var pswIsOK = formLogin.psw.value.match(pswValidator);
+//
+//
+//  if (!usrIsOK) { //Check username
+//    alert('Lo username deve contenere lettere, numeri o i caratteri "_", "." "-"  e deve essere lungo almeno 8');
+//    document.getElementById("user").focus(); //Set focus
+//    return false; //Negate access
+//  } else
+//
+//  if (!pswIsOK) { //Check password
+//    alert("La password deve contenere almeno 8 caratteri tra lettere, numeri e simboli");
+//    document.getElementById("psw").focus(); //Set focus
+//    return false; //Negate access
+//  } else
+//  return true;
+//}
