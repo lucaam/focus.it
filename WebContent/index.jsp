@@ -21,33 +21,7 @@
                  
           </div>
           <br>
-            <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-              <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-              </ol>
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <a href="searchProduct?searchnav= "><img class="d-block w-100" src="./images/sales/sale1.jpg" alt="First slide"></a>
-                </div>
-                <div class="carousel-item">
-                  <a href="searchProduct?searchnav= "><img class="d-block w-100" src="./images/sales/sale2.jpg" alt="Second slide" href="searchProduct?searchnav= "></a>
-                </div>
-                <div class="carousel-item">
-                  <a href="searchProduct?searchnav= "><img class="d-block w-100" src="./images/sales/sale3.jpg" alt="Third slide" href="searchProduct?searchnav= "></a>
-                </div>
-              </div>
-              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-            </div> -->
-            
+
 
 
               <div class="container bg-cont text-center iamcentered">
@@ -79,5 +53,31 @@
     </body>
 
     </html>
-    
+                <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <a href="searchProduct?searchnav= "><img class="d-block w-100" src="./images/sales/sale1.jpg" alt="First slide"></a>
+                </div>
+                <div class="carousel-item">
+                  <a href="searchProduct?searchnav= "><img class="d-block w-100" src="./images/sales/sale2.jpg" alt="Second slide" href="searchProduct?searchnav= "></a>
+                </div>
+                <div class="carousel-item">
+                  <a href="searchProduct?searchnav= "><img class="d-block w-100" src="./images/sales/sale3.jpg" alt="Third slide" href="searchProduct?searchnav= "></a>
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+            </div> -->
+            
 
