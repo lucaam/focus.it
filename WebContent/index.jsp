@@ -48,36 +48,9 @@
 
 
               <div class="container bg-cont text-center imcentered">
-                <div class="row imcentered">
-                  <%
+                <div class="row imcentered" id="cardContainer">
+             	<script>retriveProd()</script>
 
-
-   int i = 3;
-   	while(i!=0){
-
-
-   		Random rand = new Random();
-   		int int1 = rand.nextInt(17)+1;
-   		ProductBeanDAO pbd = new ProductBeanDAO();
-   		ProductBean pb = pbd.searchId(""+int1);
-
-   		out.print("<div class=\"col imcentered\">");
-   	    out.print("<div class=\"card\" style=\"width: 18rem;\">");
-   	    if(pb.getPic()!="")
-   	 	out.print("<label for=\"prodbutton\"><img class=\"card-img-top\" src=\" "+ pb.getPic() + "\" alt=\"Card image cap\"></label>");
-   	    else
-   	 out.print("<label for=\"prodbutton\"><img class=\"card-img-top\" src=\"./images/notfound.jpg\" alt=\"Card image cap\"></label>");  
-   	 	out.print("<div class=\"card-body\">");
-   	 	out.print("<h5 class=\"card-title\">" + pb.getProduct() + "</h5>");
-   	    out.print("<p class=\"card-text pmax\">"+ pb.getDesc() + "</p>");
-   	    out.print("<a id=\"prodbutton\" href=\"generatePage?idProd="+ pb.getId() +"\" class=\"btn btn-dark\">" + pb.getProduct() + " </a>");
-   	  	out.print("</div>");
-   		out.print("</div>");
-   	    out.print("</div>");
-   	    i--;
-
-   	}
-   %>
                 </div>
               </div>
 
@@ -101,3 +74,5 @@
     </body>
 
     </html>
+    
+
