@@ -60,6 +60,22 @@ body {
 
 .indeximg {
 
-background:url(../images/index.jpg) top left/cover no-repeat;
+/*  	background-image: url(http://focusit.dnsup.net/images/index.jpg);
+  background-size: cover;
+  background-position: center center;
+  padding: 20px; */
+}
 
+.map-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
 }
