@@ -68,7 +68,7 @@ function retriveProd(){
 								<p class="card-text">\
 								text \
 								</p>\
-								<a href="#" class="btn btn-primary">\
+								<a href="#" class="btn btn-dark">\
 								More</a></div>\
 								<div class="card-footer text-muted">\
 								 2 days ago</div></div></div>';
@@ -93,5 +93,7 @@ function retriveProd(){
 	});
 }
 
-
+function openLogin(){
+	$('#exampleModal').modal('show')
+}
 
