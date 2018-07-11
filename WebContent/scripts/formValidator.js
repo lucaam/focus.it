@@ -1,12 +1,13 @@
 function validateRegistration(formRegistration) {
 
   //Define registration regExp validators
-  var usrValidator = /^(\w+[_\.\-]*\w*){8,}$/;
-  var pswValidator = /^[a-zA-Z 0-9 \@\._\!\?\-]{8,}$/;
-  var nameValidator = /^[A-Za-z]+$/;
-  var surnameValidator = /^[A-Za-z]+$/;
+  var usrValidator = /^(\w+[_\.\-]*\w*){5,}$/;
+  var pswValidator = /^[a-zA-Z 0-9 \@\._\!\?\-]{5,}$/;
+  var nameValidator = /^[a-zA-Z]+([\s\-]?[A-Za-z]+)*$/;
+  var surnameValidator = /^[A-Za-z]+([\s\'\-]?[A-Za-z]+)*$/;
   var mailValidator = /^\w+([\._\-]?\w+)*@\w+([\.\-]?\w+)*(\.\w+)+$/;
   var phoneValidator = /^[0-9]{10}$/;
+
 
   //Save all matches in a variable
   var usrIsOK = formRegistration.username.value.match(usrValidator);
@@ -17,25 +18,25 @@ function validateRegistration(formRegistration) {
   var phoneIsOK = formRegistration.phone.value.match(phoneValidator);
 
   if (!usrIsOK) { //Check username
-    alert('Lo username deve contenere lettere, numeri o i caratteri "_", "." "-"  e deve essere lungo almeno 8');
+    alert('Lo username deve contenere lettere, numeri o i caratteri "_", "." "-"  e deve essere lungo almeno 5');
     document.getElementById("username").focus(); //Set focus
     return false; //Negate access
   } else
 
   if (!pswIsOK) { //Check password
-    alert("La password deve contenere almeno 8 caratteri tra lettere, numeri e simboli");
+    alert("La password deve contenere almeno 5 caratteri tra lettere, numeri e simboli");
     document.getElementById("password").focus(); //Set focus
     return false; //Negate access
   } else
 
    if (!nameIsOK) { //Check name
-    alert("Solo lettere per il nome");
+    alert("Il cognome non può terminare con uno spazio oppure un apostrofo \ne non può contenere numeri o simboli");
     document.getElementById("name").focus(); //Set focus
     return false; //Negate access
   } else
 
    if (!surnameIsOK) { //Check surname
-    alert("Solo lettere per il cognome");
+    alert("Il cognome non può terminare con uno spazio oppure un apostrofo\ne non può contenere numeri o simboli");
     document.getElementById("surname").focus(); //Set focus
     return false; //Negate access
   } else
