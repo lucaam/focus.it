@@ -18,7 +18,7 @@
         <div class="row">
           <div class="col-sm-5">
             <h3>Accedi a focusit</h3>
-            <h6 class="text-small text-muted">if you want to test -> id: guest password: guest</h6>
+            <h6 class="text-small text-muted">if you want to test -> id: guesterino password: guesterino</h6>
 
             <% Boolean denied = (Boolean) request.getAttribute("denied");%>
               <% Boolean nodata = (Boolean) request.getAttribute("nodata");%>

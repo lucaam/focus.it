@@ -16,7 +16,7 @@
       <%@include file="./parts/nav.jsp" %>
 
         <div class="indeximg">
-              <img src="../images/index.jpg" height="600px" width="100%">
+              <img src="../images/index.jpg" height="600px" width="100%" class="img-fluid">
         
                  
           </div>
@@ -50,11 +50,12 @@
             
 
 
-              <div class="container bg-cont text-center imcentered">
+              <div class="container bg-cont text-center iamcentered">
                 <div class="row imcentered" id="cardContainer">
-             	<script>retriveProd()</script>
-             	<script>retriveProd()</script>
-
+            <script>retriveProd()</script>
+             <!-- 	<div class="row imcentered" id="cardContainer2">
+             	<script>retriveProd(2)</script>
+							</div>  -->
                 </div>
                 <br>
                 <p class="imcentered">

@@ -11,7 +11,7 @@
 
   <body>
     <%@include file="./parts/nav.jsp" %>
-      <div class="container bg-cont table-responsive">
+      <div class="container-fluid bg-cont table-responsive">
 
 
         <% ArrayList<ProductBean> pList = (ArrayList<ProductBean>) request.getAttribute("prod");
@@ -32,7 +32,7 @@
 			for(ProductBean pb : pList)
 			{
 				if (pb.getPic()!="")
-	            	out.print("<tr><th scope=\"row\"><img src=\"/"+ pb.getPic() +"\" width=\"60px\" height=\"60px\"></th>e");
+	            	out.print("<tr><th scope=\"row\"><img src=\"/"+ pb.getPic() +"\" width=\"60px\" height=\"60px\" class=\"img-fluid\"></th>");
 	            
 				else
 					out.print("<tr><th scope=\"row\"><img src=\"./images/notfound.png\" width=\"60px\" height=\"60px\"></th>");
@@ -41,13 +41,6 @@
 
 				out.print("<td class=\"td-prod\">" + pb.getMpx() + "</td>");
 				out.print("<td class=\"td-prod\"><button class=\"btn btn-dark\" id=\"added"+pb.getId() +"\" onclick=\"addFromSearch( "+pb.getId()+ ")\" >Cart</button></td>");
-				
-
-// 	            out.print("<td class=\"td-prod\"><a href=\"addToCart?idProd="+ pb.getId() +" \" class=\"btn btn-dark\"><i class=\"fas fa-shopping-cart\"></i> Add to cart </a></td>");
- 
- 
- 				
-
 
 			}
 			out.print("</tbody>");

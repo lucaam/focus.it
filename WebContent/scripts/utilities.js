@@ -42,19 +42,14 @@ function addFromSearch(id){
 
 function retriveProd(){
 	
-
+	
 	$(document).ready(function(){
 	var prod=null;
 
-
-	//genero un numero casuale
 	var id = Math.floor((Math.random() * 15) + 1);
-	//creo questa var per richiesta ajax
 	var xhttp = new XMLHttpRequest();
 	var i = 3;
 
-	//genero la richiesta
-	//funzione di callback
 	xhttp.onreadystatechange = function(){
 		if(xhttp.readyState == 4 && xhttp.status == 200){
 					
@@ -83,6 +78,7 @@ function retriveProd(){
 							card = card.replace("#", "generatePage?idProd=" + prod.id);
 						
 							$("#cardContainer").append().html(card);
+							console.log("done");
 						},
 						url: 'jsonfiles/generateThumb.json'
 					});

@@ -17,7 +17,7 @@
         <div class="row">
           <div class="col-sm-7">
             <%if (pb.getPic()!="")
-            	out.print("<img src=\"/"+ pb.getPic() +"\" class=\"img-prod\" alt=\"img not found\" width=\"400px\" height=\"400px\">");
+            	out.print("<img src=\"/"+ pb.getPic() +"\" class=\"img-prod img-fluid\" alt=\"img not found\">");
             else
               out.print("<img src=\"/images/notfound.jpg\" class=\"img-prod\" alt=\"img not found\" width=\"400px\" height=\"400px\">");
             %>

@@ -1,8 +1,8 @@
 function validateRegistration(formRegistration) {
 
   //Define registration regExp validators
-  var usrValidator = /^(\w+[_\.\-]*\w*){5,}$/;
-  var pswValidator = /^[a-zA-Z 0-9 \@\._\!\?\-]{5,}$/;
+  var usrValidator = /^(\w+[_\.\-]*\w*){4,}$/;
+  var pswValidator = /^[a-zA-Z 0-9 \@\._\!\?\-]{8,}$/;
   var nameValidator = /^[a-zA-Z]+([\s\-]?[A-Za-z]+)*$/;
   var surnameValidator = /^[A-Za-z]+([\s\'\-]?[A-Za-z]+)*$/;
   var mailValidator = /^\w+([\._\-]?\w+)*@\w+([\.\-]?\w+)*(\.\w+)+$/;
@@ -59,7 +59,7 @@ return true; //Grant access
 
 function validateLogin(formLogin){
   //Define login regExp validators
-  var usrValidator = /^(\w+[_\.\-]*\w*){8,}$/;
+  var usrValidator = /^(\w+[_\.\-]*\w*){4,}$/;
   var pswValidator = /^[a-zA-Z 0-9 \@\._\!\?\-]{8,}$/;
 
   //Save all matches in a variable
