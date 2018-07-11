@@ -18,8 +18,8 @@ import it.focus.model.ProductBeanDAO;
 @WebServlet("/generateThumb")
 public class generateThumb extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	//private static final String SAVE_DIR = "WebContent/jsonfiles";//local in eclipse
-	private static final String SAVE_DIR = "jsonfiles";//server 
+	private static final String SAVE_DIR = "WebContent/jsonfiles";//local in eclipse
+	//private static final String SAVE_DIR = "jsonfiles";//server 
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -31,11 +31,18 @@ public class generateThumb extends HttpServlet {
 		ProductBeanDAO pbd = new ProductBeanDAO();
 		ProductBean pb = pbd.searchId(toSearch);
 		
+		 File file = new File(SAVE_DIR + "/" + "generateThumb.json");
+		 if (file.exists()){
+		     file.delete();
+		 } 
+		 
+		file.createNewFile();
 		ObjectMapper mapper = new ObjectMapper();
 
 		
-		mapper.writeValue(new File(SAVE_DIR + File.pathSeparator + "generateThumb.json"), pb);
-		
+		mapper.writeValue(file, pb);
+	    file.setLastModified(System.currentTimeMillis());
+
 	}
 	
 		

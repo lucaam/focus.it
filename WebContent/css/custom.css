@@ -58,7 +58,8 @@ body {
   text-overflow: ellipsis;
 }
 
-.wip {
-  /* background-image: url("../images/wip.png"); */
-  background-color: #ffffff;
+.indeximg {
+
+background:url(../images/index.jpg) top left/cover no-repeat;
+
 }

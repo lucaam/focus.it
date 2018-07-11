@@ -42,60 +42,60 @@ function addFromSearch(id){
 
 function retriveProd(){
 	
-	
+
 	$(document).ready(function(){
-	
+	var prod=null;
+
 
 	//genero un numero casuale
 	var id = Math.floor((Math.random() * 15) + 1);
 	//creo questa var per richiesta ajax
 	var xhttp = new XMLHttpRequest();
-	var file = new XMLHttpRequest();
+	var i = 3;
+
 	//genero la richiesta
 	//funzione di callback
 	xhttp.onreadystatechange = function(){
 		if(xhttp.readyState == 4 && xhttp.status == 200){
-			file.onreadystatechange= function(){
-				if(file.readyState == 4 && file.status == 200){
-					var prod=null;
-
-					if(prod==null)
-					prod = JSON.parse(file.responseText);
-					console.log(prod);
 					
-					var card = 	'<div class="col iamcentered">\
-						<div class="card text-center">\
-						<div class="card-header">\
-						Featured\
-						</div>\
-						<div class="card-body">\
-						<h5 class="card-title">\
-						Special title treatment\
-						</h5>\
-						<p class="card-text">\
-						With supporting text below as a natural lead-in to additional content.\
-						</p>\
-						<a href="#" class="btn btn-primary">\
-						Go somewhere</a></div>\
-						<div class="card-footer text-muted">\
-						 2 days ago</div></div></div>';
-				
-					card = card.replace("Special title treatment", prod.product)
-				
-					$("#cardContainer").append().html(card);
+					$.ajax({
+						cache: false,
+						success:function(prod){
+							var card = 	'<div class="col iamcentered">\
+								<div class="card text-center">\
+								<div class="card-header">\
+								Featured camera\
+								</div>\
+								<div class="card-body">\
+								<h5 class="card-title">\
+								title \
+								</h5>\
+								<p class="card-text">\
+								text \
+								</p>\
+								<a href="#" class="btn btn-primary">\
+								More</a></div>\
+								<div class="card-footer text-muted">\
+								 2 days ago</div></div></div>';
+						
+							card = card.replace("title ", prod.product);
+							card = card.replace("text ", prod.desc.substring(0, 250) + " ...");
+							card = card.replace("#", "generatePage?idProd=" + prod.id);
+						
+							$("#cardContainer").append().html(card);
+						},
+						url: 'jsonfiles/generateThumb.json'
+					});
 					
 					
 
 				}
 			}
-		}
-		file.open("GET", "jsonfiles/generateThumb.json", true);
-		file.send();
-	}
 	xhttp.open("GET", "generateThumb?idProd=" + id + "", true);
 	xhttp.send();
 
 	});
 }
+
 
 

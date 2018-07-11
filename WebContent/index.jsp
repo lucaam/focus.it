@@ -12,13 +12,16 @@
 
     </head>
 
-    <body class="background">
+    <body>
       <%@include file="./parts/nav.jsp" %>
 
-        <div class="container-fluid bg-cont">
-        <div class="container">
-          <p>
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div class="indeximg">
+              <img src="../images/index.jpg" height="600px" width="100%">
+        
+                 
+          </div>
+          <br>
+            <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
               <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -43,18 +46,17 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-            </div>
-            <p>
+            </div> -->
+            
 
 
               <div class="container bg-cont text-center imcentered">
                 <div class="row imcentered" id="cardContainer">
              	<script>retriveProd()</script>
+             	<script>retriveProd()</script>
 
                 </div>
-              </div>
-
-              <div class="container">
+                <br>
                 <p class="imcentered">
                   Condimentum id venenatis a condimentum vitae sapien pellentesque. Morbi blandit cursus risus at ultrices. Malesuada fames ac turpis egestas sed tempus. Porttitor eget dolor morbi non. Dolor morbi non arcu risus quis. Sit amet nisl suscipit adipiscing.
                   Viverra orci sagittis eu volutpat. Molestie nunc non blandit massa enim nec dui nunc. Suspendisse interdum consectetur libero id faucibus nisl tincidunt. At augue eget arcu dictum varius. Interdum velit laoreet id donec ultrices tincidunt.
@@ -67,8 +69,10 @@
                   et leo duis ut diam quam. Tortor aliquam nulla facilisi cras fermentum. Faucibus vitae aliquet nec ullamcorper sit. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Sed enim ut sem viverra.
                 </p>
               </div>
-			</div>
-        </div>
+
+                
+              
+			
         <%@ include file="./parts/footer.jsp" %>
 
     </body>
