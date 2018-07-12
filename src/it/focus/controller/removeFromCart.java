@@ -35,6 +35,10 @@ public class removeFromCart extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		System.out.println("-----------------------");
+		System.out.println("Inizio metodo: doGet - Servlet: removeFromCart");
+		System.out.println("-----------------------");
+		
 		HttpSession session = request.getSession();
 		CartBean cart = (CartBean) session.getAttribute("cart");
 		
@@ -70,6 +74,10 @@ public class removeFromCart extends HttpServlet {
 
 		RequestDispatcher req = request.getRequestDispatcher("cart.jsp");
 		req.forward(request, response);
+		
+		System.out.println("-----------------------");
+		System.out.println("Fine metodo: doGet - Servlet: removeFromCart");
+		System.out.println("-----------------------");
 	}
 
 	/**

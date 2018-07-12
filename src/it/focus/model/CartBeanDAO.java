@@ -11,6 +11,9 @@ public class CartBeanDAO {
 	
 	public synchronized void deleteFromCart (String usr, int id)
 	{
+		System.out.println("-----------------------");
+		System.out.println("Inizio metodo: deleteFromCart");
+		System.out.println("-----------------------");
 		Connection conn = null;
 		PreparedStatement prepstat = null;
 	
@@ -23,7 +26,9 @@ public class CartBeanDAO {
 
 			prepstat.executeUpdate();
 			
-		
+			System.out.println("-----------------------");
+			System.out.println("Fine metodo: saveCart");
+			System.out.println("-----------------------");
 		}
 		catch (SQLException e) {
 			e.printStackTrace();
@@ -39,6 +44,9 @@ public class CartBeanDAO {
 }
 	public synchronized CartBean restore (String usr)
 	{
+		System.out.println("-----------------------");
+		System.out.println("Inizio metodo: restore");
+		System.out.println("-----------------------");
 		Connection conn = null;
 		PreparedStatement prepstat = null;
 		
@@ -64,6 +72,10 @@ public class CartBeanDAO {
 			if(cart.getTotal()!=0)
 			cart.setUser(usr);
 			
+			System.out.println("-----------------------");
+			System.out.println("Fine metodo: restrore");
+			System.out.println("-----------------------");
+		
 			return cart;
 		
 		
@@ -84,6 +96,10 @@ public class CartBeanDAO {
 	
 	public synchronized void saveCart (UserBean ub, ProductBean pb)
 	{
+		System.out.println("-----------------------");
+		System.out.println("Inizio metodo: saveCart");
+		System.out.println("-----------------------");
+
 		Connection conn = null;
 		PreparedStatement prepstat = null;
 	
@@ -101,6 +117,9 @@ public class CartBeanDAO {
 			if(state!=0)
 				System.out.println("tutto ok con l'update del carrello nel database");
 			
+			System.out.println("-----------------------");
+			System.out.println("Fine metodo: saveCart");
+			System.out.println("-----------------------");
 			
 		
 		}

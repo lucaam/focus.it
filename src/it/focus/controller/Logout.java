@@ -16,6 +16,10 @@ public class Logout extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		System.out.println("-----------------------");
+		System.out.println("Inizio metodo: doGet - Servlet: Logout");
+		System.out.println("-----------------------");
+		
 		Cookie usrcookie = new Cookie("usr" , "");
 		usrcookie.setMaxAge(0);
 		usrcookie.setPath("/");

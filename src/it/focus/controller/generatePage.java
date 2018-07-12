@@ -31,6 +31,10 @@ public class generatePage extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		System.out.println("-----------------------");
+		System.out.println("Inizio metodo: doGet - Servlet: generatePage");
+		System.out.println("-----------------------");
 		String toGet = request.getParameter("idProd");
 		
 		
@@ -42,6 +46,9 @@ public class generatePage extends HttpServlet {
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("./productpage.jsp");
 		requestDispatcher.forward(request, response);
 		
+		System.out.println("-----------------------");
+		System.out.println("Fine metodo: doGet - Servlet: generatePage");
+		System.out.println("-----------------------");
 	}
 
 	/**

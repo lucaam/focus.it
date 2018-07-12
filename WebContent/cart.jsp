@@ -30,7 +30,7 @@
 
 
 		
-				cart = cart.restoreCart(cart);
+				
 				if(!cart.isEmpty()){
 
 			out.print("<div class=\"row\">");
@@ -75,6 +75,8 @@
 			out.print("</div>");
 			out.print("</div>");
 		}
+				
+		
 		else
 		{
 			out.print("<p class=\"text-center\"><h2>Your cart is empty right now!</p>");

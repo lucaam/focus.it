@@ -26,6 +26,10 @@ public class generateThumb extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
+		System.out.println("-----------------------");
+		System.out.println("Inizio metodo: doGet - Servlet: generateThumb");
+		System.out.println("-----------------------");
+		
 		String appPath = request.getServletContext().getRealPath("");
 		String savePath = appPath + SAVE_DIR;
 		System.out.println("app path: " + appPath);
@@ -54,6 +58,10 @@ public class generateThumb extends HttpServlet {
 
 		
 		mapper.writeValue(f, pb);
+		
+		System.out.println("-----------------------");
+		System.out.println("Fine metodo: doGet - Servlet: generateThumb");
+		System.out.println("-----------------------");
 
 	}
 	

@@ -34,6 +34,11 @@ public class addToCart extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		System.out.println("-----------------------");
+		System.out.println("Inizio metodo: doGet - Servlet: addToCart");
+		System.out.println("-----------------------");
+		
 		HttpSession session = request.getSession();
 		session.getAttribute("cart");
 		
@@ -58,6 +63,9 @@ public class addToCart extends HttpServlet {
 		
 		//request.setAttribute("added", true); //to modify the page
 		
+		System.out.println("-----------------------");
+		System.out.println("fine metodo: doGet - Servlet: addToCart");
+		System.out.println("-----------------------");
 		
 		
 	}

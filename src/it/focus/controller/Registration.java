@@ -21,7 +21,9 @@ public class Registration extends HttpServlet {
   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
+		System.out.println("-----------------------");
+		System.out.println("Inizio metodo: doGet - Servlet: Registration");
+		System.out.println("-----------------------");
 		
 		
 		String name = request.getParameter("name");
@@ -50,6 +52,11 @@ public class Registration extends HttpServlet {
 				RequestDispatcher req = request.getRequestDispatcher("./singinup.jsp");
 				req.forward(request, response);
 			}
+			
+			System.out.println("-----------------------");
+			System.out.println("Fine metodo: doGet - Servlet: Registration");
+			System.out.println("-----------------------");
+			
 		} catch (Exception e){
 			request.setAttribute("exception", e);
 			RequestDispatcher requestDispatcher = request.getRequestDispatcher("./servicepage/exception.jsp");

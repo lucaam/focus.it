@@ -32,6 +32,10 @@ public class searchProduct extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("-----------------------");
+		System.out.println("Inizio metodo: doGet - Servlet: searchProduct");
+		System.out.println("-----------------------");
+		
 		ProductBeanDAO pbd = new ProductBeanDAO();
 		ArrayList<ProductBean> pList = null;
 		String toSearch = null;
@@ -48,6 +52,10 @@ public class searchProduct extends HttpServlet {
 		
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("./searchres.jsp");
 		requestDispatcher.forward(request, response);
+		
+		System.out.println("-----------------------");
+		System.out.println("Fine metodo: doGet - Servlet: searchProduct");
+		System.out.println("-----------------------");
 	}
 
 	/**
