@@ -27,7 +27,7 @@ public class generateThumb extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		String appPath = request.getServletContext().getRealPath("");
-		String savePath = appPath + SAVE_DIR;
+		String savePath = "/root/server/webapps/focus.it/"+ SAVE_DIR;
 		System.out.println("app path: " + appPath);
 		System.out.println("savepath: " + savePath);
 
