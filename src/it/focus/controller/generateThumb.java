@@ -18,8 +18,8 @@ import it.focus.model.ProductBeanDAO;
 @WebServlet("/generateThumb")
 public class generateThumb extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	//private static final String SAVE_DIR = "WebContent/jsonfiles";//local in eclipse
-	private static final String SAVE_DIR = "./jsonfiles/";//server 
+	//private static final String SAVE_DIR = "WebContent/jsonfiles/";//local in eclipse
+	private static final String SAVE_DIR = "jsonfiles/";//server 
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -27,18 +27,24 @@ public class generateThumb extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		String toSearch = request.getParameter("idProd");
-		System.out.println("Creazione del file Json:" + toSearch);
+		System.out.println("Creazione del file Json per il prodotto con ID :" + toSearch);
 		ProductBeanDAO pbd = new ProductBeanDAO();
 		ProductBean pb = pbd.searchId(toSearch);
 		
-		 File file = new File(SAVE_DIR +  "generateThumb.json");
+		File f = new File(SAVE_DIR +  "generateThumb.json");
+		if(f.exists() && !f.isDirectory()) { 
+			f.delete();
+			f.createNewFile();
+			response.sendRedirect("./servicepage/nopermission.jsp");
+			
+		}
+		
 		
 		
 		ObjectMapper mapper = new ObjectMapper();
 
 		
-		mapper.writeValue(file, pb);
-	    file.setLastModified(System.currentTimeMillis());
+		mapper.writeValue(f, pb);
 
 	}
 	
