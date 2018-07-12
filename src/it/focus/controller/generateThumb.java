@@ -2,6 +2,8 @@ package it.focus.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,11 +34,8 @@ public class generateThumb extends HttpServlet {
 		ProductBean pb = pbd.searchId(toSearch);
 		
 		 File file = new File(SAVE_DIR + "/" + "generateThumb.json");
-		 if (file.exists()){
-		     file.delete();
-		 } 
-		 
-		file.createNewFile();
+		 if (!file.exists())
+			    Files.createFile(file.toPath());
 		
 		ObjectMapper mapper = new ObjectMapper();
 
