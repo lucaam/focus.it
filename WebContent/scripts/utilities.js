@@ -80,7 +80,7 @@ function retriveProd(){
 							$("#cardContainer").append().html(card);
 							console.log("done");
 						},
-						url: 'jsonfiles/generateThumb.json'
+						url: '/root/server/webapps/focus.it/ROOT/jsonfiles/generateThumb.json'
 					});
 					
 					
