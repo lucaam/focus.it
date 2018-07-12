@@ -26,6 +26,11 @@ public class generateThumb extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
+		String appPath = request.getServletContext().getRealPath("");
+		String savePath = appPath + File.separator + SAVE_DIR;
+		System.out.println("app path: " + appPath);
+		System.out.println("savepath: " + savePath);
+
 		String toSearch = request.getParameter("idProd");
 		System.out.println("Creazione del file Json per il prodotto con ID :" + toSearch);
 		ProductBeanDAO pbd = new ProductBeanDAO();
@@ -37,6 +42,8 @@ public class generateThumb extends HttpServlet {
 			f.delete();
 			f.createNewFile();	
 		}
+		else
+			System.out.println("non esiste");
 		
 		
 		
