@@ -29,9 +29,9 @@
 	}
 
 
-		if(!cart.isEmpty()){
-				if(session.getAttribute("user")!=null)
-					cart = cart.restoreCart(cart);
+		
+				cart = cart.restoreCart(cart);
+				if(!cart.isEmpty()){
 
 			out.print("<div class=\"row\">");
 			out.print("<div class=\"col-sm-10\">");
