@@ -2,8 +2,6 @@ package it.focus.controller;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,7 +19,7 @@ import it.focus.model.ProductBeanDAO;
 public class generateThumb extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	//private static final String SAVE_DIR = "WebContent/jsonfiles";//local in eclipse
-	private static final String SAVE_DIR = "jsonfiles";//server 
+	private static final String SAVE_DIR = "./jsonfiles/";//server 
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -29,13 +27,12 @@ public class generateThumb extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		String toSearch = request.getParameter("idProd");
-		System.out.println(toSearch);
+		System.out.println("Creazione del file Json:" + toSearch);
 		ProductBeanDAO pbd = new ProductBeanDAO();
 		ProductBean pb = pbd.searchId(toSearch);
 		
-		 File file = new File(SAVE_DIR + "/" + "generateThumb.json");
-		 if (!file.exists())
-			    Files.createFile(file.toPath());
+		 File file = new File(SAVE_DIR +  "generateThumb.json");
+		
 		
 		ObjectMapper mapper = new ObjectMapper();
 
