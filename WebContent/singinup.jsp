@@ -20,9 +20,9 @@
             <h3>Accedi a focusit</h3>
             <h6 class="text-small text-muted">if you want to test -> id: guesterino password: guesterino</h6>
 
-            <% Boolean denied = (Boolean) request.getAttribute("denied");%>
-              <% Boolean nodata = (Boolean) request.getAttribute("nodata");%>
-                <% Boolean duplicate = (Boolean) request.getAttribute("duplicate");%>
+            <% denied = (Boolean) request.getAttribute("denied");%>
+              <%  nodata = (Boolean) request.getAttribute("nodata");%>
+                <% duplicate = (Boolean) request.getAttribute("duplicate");%>
 
                   <form action="Login" method="post">
                     <div class="form-group">
