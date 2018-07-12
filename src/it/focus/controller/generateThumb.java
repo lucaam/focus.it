@@ -27,7 +27,7 @@ public class generateThumb extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		String appPath = request.getServletContext().getRealPath("");
-		String savePath = appPath + File.separator + SAVE_DIR;
+		String savePath = appPath + SAVE_DIR;
 		System.out.println("app path: " + appPath);
 		System.out.println("savepath: " + savePath);
 
@@ -36,15 +36,18 @@ public class generateThumb extends HttpServlet {
 		ProductBeanDAO pbd = new ProductBeanDAO();
 		ProductBean pb = pbd.searchId(toSearch);
 		
-		File f = new File(SAVE_DIR +  "generateThumb.json");
+		File f = new File(savePath +  "generateThumb.json");
 		if(f.exists() && !f.isDirectory()) { 
 			System.out.println("Esiste");
 			f.delete();
 			f.createNewFile();	
 		}
-		else
+		else {
 			System.out.println("non esiste");
-		
+			System.out.println("Creazione del file qui:" + f.getAbsolutePath());
+			f.createNewFile();	
+			
+		}
 		
 		
 		ObjectMapper mapper = new ObjectMapper();
