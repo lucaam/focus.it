@@ -19,8 +19,8 @@
 
       <div class="container bg-cont wip">
         <p class="text-center">
-          Work in progress!
-          <a href="../index.jsp" class="txt-seconday">Homepage</a>
+          <img src="../images/wip.png" class="img-fluid">
+          <a href="../index.jsp" class="text-secondary">Homepage</a>
         
         </p>
 

@@ -22,7 +22,7 @@
           <li><a class="dropdown-item" href="searchProduct?search=Nikon">Nikon</a></li>
           <li><a class="dropdown-item" href="searchProduct?search=Leica">Leica</a></li>
           <li><a class="dropdown-item" href="searchProduct?search=Olympus">Olympus</a></li>
-         
+
         </ul>
       </li>
       <li class="nav-item">
@@ -134,7 +134,7 @@
                     <%} %>
           </div>
 
-                    
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
