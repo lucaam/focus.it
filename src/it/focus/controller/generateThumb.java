@@ -33,10 +33,9 @@ public class generateThumb extends HttpServlet {
 		
 		File f = new File(SAVE_DIR +  "generateThumb.json");
 		if(f.exists() && !f.isDirectory()) { 
+			System.out.println("Esiste");
 			f.delete();
-			f.createNewFile();
-			response.sendRedirect("./servicepage/nopermission.jsp");
-			
+			f.createNewFile();	
 		}
 		
 		
