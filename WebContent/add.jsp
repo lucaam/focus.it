@@ -60,8 +60,8 @@
             <label for="pic">Pic:</label>
             <div class="input-group mb-3">
               <div class="custom-file">
-                <input type="file" class="custom-file-input" id="pic" name="pic">
-                <label class="custom-file-label" for="pic">Choose file</label>
+                <input type="file" class="custom-file-input" id="pic" name="pic" onchange="showName()" onclick="showName()">
+                <label class="custom-file-label" for="pic" id="labelpic">Choose file</label>
               </div>
             </div>
             <input type="submit" class="btn btn-default" value="Add">

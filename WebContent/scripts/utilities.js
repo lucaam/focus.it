@@ -163,10 +163,10 @@ function retriveId(){
 		xhttp.send();
 	    }
 }
-	
-	
-	
 
-	
-
-
+function showName(){
+	$('input:file').change(
+		    function(e){
+		        console.log(e.target.files[0].name);
+		        $("#labelpic").html(e.target.files[0].name);
+		    });}
