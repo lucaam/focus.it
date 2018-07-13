@@ -19,7 +19,6 @@
 
       <div class="container bg-cont">
         <p class="text-center">
-          sssssssssssssjjjlkj
           On this website you won't but anything for real. Payments are disabled and everything is only to test logic and graphics stuff. Functionality is not guaranteed and the website might be closed any time, forever or for testing purpose.
         </p>
         <p class="text-center">
