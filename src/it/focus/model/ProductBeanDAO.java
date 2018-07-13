@@ -172,6 +172,39 @@ public class ProductBeanDAO {
 	}
 		return pList;
 	}
+
+public synchronized boolean deleteById (String toQuery)
+{
+	Connection conn = null;
+	PreparedStatement prepstat = null;
+	
+
+	try {
+		
+		conn = DriverManagerConnectionPool.getConnection();
+		prepstat = conn.prepareStatement("DELETE FROM product WHERE id_product = ?");
+		prepstat.setString(1, toQuery);
+		
+		int state = prepstat.executeUpdate();
+
+
+		if(state!=0)
+		{
+			System.out.println("The product is deleted form the db");
+			return true;
+		}
+	
+	}
+	catch (SQLException e) {
+		e.printStackTrace();
+	} finally {
+		try {
+			prepstat.close();
+			DriverManagerConnectionPool.releaseConnection(conn);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 }
-
-
+	return false;
+}
+}
