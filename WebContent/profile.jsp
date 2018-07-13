@@ -80,6 +80,12 @@ No orders are avaible.
 
 <%if("admin".equals(rolecookie.getValue())) {%>
 <a href="../add.jsp" class="btn btn-dark">Add product</a>
+<a href="#" class="btn btn-dark" onclick="deleteProd()">DeleteProd</a>
+<div id="deleteDiv">
+
+
+</div>
+
 <%}else{ %>
 Sei solo un utente, mi disp.<br>
 A breve cambio password email e altre funzioni.

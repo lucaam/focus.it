@@ -78,7 +78,6 @@ function retriveProd(){
 							card = card.replace("#", "generatePage?idProd=" + prod.id);
 						
 							$("#cardContainer").append().html(card);
-							console.log("done");
 						},
 						url: 'jsonfiles/generateThumb.json'
 					});
@@ -96,4 +95,78 @@ function retriveProd(){
 function openLogin(){
 	$('#exampleModal').modal('show')
 }
+
+function deleteProd(){
+	
+	
+	$(document).ready(function(){
+	var prod=null;
+
+	var id = Math.floor((Math.random() * 15) + 1);
+	var xhttp = new XMLHttpRequest();
+	var i = 3;
+
+	xhttp.onreadystatechange = function(){
+		if(xhttp.readyState == 4 && xhttp.status == 200){
+					
+					$.ajax({
+						cache: false,
+						success:function(prod){
+							i = 0;
+							var card = '<br><div class="form-group">\
+								  <label for="deleteForm">Select one:</label>\
+							  <select class="form-control" id="deleteForm">';
+							  
+							      
+							  
+
+							while(i<prod.length)
+								{
+									var tmp = '<option id="value">text</option>';
+									tmp = tmp.replace("value", prod[i].id);
+									tmp = tmp.replace("text", prod[i].product);
+									card+=tmp;
+									
+									i++;
+								}
+
+							
+							card += '</select><br><button onclick="retriveId()" class="btn btn-dark">Remove</button></div>';
+							  
+
+							$("#deleteDiv").append().html(card);
+							
+						},
+						url: 'jsonfiles/prodList.json'
+					});
+					
+					
+
+				}
+			}
+	xhttp.open("GET", "removeProd", true);
+	xhttp.send();
+
+	});
+}
+
+function retriveId(){
+	var id=-1;
+    var xhttp = new XMLHttpRequest();
+
+	
+	    id = $("#deleteForm").find('option:selected').attr('id');
+	    console.log(id);
+	    
+	    if(id!=-1){
+		xhttp.open("GET", "removeProd?toRemove="+ id, true);
+		xhttp.send();
+	    }
+}
+	
+	
+	
+
+	
+
 
