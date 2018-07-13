@@ -6,6 +6,7 @@ public class CartBean {
 	
 	private String user;
 	private ArrayList<ProductBean> items = new ArrayList<ProductBean> ();
+	private ArrayList<Integer> qta = new ArrayList<Integer>();
 	
 	public CartBean ()
 	{
@@ -25,12 +26,45 @@ public class CartBean {
 	
 	public void addItem(ProductBean pb)
 	{
-		
-		if(this.items.add(pb))
-		
-		System.out.println("aggiunto correttamente al carrello");
+		int i = 0;
+		int e = 0;
+		this.items.add(pb);
 
+		
+		for(ProductBean tmp : this.items)
+		{
+			if(tmp.getId()==pb.getId())
+				i++;
+				System.out.println("esiste " + i + " volte");
+				
+		}
+		
+		if(i>1) {
+			int where = 0;
+			if((qta.indexOf(pb.getId())%2==0)) {
+				if(qta.indexOf(pb.getId())!=-1) {
+					where=qta.indexOf(pb.getId());
+					qta.add(where+1, i);
+			
+					System.out.println("Aggiornata correttamente la quantità");
+					System.out.println("Id Prodotto :" + qta.get(where) + ", Quantità: " + qta.get(where+1));
+				}
+			}
+		}
+		else if(i==1) {
+			int x  = qta.size();
+			
+			System.out.println("Grandezza array : " + x);
+
+			qta.add(pb.getId());
+			qta.add(1);
+			
+		System.out.println("Aggiunto correttamente al carrello per la PRIMA volta");
+		System.out.println("Id Prodotto: " + qta.get(x) + ", Quantità: " + qta.get(x+1) + "");
+		
+		}
 	}
+	
 	
 	public void removeItem(ProductBean pb)
 	{
@@ -98,4 +132,23 @@ public class CartBean {
 	    long tmp = Math.round(value);
 	    return (double) tmp / factor;
 	}
+	
+	public ProductBean last()
+	{
+		return items.get(items.size()-1);
+		
+	}
+	
+	public int getQta(ProductBean pb)
+	{	
+		int i = 0;
+		while(i<qta.size()) {
+	
+			if(i==pb.getId()) {
+				return (qta.indexOf(i)+1);
+			}
+			i=i+2;
+		}
+		return 0;
+	}	
 }

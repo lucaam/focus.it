@@ -94,35 +94,57 @@ public class CartBeanDAO {
 		
 	}
 	
-	public synchronized void saveCart (UserBean ub, ProductBean pb)
+	public synchronized void saveCart (CartBean cb, ProductBean pb)
 	{
 		System.out.println("-----------------------");
 		System.out.println("Inizio metodo: saveCart");
 		System.out.println("-----------------------");
 
 		Connection conn = null;
+		PreparedStatement prepstat1 = null;
 		PreparedStatement prepstat = null;
-	
 		try {
 			
 			conn = DriverManagerConnectionPool.getConnection();
-			prepstat = conn.prepareStatement("INSERT INTO cart (id_usr, id_product) VALUES (?, ?);");
-			System.out.println(ub.getUsr());
-			prepstat.setString(1, ub.getUsr());
+			prepstat1 = conn.prepareStatement("SELECT * FROM cart WHERE id_usr = ? AND id_product = ?");
+			prepstat1.setString(1, cb.getUser());
+			prepstat1.setInt(2, pb.getId());
+			ResultSet res = prepstat1.executeQuery();
+			if(res.next()) {
+				prepstat = conn.prepareStatement("UPDATE cart SET qta = ? WHERE id_usr = ? and id_product = ?");
+				 prepstat.setInt(1, cb.getQta(pb));
+				 prepstat.setString(2, cb.getUser());
+				 prepstat.setInt(3, pb.getId());
+				 
+				int state = prepstat.executeUpdate();
+				
+				if(state!=0)
+					System.out.println("tutto ok con l'update del carrello nel database, quantità aggiornata");
+				else {
+					System.out.println("non bene");
+
+				}
+			
+	}
+			else {
+			 
+			prepstat = conn.prepareStatement("INSERT INTO cart (id_usr, id_product, qta) VALUES (?, ?, ?);");
+			System.out.println(cb.getUser());
+			prepstat.setString(1, cb.getUser());
 			prepstat.setInt(2, pb.getId());
+			prepstat.setInt(3, cb.getQta(pb));
 			
 			
 			int state = prepstat.executeUpdate();
-			
 			if(state!=0)
-				System.out.println("tutto ok con l'update del carrello nel database");
+				System.out.println("tutto ok con l'update del carrello nel database, aggiunto per la prima volta");
 			
+		}
 			System.out.println("-----------------------");
 			System.out.println("Fine metodo: saveCart");
 			System.out.println("-----------------------");
-			
+}
 		
-		}
 		catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

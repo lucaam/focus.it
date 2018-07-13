@@ -84,7 +84,8 @@ public class Login extends HttpServlet {
 							response.addCookie(phonecookie);
 							response.addCookie(rolecookie);
 							response.addCookie(namecookie);
-
+							
+							cart.setUser(ub.getUsr());
 							session.setAttribute("cart", cart);
 							session.setAttribute("userBean", ub);
 							session.setMaxInactiveInterval(60*60*24);

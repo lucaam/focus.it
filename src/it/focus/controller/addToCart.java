@@ -56,7 +56,7 @@ public class addToCart extends HttpServlet {
 		
 		if(session.getAttribute("userBean")!=null)
 			
-		cbd.saveCart((UserBean) session.getAttribute("userBean"), pb);
+		cbd.saveCart(cart, pb);
 
 		session.removeAttribute("cart");
 		session.setAttribute("cart", cart);
