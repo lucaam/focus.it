@@ -182,7 +182,7 @@ public synchronized boolean deleteById (String toQuery)
 	try {
 		
 		conn = DriverManagerConnectionPool.getConnection();
-		prepstat = conn.prepareStatement("DELETE FROM product WHERE id_product = ?");
+		prepstat = conn.prepareStatement("DELETE FROM product, cart WHERE id_product = ?");
 		prepstat.setString(1, toQuery);
 		
 		int state = prepstat.executeUpdate();
@@ -190,7 +190,7 @@ public synchronized boolean deleteById (String toQuery)
 
 		if(state!=0)
 		{
-			System.out.println("The product is deleted form the db");
+			System.out.println("The product"+ toQuery +" is deleted form the db");
 			return true;
 		}
 	
