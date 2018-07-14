@@ -80,3 +80,40 @@ function validateLogin(formLogin){
   } else
   return true;
 }
+
+function validateUsr(changeUsrForm){
+	  var usrValidator = /^(\w+[_\.\-]*\w*){4,}$/;
+	  var newUsr= changeUsrForm.newUser.value;
+	  
+	  if(!newUsr.match(usrValidator)) {
+		  alert("Username non valido");
+		  return false;
+	  } else return true;
+}
+
+function validatePsw(changePswForm){
+	  var pswValidator = /^[a-zA-Z 0-9 \@\._\!\?\-]{8,}$/;
+	  var oldPsw= changePswForm.oldPass.value;
+	  var newPsw= changePswForm.newPass.value;
+	  
+	  
+	  
+	  if(!oldPsw.match(pswValidator)){
+		  alert("Vecchia password errata");
+		  return false;
+	  } else if(!newPsw.match(pswValidator))
+	  {
+		  alert("Nuova password non valida");
+		  return false;
+	  } else return true;
+}
+
+function validateMail(changeMailForm){
+	  var mailValidator = /^\w+([\._\-]?\w+)*@\w+([\.\-]?\w+)*(\.\w+)+$/;
+	  var newMail= changeMailForm.newMail.value;
+	  
+	  if(!newMail.match(mailValidator)){
+		  alert("Email non valida");
+		  return false;
+	  } else return true;
+}
