@@ -100,28 +100,38 @@ public class UserBeanDAO {
 		}
 		return null;
 	}
-	/*
-	public synchronized UserBean changePassword(String usr, String pwd)
+	
+	public synchronized UserBean changePassword(UserBean ub, String usr, String newPwd, String old)
 	{
 		Connection connection = null;
 		PreparedStatement prepstat = null;
 		
 		try {
-			UserBean ub = new UserBean(usr,pwd);
 			connection = DriverManagerConnectionPool.getConnection();
-			prepstat = connection.prepareStatement("");
-			prepstat.setString(1, );
-			prepstat.setString(2, );
+			prepstat = connection.prepareStatement("SELECT * FROM usr WHERE login = ? AND pwd = ?");
+			prepstat.setString(1, usr);
+			prepstat.setString(2, old);
+		
 			
 			ResultSet res = prepstat.executeQuery();
 			
 			if(res.next())
 			{
-				
-				ub.setUsr(res.getString("login"));
-				ub.setPwd(res.getString("password"));
-				
-				return ub;
+				String checkOld = res.getString("pwd");
+				if(checkOld.equals(old));
+				PreparedStatement prepstat1 = connection.prepareStatement("UPDATE usr SET pwd = ? WHERE login = ? AND pwd = ?");
+					prepstat1.setString(1, newPwd);
+					prepstat1.setString(2, usr);
+					prepstat1.setString(3, old);
+					ub.setPwd(newPwd);
+					System.out.println("Pwd updated");
+
+					return ub;
+			
+			}
+			else {
+				System.out.println("No changes");
+				return null;
 			}
 			
 		} catch (SQLException e) {
@@ -136,5 +146,52 @@ public class UserBeanDAO {
 			}
 		}
 		return null;
-	}*/
+	}
+
+
+public synchronized UserBean changeEmail(UserBean ub, String usr, String newEmail, String old)
+{
+	Connection connection = null;
+	PreparedStatement prepstat = null;
+	
+	try {
+		connection = DriverManagerConnectionPool.getConnection();
+		prepstat = connection.prepareStatement("SELECT * FROM usr WHERE login = ? AND email = ?");
+		prepstat.setString(1, usr);
+		prepstat.setString(2, old);
+	
+		
+		ResultSet res = prepstat.executeQuery();
+		
+		if(res.next())
+		{
+			String checkOld = res.getString("email");
+			if(checkOld.equals(old));
+			PreparedStatement prepstat1 = connection.prepareStatement("UPDATE usr SET email = ? WHERE login = ? AND email = ?");
+				prepstat1.setString(1, newEmail);
+				prepstat1.setString(2, usr);
+				prepstat1.setString(3, old);
+				ub.setEmail(newEmail);
+				System.out.println("Email updated");
+				return ub;
+		
+		}
+		else {
+			System.out.println("No changes");
+			return null;
+		}
+		
+	} catch (SQLException e) {
+		e.printStackTrace();
+		
+	} finally {
+		try {
+		prepstat.close();
+		DriverManagerConnectionPool.releaseConnection(connection);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	return null;
+}
 }

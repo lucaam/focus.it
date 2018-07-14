@@ -43,12 +43,15 @@
 		    out.print("<th scope=\"col\">Price</th>");
 
 			out.print(" <th scope=\"col\">Mpx</th>");
+			out.print(" <th scope=\"col\">Qta</th>");
+
 			out.print("</tr>");
 			out.print("</thead>");
 			out.print("<tbody>");
+			
 			ArrayList<ProductBean> pList = cart.getItems();
-
-
+			ArrayList<Integer> qList = cart.getQtas();
+			int i = 0;
 			for(ProductBean pb : pList)
 			{
 				if (pb.getPic()!="")
@@ -58,13 +61,10 @@
 					out.print("<tr><th scope=\"row\"><img src=\"./images/notfound.png\" width=\"60px\" height=\"60px\"></th>");
 				out.print("<td class=\"td-prod\"><a href=\"generatePage?idProd="+ pb.getId() +"\" class=\"text-dark\">" + pb.getProduct() + " </a></td>");
 				out.print("<td class=\"td-prod\">" + pb.getPrice() + "€ </td>");
-
 				out.print("<td class=\"td-prod\">" + pb.getMpx() + "</td>");
+				out.print("<td class=\"td-prod\">" + qList.get(i++) + "</td>");
+
 	            out.print("<td class=\"td-prod\"><a href=\"removeFromCart?idProd="+ pb.getId() +" \" class=\"btn btn-dark\"><i class=\"fas fa-shopping-cart\"></i> Remove from cart </a></td>");
-
-
-
-
 			}
 			out.print("</tbody>");
 			out.print("</table>");

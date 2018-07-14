@@ -60,14 +60,18 @@ public class CartBeanDAO {
 		
 		ResultSet res = prepstat.executeQuery();
 		CartBean cart = new CartBean();
-		
+		int i = 0;
+
 			
 			while(res.next()) {
 				ProductBeanDAO pbd = new ProductBeanDAO();
 				ProductBean pb = pbd.searchId(res.getString("id_product"));
-				cart.addItem(pb);
-				System.out.println(pb.getProduct());
-			}
+	
+					cart.addItem(pb, res.getInt("qta"));
+					
+					
+				}
+			
 			
 			if(cart.getTotal()!=0)
 			cart.setUser(usr);
@@ -94,25 +98,20 @@ public class CartBeanDAO {
 		
 	}
 	
-	public synchronized void saveCart (CartBean cb, ProductBean pb)
+	public synchronized void saveCart (CartBean cb, ProductBean pb, int qta)
 	{
 		System.out.println("-----------------------");
 		System.out.println("Inizio metodo: saveCart");
 		System.out.println("-----------------------");
 
 		Connection conn = null;
-		PreparedStatement prepstat1 = null;
 		PreparedStatement prepstat = null;
 		try {
 			
 			conn = DriverManagerConnectionPool.getConnection();
-			prepstat1 = conn.prepareStatement("SELECT * FROM cart WHERE id_usr = ? AND id_product = ?");
-			prepstat1.setString(1, cb.getUser());
-			prepstat1.setInt(2, pb.getId());
-			ResultSet res = prepstat1.executeQuery();
-			if(res.next()) {
+				if(qta>1) {
 				prepstat = conn.prepareStatement("UPDATE cart SET qta = ? WHERE id_usr = ? and id_product = ?");
-				 prepstat.setInt(1, cb.getQta(pb));
+				 prepstat.setInt(1, qta);
 				 prepstat.setString(2, cb.getUser());
 				 prepstat.setInt(3, pb.getId());
 				 
@@ -125,14 +124,14 @@ public class CartBeanDAO {
 
 				}
 			
-	}
+				}
 			else {
 			 
 			prepstat = conn.prepareStatement("INSERT INTO cart (id_usr, id_product, qta) VALUES (?, ?, ?);");
 			System.out.println(cb.getUser());
 			prepstat.setString(1, cb.getUser());
 			prepstat.setInt(2, pb.getId());
-			prepstat.setInt(3, cb.getQta(pb));
+			prepstat.setInt(3, qta);
 			
 			
 			int state = prepstat.executeUpdate();

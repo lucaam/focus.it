@@ -51,12 +51,12 @@ public class addToCart extends HttpServlet {
 		ProductBeanDAO pbd = new ProductBeanDAO();
 		ProductBean pb = pbd.searchId(toGet);
 		
-		cart.addItem(pb);
-		CartBeanDAO cbd = new CartBeanDAO();
+		cart.addItem(pb, 1);
+		//CartBeanDAO cbd = new CartBeanDAO();
 		
 		if(session.getAttribute("userBean")!=null)
 			
-		cbd.saveCart(cart, pb);
+		//cbd.saveCart(cart, pb);
 
 		session.removeAttribute("cart");
 		session.setAttribute("cart", cart);
