@@ -9,25 +9,69 @@ import java.sql.SQLException;
 public class CartBeanDAO {
 	
 	
-	public synchronized void deleteFromCart (String usr, int id)
+	public synchronized void deleteFromCart (String usr, int id, int qta)
 	{
 		System.out.println("-----------------------");
 		System.out.println("Inizio metodo: deleteFromCart");
 		System.out.println("-----------------------");
 		Connection conn = null;
 		PreparedStatement prepstat = null;
-	
+		PreparedStatement prepstat1 = null;
+
+		
+		try {
+			conn = DriverManagerConnectionPool.getConnection();
+
+			prepstat1 = conn.prepareStatement("SELECT * FROM cart WHERE id_usr = ? AND id_product = ?");
+			prepstat1.setString(1, usr);
+			prepstat1.setInt(2, id);
+			
+			ResultSet res = prepstat1.executeQuery();
+			int prec = 0;
+			if(res.next()) 
+				prec = res.getInt("qta");
+			
+			System.out.println("Qta in db: " + prec);
+			System.out.println("To Remove: " + qta);
+
+			qta=prec-qta;
+			
+			System.out.println("Qta attuale da aggiornare: " + qta);
+
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				prepstat1.close();
+				DriverManagerConnectionPool.releaseConnection(conn);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
 		try {
 			
 			conn = DriverManagerConnectionPool.getConnection();
+			System.out.println("Qta attuale da aggiornare secondo try: " + qta);
+
+			if(qta==0) {
 			prepstat = conn.prepareStatement("DELETE FROM cart where id_usr = ? AND id_product = ?");
 			prepstat.setString(1, usr);
 			prepstat.setInt(2, id);
+			}
+			else {
+			prepstat = conn.prepareStatement("UPDATE cart SET qta = ? WHERE id_usr = ? and id_product = ?");
+			prepstat.setInt(1, qta);
+			prepstat.setString(2, usr);
+			prepstat.setInt(3, id);
+			}
+			
 
 			prepstat.executeUpdate();
 			
 			System.out.println("-----------------------");
-			System.out.println("Fine metodo: saveCart");
+			System.out.println("Fine metodo: deleteFromCart");
 			System.out.println("-----------------------");
 		}
 		catch (SQLException e) {
@@ -60,7 +104,6 @@ public class CartBeanDAO {
 		
 		ResultSet res = prepstat.executeQuery();
 		CartBean cart = new CartBean();
-		int i = 0;
 
 			
 			while(res.next()) {

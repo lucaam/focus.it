@@ -33,7 +33,9 @@ public class CartBean {
 	
 	public Double getTotal()
 	{
-		return this.pList.totPrice();
+		int temp = (int)(pList.totPrice()*100.0);
+	    return ((double)temp)/100.0;
+		
 	}
 	
 	public boolean isEmpty()
@@ -47,10 +49,18 @@ public class CartBean {
 		return cart = cbd.restore(cart.getUser());
 		
 	}
-
-	public void deleteFromDb(ProductBean pb) {
+	
+	public void saveCart(CartBean cart, ProductBean pb, int qta)
+	{
 		CartBeanDAO cbd = new CartBeanDAO();
-		cbd.deleteFromCart(this.getUser(), pb.getId());
+		cbd.saveCart (cart, pb, qta);
+		
+	}
+
+	public void deleteFromDb(ProductBean pb, int qta) {
+		CartBeanDAO cbd = new CartBeanDAO();
+		cbd.deleteFromCart(this.getUser(), pb.getId(), qta);
+		System.out.println("ID UTENTE: " + this.getUser() + "ID PROD DA ELIMINARE: " + pb.getId() + "qta to remove: "  + qta);
 		
 	}
 	

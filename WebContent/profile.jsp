@@ -105,38 +105,38 @@
 								style="width: 100%" aria-valuenow="100" aria-valuemin="0"
 								aria-valuemax="100"></div>
 						</div>
-						<br> 
-					
+						<br>
+
 					<!-- INIZIO FORM CAMBIO CREDENZIALI PER ADMIN -->
-					
+
 						<div class="container">
 						<h4>Cambia credenziali d'accesso</h4>
 							<h6>Sarà richiesto l'accesso ad operazione effettuata.</h6>
-							
+
 				<!--  -->		<!-- 	<form action="manageUsers" method="post">
 								<label for="changeUser">Cambia username:</label>
 									<input type="text" class="form-control" id="changeUser" placeholder="Enter new username" name="newUser">
 								<input type="button" class="btn btn-dark" id="confirmUSR" onclick= "return validateUsr(this.form)" value="CHANGE">
 							</form>
-							
+
 							<br> -->
-							
-							<form action="manageUser" method="post">
+
+							<form>
 								<label for="changePass">Cambia password:</label>
 									<input type="text" class="form-control" id="changePass" placeholder="Enter old password" name="oldPass">
-									<input type="text" class="form-control" id="changePass" placeholder="Enter new password" name="newPass">									
-								<input type="button" class="btn btn-dark" id="confirmPSW" onclick= "return validatePsw(this.form)" value="CHANGE">
-								
+									<input type="text" class="form-control" id="changePass" placeholder="Enter new password" name="newPass">
+								<a class="btn btn-dark" id="confirmPSW" onclick= "return validatePsw(this.form)" href="/manageUser">Change</a>
+
 							</form>
-							
+
 							<br>
-							
-					 		<form action="manageUsers" method="post">
+
+					 		<form>
 								<label for="changeMail">Cambia email:</label>
 									<input type="text"class="form-control" id="changeMail"	placeholder="Enter new Email" name="newMail">
-								<input type="button" class="btn btn-dark" id="confirmEMAIL" onclick= "return validateMail(this.form)" value="CHANGE">
+								<a class="btn btn-dark" id="confirmMail" onclick= "return validatePsw(this.form)" href="/manageUser">Change</a>
 
-							</form> 
+							</form>
 							<br>
 						</div>
 
@@ -144,9 +144,9 @@
 						<%
 							} else {
 						%>
-						
+
 						<!-- INIZIO FORM CAMBIO CREDENZIALI -->
-					
+
 						<div class="container">
 						<h4>Cambia credenziali d'accesso</h4>
 							<h6>Sarà richiesto l'accesso ad operazione effettuata.</h6>
@@ -155,29 +155,29 @@
 									<input type="text" class="form-control" id="changeUser" placeholder="Enter new username" name="newUser">
 								<input type="button" class="btn btn-dark" id="confirmUSR" onclick= "return validateUsr(this.form)" value="CHANGE">
 							</form>
-							
+
 							<br> -->
-							
+
 							<form action="manageUser" method="post">
 								<label for="changePass">Cambia password:</label>
 									<input type="password" class="form-control" id="changePass" placeholder="Enter old password" name="oldPass">
-									<input type="password" class="form-control" id="changePass" placeholder="Enter new password" name="newPass">									
-								<input type="submit" class="btn btn-dark" id="confirmPSW" onclick= "return validatePsw(this.form)" value="CHANGE">
-								
+									<input type="password" class="form-control" id="changePass" placeholder="Enter new password" name="newPass">
+								<a class="btn btn-dark" id="confirmPsw" onclick= "return validatePsw(this.form)" href="/manageUser">Change</a>
+
 							</form>
-							
+
 							<br>
-							
+
 							<form action="manageUser" method="post">
 								<label for="changeMail">Cambia email:</label>
 									<input type="text"class="form-control" id="changeMail"	placeholder="Enter new Email" name="newMail">
-								<input type="submit" class="btn btn-dark" id="confirmEMAIL" onclick= "return validateMail(this.form)" value="CHANGE">
-							</form> 
+								<a class="btn btn-dark" id="confirmEmail" onclick= "return validateMail(this.form)" href="/manageUser">Change</a>
+							</form>
 							<br>
 						</div>
 
 						<!-- FINE FORM CAMBIO CREDENZIALI -->
-						
+
 						<%
 							}
 						%>

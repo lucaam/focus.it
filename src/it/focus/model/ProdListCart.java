@@ -17,7 +17,7 @@ public class ProdListCart {
 	public Boolean Add(ProductBean pb, int qta)
 	{
 		System.out.println("Id prodotto da aggiungere: " + pb.getId());
-		if(this.prods.isEmpty())
+		if(this.prods.size()==0 && this.qta.size()==0)
 		{
 			this.prods.add(pb);
 			this.qta.add(qta);
@@ -25,38 +25,38 @@ public class ProdListCart {
 
 			return true;
 		}
-		else {
-			
-		
-		for(ProductBean temp : this.prods) {
-			System.out.println("Id prodotto mentre scorro: " + temp.getId());
-
-			if(temp.getId()==pb.getId())
-			{		
-				System.out.println("Id corrispondono");
-
-				int index = 0;
-				index = this.prods.indexOf(temp);
-
-				int add = this.qta.get(index);
-				this.qta.set(index, add+qta);
-				System.out.println("Prodotto trovato nella lista, qta aggiornata");
-
-				return true;	
-				
-			}
-			else {
-				this.prods.add(pb);
-				this.qta.add(qta);
-				System.out.println("Prodotto mai inserito, aggiunto");
+		if(this.prods.size()> 0 && this.qta.size()>0 ) {
+			System.out.println("N prodotti in list: " + this.prods.size() + "N qta in lista: " + this.qta.size());
+			int i = this.prods.size()-1;
+			while(i>=0) {
 	
-				return true;
-			}
+				if((this.prods.get(i).getId()==pb.getId()))
+				{		
+					System.out.println("Id trovato: " + this.prods.get(i).getId());
+	
+					
+	
+					int add = this.qta.get(i);
+					System.out.println("Qta prima di aggiornamento: " + add);
+	
+					this.qta.set(i, add+qta);
+					System.out.println("Prodotto trovato nella lista, qta aggiornata");
+	
+					return true;	
+					
+				}
+				i--;
+				
+				
 		}
 		}
-		System.out.println("Non aggiunto");
+		
+			this.prods.add(pb);
+			this.qta.add(qta);
+			System.out.println("Prodotto mai inserito, aggiunto");
 
-		return false;
+			return true;
+		
 		
 
 	}

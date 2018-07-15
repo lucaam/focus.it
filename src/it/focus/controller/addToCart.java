@@ -52,11 +52,10 @@ public class addToCart extends HttpServlet {
 		ProductBean pb = pbd.searchId(toGet);
 		
 		cart.addItem(pb, 1);
-		//CartBeanDAO cbd = new CartBeanDAO();
 		
-		if(session.getAttribute("userBean")!=null)
+		if(!cart.getUser().isEmpty())
+			cart.saveCart(cart, pb, 1);
 			
-		//cbd.saveCart(cart, pb);
 
 		session.removeAttribute("cart");
 		session.setAttribute("cart", cart);

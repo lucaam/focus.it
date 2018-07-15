@@ -70,7 +70,7 @@
 			out.print("</table>");
 			out.print("</div>");
 			out.print("<div class=\"col-sm-2\">");
-			out.print("<div class=\"alert alert-secondary\">Total: " + cart.getTotal() + "</div>");
+			out.print("<div class=\"alert alert-secondary\">Total: " + cart.getTotal() + "€</div>");
 			out.print("<a href=\"#\" class=\"btn btn-secondary\">Buy</a>");
 			out.print("</div>");
 			out.print("</div>");

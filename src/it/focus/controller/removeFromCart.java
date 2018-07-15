@@ -54,8 +54,9 @@ public class removeFromCart extends HttpServlet {
 		
 		
 		cart.removeItem(pb, 1);
-		if(session.getAttribute("user")!=null)
-		cart.deleteFromDb(pb);
+		
+		if(!cart.getUser().isEmpty())
+		cart.deleteFromDb(pb, 1);
 
 		
 		session.removeAttribute("cart");
@@ -72,7 +73,7 @@ public class removeFromCart extends HttpServlet {
 		
 		//Debugging purpose
 
-		RequestDispatcher req = request.getRequestDispatcher("cart.jsp");
+		RequestDispatcher req = request.getRequestDispatcher("./cart.jsp");
 		req.forward(request, response);
 		
 		System.out.println("-----------------------");
