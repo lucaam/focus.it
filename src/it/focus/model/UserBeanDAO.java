@@ -33,7 +33,7 @@ public class UserBeanDAO {
 				
 				return ub;
 			}
-			
+			 
 		} catch (SQLException e) {
 			e.printStackTrace();
 			

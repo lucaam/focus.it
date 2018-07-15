@@ -107,20 +107,21 @@
 						</div>
 						<br> 
 					
-					<!-- INIZIO FORM CAMBIO CREDENZIALI -->
+					<!-- INIZIO FORM CAMBIO CREDENZIALI PER ADMIN -->
 					
 						<div class="container">
 						<h4>Cambia credenziali d'accesso</h4>
+							<h6>Sarà richiesto l'accesso ad operazione effettuata.</h6>
 							
-							<form action="manageUsers" method="post">
+				<!--  -->		<!-- 	<form action="manageUsers" method="post">
 								<label for="changeUser">Cambia username:</label>
 									<input type="text" class="form-control" id="changeUser" placeholder="Enter new username" name="newUser">
 								<input type="button" class="btn btn-dark" id="confirmUSR" onclick= "return validateUsr(this.form)" value="CHANGE">
 							</form>
 							
-							<br>
+							<br> -->
 							
-							<form action="manageUsers" method="post">
+							<form action="manageUser" method="post">
 								<label for="changePass">Cambia password:</label>
 									<input type="text" class="form-control" id="changePass" placeholder="Enter old password" name="oldPass">
 									<input type="text" class="form-control" id="changePass" placeholder="Enter new password" name="newPass">									
@@ -130,12 +131,12 @@
 							
 							<br>
 							
-							<form action="manageUsers" method="post">
+					 		<form action="manageUsers" method="post">
 								<label for="changeMail">Cambia email:</label>
 									<input type="text"class="form-control" id="changeMail"	placeholder="Enter new Email" name="newMail">
 								<input type="button" class="btn btn-dark" id="confirmEMAIL" onclick= "return validateMail(this.form)" value="CHANGE">
 
-							</form>
+							</form> 
 							<br>
 						</div>
 
@@ -148,31 +149,30 @@
 					
 						<div class="container">
 						<h4>Cambia credenziali d'accesso</h4>
-							
-							<form action="manageUsers" method="post">
+							<h6>Sarà richiesto l'accesso ad operazione effettuata.</h6>
+						<!-- 	<form action="manageUsers" method="post">
 								<label for="changeUser">Cambia username:</label>
 									<input type="text" class="form-control" id="changeUser" placeholder="Enter new username" name="newUser">
 								<input type="button" class="btn btn-dark" id="confirmUSR" onclick= "return validateUsr(this.form)" value="CHANGE">
 							</form>
 							
-							<br>
+							<br> -->
 							
-							<form action="manageUsers" method="post">
+							<form action="manageUser" method="post">
 								<label for="changePass">Cambia password:</label>
-									<input type="text" class="form-control" id="changePass" placeholder="Enter old password" name="oldPass">
-									<input type="text" class="form-control" id="changePass" placeholder="Enter new password" name="newPass">									
-								<input type="button" class="btn btn-dark" id="confirmPSW" onclick= "return validatePsw(this.form)" value="CHANGE">
+									<input type="password" class="form-control" id="changePass" placeholder="Enter old password" name="oldPass">
+									<input type="password" class="form-control" id="changePass" placeholder="Enter new password" name="newPass">									
+								<input type="submit" class="btn btn-dark" id="confirmPSW" onclick= "return validatePsw(this.form)" value="CHANGE">
 								
 							</form>
 							
 							<br>
 							
-							<form action="manageUsers" method="post">
+							<form action="manageUser" method="post">
 								<label for="changeMail">Cambia email:</label>
 									<input type="text"class="form-control" id="changeMail"	placeholder="Enter new Email" name="newMail">
-								<input type="button" class="btn btn-dark" id="confirmEMAIL" onclick= "return validateMail(this.form)" value="CHANGE">
-
-							</form>
+								<input type="submit" class="btn btn-dark" id="confirmEMAIL" onclick= "return validateMail(this.form)" value="CHANGE">
+							</form> 
 							<br>
 						</div>
 

@@ -19,12 +19,11 @@ public class Registration extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
   
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		System.out.println("-----------------------");
 		System.out.println("Inizio metodo: doGet - Servlet: Registration");
 		System.out.println("-----------------------");
-		
 		
 		String name = request.getParameter("name");
 		String surname = request.getParameter("surname");
@@ -40,9 +39,8 @@ public class Registration extends HttpServlet {
 			UserBean ub = ubBeanDAO.userRegistration(login, name, surname, password, email, phone);
 			
 			
-			if(ub.getUsr()!="duplicate" && ub.getPwd()!="duplicate")
+			if(ub.getUsr()!="duplicate" && ub.getPwd()!="duplicate" && ub.getEmail()!="duplicate")
 			{
-				
 				RequestDispatcher req = request.getRequestDispatcher("./servicepage/success.jsp");
 				req.forward(request, response);
 			}
@@ -69,5 +67,5 @@ public class Registration extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
-
+	
 }
