@@ -45,8 +45,13 @@ public class CartBean {
 	
 	public CartBean restoreCart()
 	{
+		//controllo se è diverso da una stringa nuova
+		String s = new String();
+		if(!this.user.equals(s)) {
 		CartBeanDAO cbd = new CartBeanDAO();
 		return cbd.restore(this.user);
+		}
+		else return this;
 		
 	}
 	
