@@ -117,7 +117,7 @@
                     <form action="Login" method="post">
                       <div class="form-group">
                         <label for="username">Username:</label>
-                        <input type="text" class="form-control" id="user" placeholder="Enter username" name="user"  >
+                        <input type="text" class="form-control" id="user" placeholder="Enter username" name="user" >
                       </div>
 
                       <div class="form-group">

@@ -2,6 +2,9 @@ package it.focus.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,17 +33,15 @@ public class generateThumb extends HttpServlet {
 		System.out.println("Inizio metodo: doGet - Servlet: generateThumb");
 		System.out.println("-----------------------");
 		
+		ProductBeanDAO pbd = new ProductBeanDAO();
+
+		String toSearch="";
+
+		ArrayList<ProductBean> pList = pbd.searchName(toSearch);
 		String appPath = request.getServletContext().getRealPath("");
 		String savePath = appPath + SAVE_DIR;
-		System.out.println("app path: " + appPath);
-		System.out.println("savepath: " + savePath);
-
-		String toSearch = request.getParameter("idProd");
-		System.out.println("Creazione del file Json per il prodotto con ID :" + toSearch);
-		ProductBeanDAO pbd = new ProductBeanDAO();
-		ProductBean pb = pbd.searchId(toSearch);
 		
-		File f = new File(savePath +  "generateThumb.json");
+		File f = new File(savePath +  "prodList.json");
 		if(f.exists() && !f.isDirectory()) { 
 			System.out.println("Esiste");
 			f.delete();
@@ -57,8 +58,9 @@ public class generateThumb extends HttpServlet {
 		ObjectMapper mapper = new ObjectMapper();
 
 		
-		mapper.writeValue(f, pb);
+		mapper.writeValue(f, pList);
 		
+
 		System.out.println("-----------------------");
 		System.out.println("Fine metodo: doGet - Servlet: generateThumb");
 		System.out.println("-----------------------");

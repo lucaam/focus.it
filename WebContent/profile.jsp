@@ -96,6 +96,8 @@
 						<%
 							if ("admin".equals(rolecookie.getValue())) {
 						%>
+						<h4>Admin reserved</h4>
+						
 						<a href="../add.jsp" class="btn btn-dark">Add product</a> <a
 							href="#" class="btn btn-dark" onclick="deleteProd()">DeleteProd</a>
 						<div id="deleteDiv"></div>
@@ -106,81 +108,49 @@
 								aria-valuemax="100"></div>
 						</div>
 						<br>
-
-					<!-- INIZIO FORM CAMBIO CREDENZIALI PER ADMIN -->
-
-						<div class="container">
-						<h4>Cambia credenziali d'accesso</h4>
-							<h6>Sarà richiesto l'accesso ad operazione effettuata.</h6>
-
-				<!--  -->		<!-- 	<form action="manageUsers" method="post">
-								<label for="changeUser">Cambia username:</label>
-									<input type="text" class="form-control" id="changeUser" placeholder="Enter new username" name="newUser">
-								<input type="button" class="btn btn-dark" id="confirmUSR" onclick= "return validateUsr(this.form)" value="CHANGE">
-							</form>
-
-							<br> -->
-
-							<form>
-								<label for="changePass">Cambia password:</label>
-									<input type="text" class="form-control" id="changePass" placeholder="Enter old password" name="oldPass">
-									<input type="text" class="form-control" id="changePass" placeholder="Enter new password" name="newPass">
-								<a class="btn btn-dark" id="confirmPSW" onclick= "return validatePsw(this.form)" href="manageUser">Change</a>
-
-							</form>
-
-							<br>
-
-					 		<form>
-								<label for="changeMail">Cambia email:</label>
-									<input type="text"class="form-control" id="changeMail"	placeholder="Enter new Email" name="newMail">
-								<a class="btn btn-dark" id="confirmMail" onclick= "return validatePsw(this.form)" href="manageUser">Change</a>
-
-							</form>
-							<br>
-						</div>
-
-						<!-- FINE FORM CAMBIO CREDENZIALI -->
 						<%
-							} else {
+							}
 						%>
-
 						<!-- INIZIO FORM CAMBIO CREDENZIALI -->
 
 						<div class="container">
 						<h4>Cambia credenziali d'accesso</h4>
-							<h6>Sarà richiesto l'accesso ad operazione effettuata.</h6>
-						<!-- 	<form action="manageUsers" method="post">
-								<label for="changeUser">Cambia username:</label>
-									<input type="text" class="form-control" id="changeUser" placeholder="Enter new username" name="newUser">
-								<input type="button" class="btn btn-dark" id="confirmUSR" onclick= "return validateUsr(this.form)" value="CHANGE">
-							</form>
-
-							<br> -->
-
+							
 							<form action="manageUser" method="post">
 								<label for="changePass">Cambia password:</label>
-									<input type="password" class="form-control" id="changePass" placeholder="Enter old password" name="oldPass">
-									<input type="password" class="form-control" id="changePass" placeholder="Enter new password" name="newPass">
-								<a class="btn btn-dark" id="confirmPsw" onclick= "return validatePsw(this.form)" href="/manageUser">Change</a>
+								<br>
+									<input type="password" class="form-control" id="old" placeholder="Enter old password" name="old">
+									<br>
+									<input type="password" class="form-control" id="new" placeholder="Enter new password" name="new">
+															<br>
+								
+							<input type="submit" class="btn btn-dark" value="Submit" onclick="return validatePsw(this.form)">
+
 
 							</form>
 
 							<br>
 
+							<h4>Cambia credenziali d'accesso</h4>
+							
 							<form action="manageUser" method="post">
-								<label for="changeMail">Cambia email:</label>
-									<input type="text"class="form-control" id="changeMail"	placeholder="Enter new Email" name="newMail">
-								<a class="btn btn-dark" id="confirmEmail" onclick= "return validateMail(this.form)" href="/manageUser">Change</a>
+								<label for="changeEmail">Cambia Email:</label>
+								<br>
+									<input type="email" class="form-control" id="oldemail" placeholder="Enter old email" name="oldemail">
+									<br>
+									<input type="email" class="form-control" id="oldemail" placeholder="Enter new email" name="newemail">
+															<br>
+								
+							<input type="submit" class="btn btn-dark" value="Submit" onclick="return validateEmail(this.form)">
+
+
 							</form>
 							<br>
 						</div>
 
 						<!-- FINE FORM CAMBIO CREDENZIALI -->
 
-						<%
-							}
-						%>
+						
 					</div>
 				</div>
 			</div>

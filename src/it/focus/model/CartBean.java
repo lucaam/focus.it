@@ -43,17 +43,18 @@ public class CartBean {
 		return this.pList.isEmpty();
 	}
 	
-	public CartBean restoreCart(CartBean cart)
+	public CartBean restoreCart()
 	{
 		CartBeanDAO cbd = new CartBeanDAO();
-		return cart = cbd.restore(cart.getUser());
+		return cbd.restore(this.user);
 		
 	}
 	
 	public void saveCart(CartBean cart, ProductBean pb, int qta)
 	{
 		CartBeanDAO cbd = new CartBeanDAO();
-		cbd.saveCart (cart, pb, qta);
+		//dovrebbe essete qta ma al momento non viene mai inviata una qta maggiore di 1
+		cbd.saveCart (cart, pb, this.pList.getSpecQta(pb));
 		
 	}
 

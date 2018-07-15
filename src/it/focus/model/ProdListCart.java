@@ -120,4 +120,27 @@ public class ProdListCart {
 		return this.qta;
 	}
 	
+	public int getSpecQta(ProductBean pb)
+	{
+		int i = this.prods.size()-1;
+
+	
+		while(i>=0) {
+			
+			if((this.prods.get(i).getId()==pb.getId()))
+			{		
+				System.out.println("Id trovato: " + this.prods.get(i).getId());
+
+				System.out.println("Prodotto trovato nella lista, qta ritornata");
+
+
+				return this.qta.get(i);
+
+				
+			}
+			i--;
+	}
+		return -1;
+	
+	}
 }

@@ -49,6 +49,9 @@
 			out.print("</thead>");
 			out.print("<tbody>");
 			
+			if(user.getUsr()!=null)
+				cart = cart.restoreCart();
+			
 			ArrayList<ProductBean> pList = cart.getItems();
 			ArrayList<Integer> qList = cart.getQtas();
 			int i = 0;

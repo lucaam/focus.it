@@ -46,7 +46,7 @@ function retriveProd(){
 	$(document).ready(function(){
 	var prod=null;
 
-	var id = Math.floor((Math.random() * 15) + 1);
+	
 	var xhttp = new XMLHttpRequest();
 	var i = 3;
 
@@ -73,20 +73,21 @@ function retriveProd(){
 								<div class="card-footer text-muted">\
 								 2 days ago</div></div></div>';
 						
-							card = card.replace("title ", prod.product);
-							card = card.replace("text ", prod.desc.substring(0, 250) + " ...");
-							card = card.replace("#", "generatePage?idProd=" + prod.id);
+							var id = Math.floor((Math.random() * prod.length) + 1);
+							card = card.replace("title ", prod[id].product);
+							card = card.replace("text ", prod[id].desc.substring(0, 250) + " ...");
+							card = card.replace("#", "generatePage?idProd=" + prod[id].id);
 						
 							$("#cardContainer").append().html(card);
 						},
-						url: 'jsonfiles/generateThumb.json'
+						url: 'jsonfiles/prodList.json'
 					});
 					
 					
 
 				}
 			}
-	xhttp.open("GET", "generateThumb?idProd=" + id + "", true);
+	xhttp.open("GET", "generateThumb", true);
 	xhttp.send();
 
 	});
@@ -115,7 +116,7 @@ function deleteProd(){
 							i = 0;
 							var card = '<br><div class="form-group">\
 								  <label for="deleteForm">Select one:</label>\
-							  <select class="form-control" id="deleteForm">';
+							  <select class="form-control" id="deleteForm" data-live-search="true" data-live-search-style="startsWith" class="selectpicker">';
 							  
 							      
 							  
