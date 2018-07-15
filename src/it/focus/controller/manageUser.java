@@ -47,7 +47,7 @@ public class manageUser extends HttpServlet {
 
 				userB= ubd.changePassword(userB, userB.getUsr(), newPSW, oldPSW);
 				
-				RequestDispatcher reqDis= request.getRequestDispatcher("./Logout.java");
+				RequestDispatcher reqDis= request.getRequestDispatcher("./servicepage/success.jsp");
 				reqDis.forward(request, response);
 			}
 			catch (Exception e) {

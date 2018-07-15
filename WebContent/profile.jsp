@@ -125,7 +125,7 @@
 								<label for="changePass">Cambia password:</label>
 									<input type="text" class="form-control" id="changePass" placeholder="Enter old password" name="oldPass">
 									<input type="text" class="form-control" id="changePass" placeholder="Enter new password" name="newPass">
-								<a class="btn btn-dark" id="confirmPSW" onclick= "return validatePsw(this.form)" href="/manageUser">Change</a>
+								<a class="btn btn-dark" id="confirmPSW" onclick= "return validatePsw(this.form)" href="manageUser">Change</a>
 
 							</form>
 
@@ -134,7 +134,7 @@
 					 		<form>
 								<label for="changeMail">Cambia email:</label>
 									<input type="text"class="form-control" id="changeMail"	placeholder="Enter new Email" name="newMail">
-								<a class="btn btn-dark" id="confirmMail" onclick= "return validatePsw(this.form)" href="/manageUser">Change</a>
+								<a class="btn btn-dark" id="confirmMail" onclick= "return validatePsw(this.form)" href="manageUser">Change</a>
 
 							</form>
 							<br>
