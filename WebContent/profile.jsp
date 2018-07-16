@@ -94,7 +94,7 @@
 						<br>
 
 						<%
-							if ("admin".equals(rolecookie.getValue())) {
+							if ("admin".contentEquals(user.getRole())) {
 						%>
 						<h4>Admin reserved</h4>
 						

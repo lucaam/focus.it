@@ -158,7 +158,11 @@ function retriveId(){
 	
 	    id = $("#deleteForm").find('option:selected').attr('id');
 	    console.log(id);
-	    
+	    xhttp.onreadystatechange = function(){
+	        if(xhttp.readyState == 4 && xhttp.status == 200){
+	            $("#deleteDiv").append().html("<span class=\"text-success\">Rimosso con successo</span>");
+	          }
+	        }
 	    if(id!=-1){
 		xhttp.open("GET", "removeProd?toRemove="+ id, true);
 		xhttp.send();
