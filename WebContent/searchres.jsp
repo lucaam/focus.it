@@ -33,7 +33,7 @@
 			{
 				if (pb.getPic()!="")
 	            	out.print("<tr><th scope=\"row\"><img src=\"/"+ pb.getPic() +"\" width=\"60px\" height=\"60px\" class=\"img-fluid\"></th>");
-	            
+
 				else
 					out.print("<tr><th scope=\"row\"><img src=\"./images/notfound.png\" width=\"60px\" height=\"60px\"></th>");
 				out.print("<td class=\"td-prod\"><a href=\"generatePage?idProd="+ pb.getId() +"\" class=\"text-dark\">" + pb.getProduct() + " </a></td>");
@@ -46,12 +46,12 @@
 			out.print("</tbody>");
 			out.print("</table>");
 			out.print("<div id=\"dialog\" title=\"Confirmation\">");
-			
+
 			out.print("</div>​");
 		}
 		else
 		{
-			out.print("<p class=\"text-center nores \"> <h2> Spiacenti! La ricerca non ha protato risultati!</p>");
+			out.print("<p class=\"text-center nores \"> <h2> Spiacenti! La ricerca non ha portato risultati!</p>");
 		}
 	%>
 

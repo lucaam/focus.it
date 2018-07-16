@@ -55,7 +55,7 @@
 
         <%  if (user != null) {%>
           <li class="nav-item">
-            <a class="nav-link" href="profile.jsp" style="margin-top: 5px">Welcome back, <%=user.getNome()%></a>
+            <a class="nav-link" href="profile.jsp" style="margin-top:5px">Welcome back, <%=user.getNome()%></a>
           </li>
           <li>
             <form class="nav-link" action="Logout" method="post">
