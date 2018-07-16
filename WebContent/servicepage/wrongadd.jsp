@@ -14,7 +14,7 @@
 
   <body>
     <%@include file="../parts/nav.jsp" %>
-      <%if(!"admin".equals(rolecookie.getValue())){
+      <%if(!"admin".equals(user.getRole())){
 			response.sendRedirect("./nopermission.jsp");
         return;}
 		%>

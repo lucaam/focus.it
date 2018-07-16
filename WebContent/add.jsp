@@ -18,7 +18,7 @@
 			return;
 			}
 
-			if(!"admin".equals(rolecookie.getValue()))
+			if(!"admin".equals(user.getRole()))
 				response.sendRedirect("./servicepage/nopermission.jsp");
 
 		%>
