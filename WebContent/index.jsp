@@ -17,8 +17,8 @@
 
         <div class="indeximg">
               <img src="../images/index.jpg" height="600px" width="100%" class="img-fluid">
-        
-                 
+
+
           </div>
           <br>
 
@@ -45,9 +45,9 @@
                 </p>
               </div>
 
-                
-              
-			
+
+
+
         <%@ include file="./parts/footer.jsp" %>
 
     </body>
@@ -79,5 +79,3 @@
     <span class="sr-only">Next</span>
   </a>
             </div> -->
-            
-

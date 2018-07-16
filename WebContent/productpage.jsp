@@ -6,7 +6,7 @@
   <head>
     <%@include file="./parts/meta.jsp" %>
       <%@include file="./parts/head.jsp" %>
-        <title>Test page - focus.it</title>
+        <title><%=pb.getProduct()%></title>
   </head>
 
   <body>
@@ -32,13 +32,13 @@
             <p class="text-justify">
               <%= pb.getDesc()%>
             </p>
-            
+
           <!-- ("<a href=\"\" class=\"btn btn-dark\" id=\"addtocart\" onclick=\"added();\"><i class=\"fas fa-shopping-cart\"></i> Add to cart </a>") -->
             <button class="btn btn-dark" onclick="added(<%=pb.getId()%>)">Add to Cart</button>
             <span id="added" class="text-success"></span>
-						
-							
-						
+
+
+
               <p class="text-justify">
                 <ul style="list-style-type: none; padding:0;">
                   <li>
