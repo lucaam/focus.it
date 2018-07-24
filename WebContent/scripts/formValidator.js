@@ -61,13 +61,12 @@ function validateRegistration(formRegistration) {
     return false; //Negate access
   }
 
-if (!cost1IsOK||!fucc1IsOK) {
-    return true;
-} else if (!cost2IsOK||!fucc2IsOK) {
-  return true;
+if (cost1IsOK && cost2IsOK || fucc1IsOK && fucc2IsOK){
+	alert("Benvenuto, Prof. "+profsurname);
+	console.log("OOOOOOOOOOOOOOO");
+	return true;
 }
 else
-alert("Benvenuto, Prof"+ profsurname)
 return true; //Grant access
 }
 
