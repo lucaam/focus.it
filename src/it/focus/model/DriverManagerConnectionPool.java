@@ -28,18 +28,18 @@ public class DriverManagerConnectionPool {
 //		please, if you are in this section avoid to access into my database.
 //		please, if you are in this section avoid to access into my database.
 //		please, if you are in this section avoid to access into my database.
-		String username = "focusdb";
-		String password = "newpassword2018";
+//		String username = "focusdb";
+//		String password = "newpassword2018";
 //		please, if you are in this section avoid to access into my database.
 //		please, if you are in this section avoid to access into my database.
 //		please, if you are in this section avoid to access into my database.
 //		please, if you are in this section avoid to access into my database.
 //		please, if you are in this section avoid to access into my database.
 //		please, if you are in this section avoid to access into my database.
-
-
+		String username = "root";
+		String password = "Empirealice97";
 		
-		   String url = "jdbc:mysql://db4free.net:3306/"+"focusdb"+"?autoReconnect=true&useSSL=false";
+		   String url = "jdbc:mysql://localhost:3306/"+"focusdb"+"?autoReconnect=true&useSSL=false";
 		   newConnection = DriverManager.getConnection(url, username, password);
 		   
 		

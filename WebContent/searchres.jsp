@@ -11,7 +11,7 @@
 
   <body>
     <%@include file="./parts/nav.jsp" %>
-      <div class="container-fluid bg-cont table-responsive">
+      <div class="table-responsive">
 
 
         <% ArrayList<ProductBean> pList = (ArrayList<ProductBean>) request.getAttribute("prod");

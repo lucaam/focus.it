@@ -56,7 +56,7 @@ public class removeProd extends HttpServlet {
 		
 		ArrayList<ProductBean> pList = pbd.searchName(toSearch);
 		String appPath = request.getServletContext().getRealPath("");
-		String savePath = appPath + SAVE_DIR;
+		String savePath = appPath + File.separator + SAVE_DIR;
 		
 		File f = new File(savePath +  "prodList.json");
 		if(f.exists() && !f.isDirectory()) { 

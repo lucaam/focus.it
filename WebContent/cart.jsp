@@ -12,19 +12,19 @@
   <body>
     <%@include file="./parts/nav.jsp" %>
 
-      <div class="container bg-cont">
+      
 
 
 
 
         <%
 	if (session==null){
-		out.print("<p class=\"text-center\"><h2>Your cart is empty right now!</p>");
+		out.print("<div class=\"container bg-cont\"><p class=\"text-center\"><h2>Your cart is empty right now!</p>");
 	return;
 	}
 
 	if (cart==null){
-		out.print("<p class=\"text-center\"><h2>Your cart is empty right now!</p>");
+		out.print("<div class=\"container bg-cont\"><p class=\"text-center\"><h2>Your cart is empty right now!</p>");
 	return;
 	}
 
@@ -33,7 +33,7 @@
 				
 				if(!cart.isEmpty()){
 
-			out.print("<div class=\"row\">");
+			out.print("<div class=\"table-responsive\"><div class=\"row\">");
 			out.print("<div class=\"col-sm-10\">");
 			out.print("<table class=\"table\">");
 			out.print("<thead>");
