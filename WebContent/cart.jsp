@@ -14,7 +14,7 @@
 
       
 
-
+	
 
 
         <%
@@ -33,8 +33,8 @@
 				
 				if(!cart.isEmpty()){
 
-			out.print("<div class=\"table-responsive\"><div class=\"row\">");
-			out.print("<div class=\"col-sm-10\">");
+			out.print("<div class=\"table-responsive\">");
+			
 			out.print("<table class=\"table\">");
 			out.print("<thead>");
 			out.print("<tr>");
@@ -55,13 +55,14 @@
 			ArrayList<ProductBean> pList = cart.getItems();
 			ArrayList<Integer> qList = cart.getQtas();
 			int i = 0;
+			
 			for(ProductBean pb : pList)
 			{
 				if (pb.getPic()!="")
-	            	out.print("<tr><th scope=\"row\"><img src=\"/"+ pb.getPic() +"\" width=\"60px\" height=\"60px\"></th>");
+	            	out.print("<tr><th scope=\"row\"><img src=\"/"+ pb.getPic() +"\" class=\"img-fluid\" width=\"60px\" height=\"60px\"></th>");
 	            
 				else
-					out.print("<tr><th scope=\"row\"><img src=\"./images/notfound.png\" width=\"60px\" height=\"60px\"></th>");
+					out.print("<tr><th scope=\"row\"><img src=\"./images/notfound.png\" class=\"img-fluid\" width=\"60px\" height=\"60px\"></th>");
 				out.print("<td class=\"td-prod\"><a href=\"generatePage?idProd="+ pb.getId() +"\" class=\"text-dark\">" + pb.getProduct() + " </a></td>");
 				out.print("<td class=\"td-prod\">" + pb.getPrice() + "€ </td>");
 				out.print("<td class=\"td-prod\">" + pb.getMpx() + "</td>");
@@ -71,12 +72,10 @@
 			}
 			out.print("</tbody>");
 			out.print("</table>");
-			out.print("</div>");
-			out.print("<div class=\"col-sm-2\">");
 			out.print("<div class=\"alert alert-secondary\">Total: " + cart.getTotal() + "€</div>");
-			out.print("<a href=\"#\" class=\"btn btn-secondary\">Buy</a>");
+
 			out.print("</div>");
-			out.print("</div>");
+			
 		}
 				
 		
